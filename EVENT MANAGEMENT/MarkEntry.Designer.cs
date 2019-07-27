@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.SlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventRollNo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Judges = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.AvgMark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -37,10 +41,6 @@
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.button1 = new System.Windows.Forms.Button();
-            this.SlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventRollNo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Judges = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.AvgMark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,32 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(578, 346);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // SlNo
+            // 
+            this.SlNo.HeaderText = "Sl No";
+            this.SlNo.Name = "SlNo";
+            this.SlNo.Width = 50;
+            // 
+            // EventRollNo
+            // 
+            this.EventRollNo.HeaderText = "Event Roll No";
+            this.EventRollNo.Name = "EventRollNo";
+            this.EventRollNo.Width = 200;
+            // 
+            // Judges
+            // 
+            this.Judges.HeaderText = "Judges";
+            this.Judges.Name = "Judges";
+            this.Judges.Width = 200;
+            // 
+            // AvgMark
+            // 
+            this.AvgMark.HeaderText = "Avg. Mark";
+            this.AvgMark.Name = "AvgMark";
+            this.AvgMark.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AvgMark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AvgMark.Width = 125;
             // 
             // button3
             // 
@@ -131,32 +157,6 @@
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // SlNo
-            // 
-            this.SlNo.HeaderText = "Sl No";
-            this.SlNo.Name = "SlNo";
-            this.SlNo.Width = 50;
-            // 
-            // EventRollNo
-            // 
-            this.EventRollNo.HeaderText = "Event Roll No";
-            this.EventRollNo.Name = "EventRollNo";
-            this.EventRollNo.Width = 200;
-            // 
-            // Judges
-            // 
-            this.Judges.HeaderText = "Judges";
-            this.Judges.Name = "Judges";
-            this.Judges.Width = 200;
-            // 
-            // AvgMark
-            // 
-            this.AvgMark.HeaderText = "Avg. Mark";
-            this.AvgMark.Name = "AvgMark";
-            this.AvgMark.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvgMark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.AvgMark.Width = 125;
-            // 
             // MarkEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +170,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "MarkEntry";
             this.Text = "MarkEntry";
+            this.Load += new System.EventHandler(this.MarkEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
