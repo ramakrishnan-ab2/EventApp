@@ -1,6 +1,6 @@
 ﻿namespace EVENT_MANAGEMENT
 {
-    partial class SchoolRegistration
+    partial class FormSchoolRegistration
     {
         /// <summary>
         /// Required designer variable.
@@ -28,174 +28,174 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.groupBox1.SuspendLayout();
+            this.TxtSchoolRegistrationAddress = new System.Windows.Forms.TextBox();
+            this.TxtSchoolRegistrationSchoolName = new System.Windows.Forms.TextBox();
+            this.BtnSchoolRegistrationExit = new System.Windows.Forms.Button();
+            this.BtnSchoolRegistrationSave = new System.Windows.Forms.Button();
+            this.BtnSchoolRegistrationCancel = new System.Windows.Forms.Button();
+            this.BtnSchoolRegistrationEdit = new System.Windows.Forms.Button();
+            this.LblSchoolRegistrationSchoolName = new System.Windows.Forms.Label();
+            this.BtnSchoolRegistrationDelete = new System.Windows.Forms.Button();
+            this.BtnSchoolRegistrationNew = new System.Windows.Forms.Button();
+            this.listBoxSchoolRegistration = new System.Windows.Forms.ListBox();
+            this.LblSchoolRegistrationAddress = new System.Windows.Forms.Label();
+            this.groupBoxSchoolRegistrationSchoolDetails = new System.Windows.Forms.GroupBox();
+            this.statusStripBtnSchoolRegistration = new System.Windows.Forms.StatusStrip();
+            this.groupBoxSchoolRegistrationSchoolDetails.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox4
+            // TxtSchoolRegistrationAddress
             // 
-            this.textBox4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(21, 100);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(460, 85);
-            this.textBox4.TabIndex = 15;
+            this.TxtSchoolRegistrationAddress.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSchoolRegistrationAddress.Location = new System.Drawing.Point(21, 100);
+            this.TxtSchoolRegistrationAddress.Multiline = true;
+            this.TxtSchoolRegistrationAddress.Name = "TxtSchoolRegistrationAddress";
+            this.TxtSchoolRegistrationAddress.Size = new System.Drawing.Size(460, 85);
+            this.TxtSchoolRegistrationAddress.TabIndex = 15;
             // 
-            // textBox1
+            // TxtSchoolRegistrationSchoolName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(21, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(460, 23);
-            this.textBox1.TabIndex = 15;
+            this.TxtSchoolRegistrationSchoolName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSchoolRegistrationSchoolName.Location = new System.Drawing.Point(21, 55);
+            this.TxtSchoolRegistrationSchoolName.Name = "TxtSchoolRegistrationSchoolName";
+            this.TxtSchoolRegistrationSchoolName.Size = new System.Drawing.Size(460, 23);
+            this.TxtSchoolRegistrationSchoolName.TabIndex = 15;
             // 
-            // button7
+            // BtnSchoolRegistrationExit
             // 
-            this.button7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(737, 367);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(76, 23);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Exit";
-            this.button7.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationExit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSchoolRegistrationExit.Location = new System.Drawing.Point(737, 367);
+            this.BtnSchoolRegistrationExit.Name = "BtnSchoolRegistrationExit";
+            this.BtnSchoolRegistrationExit.Size = new System.Drawing.Size(76, 23);
+            this.BtnSchoolRegistrationExit.TabIndex = 10;
+            this.BtnSchoolRegistrationExit.Text = "Exit";
+            this.BtnSchoolRegistrationExit.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // BtnSchoolRegistrationSave
             // 
-            this.button6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(650, 367);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Save";
-            this.button6.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationSave.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSchoolRegistrationSave.Location = new System.Drawing.Point(650, 367);
+            this.BtnSchoolRegistrationSave.Name = "BtnSchoolRegistrationSave";
+            this.BtnSchoolRegistrationSave.Size = new System.Drawing.Size(75, 23);
+            this.BtnSchoolRegistrationSave.TabIndex = 11;
+            this.BtnSchoolRegistrationSave.Text = "Save";
+            this.BtnSchoolRegistrationSave.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // BtnSchoolRegistrationCancel
             // 
-            this.button5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(557, 367);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(78, 23);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Cancel";
-            this.button5.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationCancel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSchoolRegistrationCancel.Location = new System.Drawing.Point(557, 367);
+            this.BtnSchoolRegistrationCancel.Name = "BtnSchoolRegistrationCancel";
+            this.BtnSchoolRegistrationCancel.Size = new System.Drawing.Size(78, 23);
+            this.BtnSchoolRegistrationCancel.TabIndex = 12;
+            this.BtnSchoolRegistrationCancel.Text = "Cancel";
+            this.BtnSchoolRegistrationCancel.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BtnSchoolRegistrationEdit
             // 
-            this.button4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(201, 367);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Edit";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationEdit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSchoolRegistrationEdit.Location = new System.Drawing.Point(201, 367);
+            this.BtnSchoolRegistrationEdit.Name = "BtnSchoolRegistrationEdit";
+            this.BtnSchoolRegistrationEdit.Size = new System.Drawing.Size(75, 23);
+            this.BtnSchoolRegistrationEdit.TabIndex = 13;
+            this.BtnSchoolRegistrationEdit.Text = "Edit";
+            this.BtnSchoolRegistrationEdit.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // LblSchoolRegistrationSchoolName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 16);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "School Name :";
+            this.LblSchoolRegistrationSchoolName.AutoSize = true;
+            this.LblSchoolRegistrationSchoolName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSchoolRegistrationSchoolName.Location = new System.Drawing.Point(18, 36);
+            this.LblSchoolRegistrationSchoolName.Name = "LblSchoolRegistrationSchoolName";
+            this.LblSchoolRegistrationSchoolName.Size = new System.Drawing.Size(98, 16);
+            this.LblSchoolRegistrationSchoolName.TabIndex = 12;
+            this.LblSchoolRegistrationSchoolName.Text = "School Name :";
             // 
-            // button3
+            // BtnSchoolRegistrationDelete
             // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(111, 367);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationDelete.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSchoolRegistrationDelete.Location = new System.Drawing.Point(111, 367);
+            this.BtnSchoolRegistrationDelete.Name = "BtnSchoolRegistrationDelete";
+            this.BtnSchoolRegistrationDelete.Size = new System.Drawing.Size(84, 23);
+            this.BtnSchoolRegistrationDelete.TabIndex = 14;
+            this.BtnSchoolRegistrationDelete.Text = "Delete";
+            this.BtnSchoolRegistrationDelete.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // BtnSchoolRegistrationNew
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(21, 367);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "New";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationNew.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSchoolRegistrationNew.Location = new System.Drawing.Point(21, 367);
+            this.BtnSchoolRegistrationNew.Name = "BtnSchoolRegistrationNew";
+            this.BtnSchoolRegistrationNew.Size = new System.Drawing.Size(84, 23);
+            this.BtnSchoolRegistrationNew.TabIndex = 15;
+            this.BtnSchoolRegistrationNew.Text = "New";
+            this.BtnSchoolRegistrationNew.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // listBoxSchoolRegistration
             // 
-            this.listBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 9);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(264, 340);
-            this.listBox1.TabIndex = 8;
+            this.listBoxSchoolRegistration.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxSchoolRegistration.FormattingEnabled = true;
+            this.listBoxSchoolRegistration.ItemHeight = 16;
+            this.listBoxSchoolRegistration.Location = new System.Drawing.Point(12, 9);
+            this.listBoxSchoolRegistration.Name = "listBoxSchoolRegistration";
+            this.listBoxSchoolRegistration.Size = new System.Drawing.Size(264, 340);
+            this.listBoxSchoolRegistration.TabIndex = 8;
             // 
-            // label9
+            // LblSchoolRegistrationAddress
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(18, 81);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 16);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Address :";
+            this.LblSchoolRegistrationAddress.AutoSize = true;
+            this.LblSchoolRegistrationAddress.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSchoolRegistrationAddress.Location = new System.Drawing.Point(18, 81);
+            this.LblSchoolRegistrationAddress.Name = "LblSchoolRegistrationAddress";
+            this.LblSchoolRegistrationAddress.Size = new System.Drawing.Size(71, 16);
+            this.LblSchoolRegistrationAddress.TabIndex = 12;
+            this.LblSchoolRegistrationAddress.Text = "Address :";
             // 
-            // groupBox1
+            // groupBoxSchoolRegistrationSchoolDetails
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(282, 9);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(548, 342);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "School Details";
+            this.groupBoxSchoolRegistrationSchoolDetails.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBoxSchoolRegistrationSchoolDetails.Controls.Add(this.TxtSchoolRegistrationAddress);
+            this.groupBoxSchoolRegistrationSchoolDetails.Controls.Add(this.TxtSchoolRegistrationSchoolName);
+            this.groupBoxSchoolRegistrationSchoolDetails.Controls.Add(this.LblSchoolRegistrationAddress);
+            this.groupBoxSchoolRegistrationSchoolDetails.Controls.Add(this.LblSchoolRegistrationSchoolName);
+            this.groupBoxSchoolRegistrationSchoolDetails.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxSchoolRegistrationSchoolDetails.Location = new System.Drawing.Point(282, 9);
+            this.groupBoxSchoolRegistrationSchoolDetails.Name = "groupBoxSchoolRegistrationSchoolDetails";
+            this.groupBoxSchoolRegistrationSchoolDetails.Size = new System.Drawing.Size(548, 342);
+            this.groupBoxSchoolRegistrationSchoolDetails.TabIndex = 9;
+            this.groupBoxSchoolRegistrationSchoolDetails.TabStop = false;
+            this.groupBoxSchoolRegistrationSchoolDetails.Text = "School Details";
             // 
-            // statusStrip1
+            // statusStripBtnSchoolRegistration
             // 
-            this.statusStrip1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusStrip1.Location = new System.Drawing.Point(0, 401);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(842, 22);
-            this.statusStrip1.TabIndex = 16;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStripBtnSchoolRegistration.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStripBtnSchoolRegistration.Location = new System.Drawing.Point(0, 401);
+            this.statusStripBtnSchoolRegistration.Name = "statusStripBtnSchoolRegistration";
+            this.statusStripBtnSchoolRegistration.Size = new System.Drawing.Size(842, 22);
+            this.statusStripBtnSchoolRegistration.TabIndex = 16;
+            this.statusStripBtnSchoolRegistration.Text = "statusStrip1";
             // 
-            // SchoolRegistration
+            // FormSchoolRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 423);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.statusStripBtnSchoolRegistration);
+            this.Controls.Add(this.BtnSchoolRegistrationExit);
+            this.Controls.Add(this.BtnSchoolRegistrationSave);
+            this.Controls.Add(this.BtnSchoolRegistrationCancel);
+            this.Controls.Add(this.BtnSchoolRegistrationEdit);
+            this.Controls.Add(this.BtnSchoolRegistrationDelete);
+            this.Controls.Add(this.BtnSchoolRegistrationNew);
+            this.Controls.Add(this.listBoxSchoolRegistration);
+            this.Controls.Add(this.groupBoxSchoolRegistrationSchoolDetails);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SchoolRegistration";
+            this.Name = "FormSchoolRegistration";
             this.Text = "School Registration";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxSchoolRegistrationSchoolDetails.ResumeLayout(false);
+            this.groupBoxSchoolRegistrationSchoolDetails.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,18 +203,18 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.TextBox TxtSchoolRegistrationAddress;
+        private System.Windows.Forms.TextBox TxtSchoolRegistrationSchoolName;
+        private System.Windows.Forms.Button BtnSchoolRegistrationExit;
+        private System.Windows.Forms.Button BtnSchoolRegistrationSave;
+        private System.Windows.Forms.Button BtnSchoolRegistrationCancel;
+        private System.Windows.Forms.Button BtnSchoolRegistrationEdit;
+        private System.Windows.Forms.Label LblSchoolRegistrationSchoolName;
+        private System.Windows.Forms.Button BtnSchoolRegistrationDelete;
+        private System.Windows.Forms.Button BtnSchoolRegistrationNew;
+        private System.Windows.Forms.ListBox listBoxSchoolRegistration;
+        private System.Windows.Forms.Label LblSchoolRegistrationAddress;
+        private System.Windows.Forms.GroupBox groupBoxSchoolRegistrationSchoolDetails;
+        private System.Windows.Forms.StatusStrip statusStripBtnSchoolRegistration;
     }
 }

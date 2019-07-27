@@ -1,6 +1,6 @@
 ﻿namespace EVENT_MANAGEMENT
 {
-    partial class Login
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,10 @@
         {
             this.BtnLoginLogin = new System.Windows.Forms.Button();
             this.BtnLoginCancel = new System.Windows.Forms.Button();
-            this.TextBoxLoginPassword = new System.Windows.Forms.TextBox();
-            this.TextBoxLoginLogin = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TxtLoginPassword = new System.Windows.Forms.TextBox();
+            this.TxtLoginLogin = new System.Windows.Forms.TextBox();
+            this.LblLoginPassword = new System.Windows.Forms.Label();
+            this.LblLoginLogin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnLoginLogin
@@ -58,58 +58,59 @@
             this.BtnLoginCancel.Text = "Cancel";
             this.BtnLoginCancel.UseVisualStyleBackColor = true;
             // 
-            // TextBoxLoginPassword
+            // TxtLoginPassword
             // 
-            this.TextBoxLoginPassword.Location = new System.Drawing.Point(26, 74);
-            this.TextBoxLoginPassword.MaxLength = 100;
-            this.TextBoxLoginPassword.Name = "TextBoxLoginPassword";
-            this.TextBoxLoginPassword.PasswordChar = '*';
-            this.TextBoxLoginPassword.Size = new System.Drawing.Size(260, 20);
-            this.TextBoxLoginPassword.TabIndex = 9;
+            this.TxtLoginPassword.Location = new System.Drawing.Point(26, 74);
+            this.TxtLoginPassword.MaxLength = 100;
+            this.TxtLoginPassword.Name = "TxtLoginPassword";
+            this.TxtLoginPassword.PasswordChar = '*';
+            this.TxtLoginPassword.Size = new System.Drawing.Size(260, 20);
+            this.TxtLoginPassword.TabIndex = 9;
             // 
-            // TextBoxLoginLogin
+            // TxtLoginLogin
             // 
-            this.TextBoxLoginLogin.Location = new System.Drawing.Point(26, 32);
-            this.TextBoxLoginLogin.MaxLength = 30;
-            this.TextBoxLoginLogin.Name = "TextBoxLoginLogin";
-            this.TextBoxLoginLogin.Size = new System.Drawing.Size(260, 20);
-            this.TextBoxLoginLogin.TabIndex = 8;
+            this.TxtLoginLogin.Location = new System.Drawing.Point(26, 32);
+            this.TxtLoginLogin.MaxLength = 30;
+            this.TxtLoginLogin.Name = "TxtLoginLogin";
+            this.TxtLoginLogin.Size = new System.Drawing.Size(260, 20);
+            this.TxtLoginLogin.TabIndex = 8;
             // 
-            // label2
+            // LblLoginPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Password";
+            this.LblLoginPassword.AutoSize = true;
+            this.LblLoginPassword.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLoginPassword.Location = new System.Drawing.Point(23, 57);
+            this.LblLoginPassword.Name = "LblLoginPassword";
+            this.LblLoginPassword.Size = new System.Drawing.Size(71, 16);
+            this.LblLoginPassword.TabIndex = 7;
+            this.LblLoginPassword.Text = "Password";
             // 
-            // label1
+            // LblLoginLogin
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Login";
+            this.LblLoginLogin.AutoSize = true;
+            this.LblLoginLogin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLoginLogin.Location = new System.Drawing.Point(23, 16);
+            this.LblLoginLogin.Name = "LblLoginLogin";
+            this.LblLoginLogin.Size = new System.Drawing.Size(42, 16);
+            this.LblLoginLogin.TabIndex = 6;
+            this.LblLoginLogin.Text = "Login";
             // 
-            // Login
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 145);
             this.Controls.Add(this.BtnLoginLogin);
             this.Controls.Add(this.BtnLoginCancel);
-            this.Controls.Add(this.TextBoxLoginPassword);
-            this.Controls.Add(this.TextBoxLoginLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TxtLoginPassword);
+            this.Controls.Add(this.TxtLoginLogin);
+            this.Controls.Add(this.LblLoginPassword);
+            this.Controls.Add(this.LblLoginLogin);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Login";
+            this.Name = "FormLogin";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,10 +120,10 @@
 
         private System.Windows.Forms.Button BtnLoginLogin;
         private System.Windows.Forms.Button BtnLoginCancel;
-        private System.Windows.Forms.TextBox TextBoxLoginPassword;
-        private System.Windows.Forms.TextBox TextBoxLoginLogin;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TxtLoginPassword;
+        private System.Windows.Forms.TextBox TxtLoginLogin;
+        private System.Windows.Forms.Label LblLoginPassword;
+        private System.Windows.Forms.Label LblLoginLogin;
     }
 }
 

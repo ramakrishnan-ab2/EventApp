@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EVENT_MANAGEMENT
 {
-    public partial class MarkEntry : Form
+    public partial class FormMarkEntry : Form
     {
-        public MarkEntry()
+        public FormMarkEntry()
         {
             InitializeComponent();
         }

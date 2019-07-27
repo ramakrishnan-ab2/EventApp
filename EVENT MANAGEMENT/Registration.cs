@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EVENT_MANAGEMENT
 {
-    public partial class Registration : Form
+    public partial class FormRegistration : Form
     {
-        public Registration()
+        public FormRegistration()
         {
             InitializeComponent();
         }
