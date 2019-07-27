@@ -30,26 +30,26 @@
         {
             this.listBoxRgistrationlistbox = new System.Windows.Forms.ListBox();
             this.groupBoxRegistrationStudentDetails = new System.Windows.Forms.GroupBox();
-            this.BtnRegistartionSchoolnamenew = new System.Windows.Forms.Button();
+            this.BtnRegistartionSchoolnameNew = new System.Windows.Forms.Button();
             this.dateTimePickerRegistartionDate = new System.Windows.Forms.DateTimePicker();
             this.comboBoxRegistartionEvent = new System.Windows.Forms.ComboBox();
             this.comboBoxRegistartionCategory = new System.Windows.Forms.ComboBox();
-            this.comboBoxRegistartionSchoolname = new System.Windows.Forms.ComboBox();
+            this.comboBoxRegistartionSchoolName = new System.Windows.Forms.ComboBox();
             this.comboBoxRegistartionQualification = new System.Windows.Forms.ComboBox();
-            this.TxtRegistartionEventrollno = new System.Windows.Forms.TextBox();
-            this.TxtRegistartionPhoneno = new System.Windows.Forms.TextBox();
-            this.TxtRegistartionFathersname = new System.Windows.Forms.TextBox();
-            this.LblRegistartionPhoneno = new System.Windows.Forms.Label();
+            this.TxtRegistartionEventRollNo = new System.Windows.Forms.TextBox();
+            this.TxtRegistartionPhoneNo = new System.Windows.Forms.TextBox();
+            this.TxtRegistartionFathersName = new System.Windows.Forms.TextBox();
+            this.LblRegistartionPhoneNo = new System.Windows.Forms.Label();
             this.TxtRegistartionName = new System.Windows.Forms.TextBox();
-            this.LblRegistartionSchoolname = new System.Windows.Forms.Label();
-            this.LblRegistartionEventrollno = new System.Windows.Forms.Label();
+            this.LblRegistartionSchoolName = new System.Windows.Forms.Label();
+            this.LblRegistartionEventRollNo = new System.Windows.Forms.Label();
             this.LblRegistartionEvent = new System.Windows.Forms.Label();
             this.LblRegistartionCategory = new System.Windows.Forms.Label();
             this.LblRegistartionQualification = new System.Windows.Forms.Label();
-            this.LblRegistartionRolln = new System.Windows.Forms.Label();
+            this.LblRegistartionRollN = new System.Windows.Forms.Label();
             this.LblRegistartionDate = new System.Windows.Forms.Label();
-            this.LblRegistartionRollno = new System.Windows.Forms.Label();
-            this.LblRegistartionFathersname = new System.Windows.Forms.Label();
+            this.LblRegistartionRollNo = new System.Windows.Forms.Label();
+            this.LblRegistartionFathersName = new System.Windows.Forms.Label();
             this.LblRegistrationName = new System.Windows.Forms.Label();
             this.BtnRegistartionNew = new System.Windows.Forms.Button();
             this.BtnRegistartionDelete = new System.Windows.Forms.Button();
@@ -72,26 +72,26 @@
             // groupBoxRegistrationStudentDetails
             // 
             this.groupBoxRegistrationStudentDetails.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.BtnRegistartionSchoolnamenew);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.BtnRegistartionSchoolnameNew);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.dateTimePickerRegistartionDate);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.comboBoxRegistartionEvent);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.comboBoxRegistartionCategory);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.comboBoxRegistartionSchoolname);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.comboBoxRegistartionSchoolName);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.comboBoxRegistartionQualification);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRegistartionEventrollno);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRegistartionPhoneno);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRegistartionFathersname);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionPhoneno);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRegistartionEventRollNo);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRegistartionPhoneNo);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRegistartionFathersName);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionPhoneNo);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRegistartionName);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionSchoolname);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionEventrollno);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionSchoolName);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionEventRollNo);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionEvent);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionCategory);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionQualification);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionRolln);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionRollN);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionDate);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionRollno);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionFathersname);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionRollNo);
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionFathersName);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistrationName);
             this.groupBoxRegistrationStudentDetails.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxRegistrationStudentDetails.Location = new System.Drawing.Point(289, 12);
@@ -101,15 +101,15 @@
             this.groupBoxRegistrationStudentDetails.TabStop = false;
             this.groupBoxRegistrationStudentDetails.Text = "Student Details";
             // 
-            // BtnRegistartionSchoolnamenew
+            // BtnRegistartionSchoolnameNew
             // 
-            this.BtnRegistartionSchoolnamenew.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegistartionSchoolnamenew.Location = new System.Drawing.Point(300, 345);
-            this.BtnRegistartionSchoolnamenew.Name = "BtnRegistartionSchoolnamenew";
-            this.BtnRegistartionSchoolnamenew.Size = new System.Drawing.Size(59, 23);
-            this.BtnRegistartionSchoolnamenew.TabIndex = 20;
-            this.BtnRegistartionSchoolnamenew.Text = "New";
-            this.BtnRegistartionSchoolnamenew.UseVisualStyleBackColor = true;
+            this.BtnRegistartionSchoolnameNew.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistartionSchoolnameNew.Location = new System.Drawing.Point(300, 345);
+            this.BtnRegistartionSchoolnameNew.Name = "BtnRegistartionSchoolnameNew";
+            this.BtnRegistartionSchoolnameNew.Size = new System.Drawing.Size(59, 23);
+            this.BtnRegistartionSchoolnameNew.TabIndex = 20;
+            this.BtnRegistartionSchoolnameNew.Text = "New";
+            this.BtnRegistartionSchoolnameNew.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerRegistartionDate
             // 
@@ -140,15 +140,15 @@
             this.comboBoxRegistartionCategory.TabIndex = 17;
             this.comboBoxRegistartionCategory.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
-            // comboBoxRegistartionSchoolname
+            // comboBoxRegistartionSchoolName
             // 
-            this.comboBoxRegistartionSchoolname.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxRegistartionSchoolname.FormattingEnabled = true;
-            this.comboBoxRegistartionSchoolname.Location = new System.Drawing.Point(36, 345);
-            this.comboBoxRegistartionSchoolname.Name = "comboBoxRegistartionSchoolname";
-            this.comboBoxRegistartionSchoolname.Size = new System.Drawing.Size(258, 25);
-            this.comboBoxRegistartionSchoolname.TabIndex = 17;
-            this.comboBoxRegistartionSchoolname.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.comboBoxRegistartionSchoolName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRegistartionSchoolName.FormattingEnabled = true;
+            this.comboBoxRegistartionSchoolName.Location = new System.Drawing.Point(36, 345);
+            this.comboBoxRegistartionSchoolName.Name = "comboBoxRegistartionSchoolName";
+            this.comboBoxRegistartionSchoolName.Size = new System.Drawing.Size(258, 25);
+            this.comboBoxRegistartionSchoolName.TabIndex = 17;
+            this.comboBoxRegistartionSchoolName.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // comboBoxRegistartionQualification
             // 
@@ -159,40 +159,40 @@
             this.comboBoxRegistartionQualification.Size = new System.Drawing.Size(258, 25);
             this.comboBoxRegistartionQualification.TabIndex = 18;
             // 
-            // TxtRegistartionEventrollno
+            // TxtRegistartionEventRollNo
             // 
-            this.TxtRegistartionEventrollno.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRegistartionEventrollno.Location = new System.Drawing.Point(36, 286);
-            this.TxtRegistartionEventrollno.Name = "TxtRegistartionEventrollno";
-            this.TxtRegistartionEventrollno.Size = new System.Drawing.Size(258, 25);
-            this.TxtRegistartionEventrollno.TabIndex = 13;
+            this.TxtRegistartionEventRollNo.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRegistartionEventRollNo.Location = new System.Drawing.Point(36, 286);
+            this.TxtRegistartionEventRollNo.Name = "TxtRegistartionEventRollNo";
+            this.TxtRegistartionEventRollNo.Size = new System.Drawing.Size(258, 25);
+            this.TxtRegistartionEventRollNo.TabIndex = 13;
             // 
-            // TxtRegistartionPhoneno
+            // TxtRegistartionPhoneNo
             // 
-            this.TxtRegistartionPhoneno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRegistartionPhoneno.Location = new System.Drawing.Point(36, 395);
-            this.TxtRegistartionPhoneno.Name = "TxtRegistartionPhoneno";
-            this.TxtRegistartionPhoneno.Size = new System.Drawing.Size(258, 26);
-            this.TxtRegistartionPhoneno.TabIndex = 14;
+            this.TxtRegistartionPhoneNo.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRegistartionPhoneNo.Location = new System.Drawing.Point(36, 395);
+            this.TxtRegistartionPhoneNo.Name = "TxtRegistartionPhoneNo";
+            this.TxtRegistartionPhoneNo.Size = new System.Drawing.Size(258, 26);
+            this.TxtRegistartionPhoneNo.TabIndex = 14;
             // 
-            // TxtRegistartionFathersname
+            // TxtRegistartionFathersName
             // 
-            this.TxtRegistartionFathersname.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRegistartionFathersname.Location = new System.Drawing.Point(36, 115);
-            this.TxtRegistartionFathersname.Name = "TxtRegistartionFathersname";
-            this.TxtRegistartionFathersname.Size = new System.Drawing.Size(258, 25);
-            this.TxtRegistartionFathersname.TabIndex = 15;
-            this.TxtRegistartionFathersname.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.TxtRegistartionFathersName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRegistartionFathersName.Location = new System.Drawing.Point(36, 115);
+            this.TxtRegistartionFathersName.Name = "TxtRegistartionFathersName";
+            this.TxtRegistartionFathersName.Size = new System.Drawing.Size(258, 25);
+            this.TxtRegistartionFathersName.TabIndex = 15;
+            this.TxtRegistartionFathersName.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // LblRegistartionPhoneno
+            // LblRegistartionPhoneNo
             // 
-            this.LblRegistartionPhoneno.AutoSize = true;
-            this.LblRegistartionPhoneno.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionPhoneno.Location = new System.Drawing.Point(37, 375);
-            this.LblRegistartionPhoneno.Name = "LblRegistartionPhoneno";
-            this.LblRegistartionPhoneno.Size = new System.Drawing.Size(81, 17);
-            this.LblRegistartionPhoneno.TabIndex = 5;
-            this.LblRegistartionPhoneno.Text = "Phone No :";
+            this.LblRegistartionPhoneNo.AutoSize = true;
+            this.LblRegistartionPhoneNo.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionPhoneNo.Location = new System.Drawing.Point(37, 375);
+            this.LblRegistartionPhoneNo.Name = "LblRegistartionPhoneNo";
+            this.LblRegistartionPhoneNo.Size = new System.Drawing.Size(81, 17);
+            this.LblRegistartionPhoneNo.TabIndex = 5;
+            this.LblRegistartionPhoneNo.Text = "Phone No :";
             // 
             // TxtRegistartionName
             // 
@@ -202,25 +202,25 @@
             this.TxtRegistartionName.Size = new System.Drawing.Size(258, 25);
             this.TxtRegistartionName.TabIndex = 15;
             // 
-            // LblRegistartionSchoolname
+            // LblRegistartionSchoolName
             // 
-            this.LblRegistartionSchoolname.AutoSize = true;
-            this.LblRegistartionSchoolname.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionSchoolname.Location = new System.Drawing.Point(37, 325);
-            this.LblRegistartionSchoolname.Name = "LblRegistartionSchoolname";
-            this.LblRegistartionSchoolname.Size = new System.Drawing.Size(104, 17);
-            this.LblRegistartionSchoolname.TabIndex = 5;
-            this.LblRegistartionSchoolname.Text = "School Name :";
+            this.LblRegistartionSchoolName.AutoSize = true;
+            this.LblRegistartionSchoolName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionSchoolName.Location = new System.Drawing.Point(37, 325);
+            this.LblRegistartionSchoolName.Name = "LblRegistartionSchoolName";
+            this.LblRegistartionSchoolName.Size = new System.Drawing.Size(104, 17);
+            this.LblRegistartionSchoolName.TabIndex = 5;
+            this.LblRegistartionSchoolName.Text = "School Name :";
             // 
-            // LblRegistartionEventrollno
+            // LblRegistartionEventRollNo
             // 
-            this.LblRegistartionEventrollno.AutoSize = true;
-            this.LblRegistartionEventrollno.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionEventrollno.Location = new System.Drawing.Point(37, 266);
-            this.LblRegistartionEventrollno.Name = "LblRegistartionEventrollno";
-            this.LblRegistartionEventrollno.Size = new System.Drawing.Size(108, 17);
-            this.LblRegistartionEventrollno.TabIndex = 6;
-            this.LblRegistartionEventrollno.Text = "Event Roll No :";
+            this.LblRegistartionEventRollNo.AutoSize = true;
+            this.LblRegistartionEventRollNo.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionEventRollNo.Location = new System.Drawing.Point(37, 266);
+            this.LblRegistartionEventRollNo.Name = "LblRegistartionEventRollNo";
+            this.LblRegistartionEventRollNo.Size = new System.Drawing.Size(108, 17);
+            this.LblRegistartionEventRollNo.TabIndex = 6;
+            this.LblRegistartionEventRollNo.Text = "Event Roll No :";
             // 
             // LblRegistartionEvent
             // 
@@ -252,16 +252,16 @@
             this.LblRegistartionQualification.TabIndex = 9;
             this.LblRegistartionQualification.Text = "Qualification :";
             // 
-            // LblRegistartionRolln
+            // LblRegistartionRollN
             // 
-            this.LblRegistartionRolln.AutoSize = true;
-            this.LblRegistartionRolln.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionRolln.Location = new System.Drawing.Point(404, 115);
-            this.LblRegistartionRolln.Name = "LblRegistartionRolln";
-            this.LblRegistartionRolln.Size = new System.Drawing.Size(68, 28);
-            this.LblRegistartionRolln.TabIndex = 10;
-            this.LblRegistartionRolln.Text = "0000";
-            this.LblRegistartionRolln.Click += new System.EventHandler(this.label8_Click);
+            this.LblRegistartionRollN.AutoSize = true;
+            this.LblRegistartionRollN.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionRollN.Location = new System.Drawing.Point(404, 115);
+            this.LblRegistartionRollN.Name = "LblRegistartionRollN";
+            this.LblRegistartionRollN.Size = new System.Drawing.Size(68, 28);
+            this.LblRegistartionRollN.TabIndex = 10;
+            this.LblRegistartionRollN.Text = "0000";
+            this.LblRegistartionRollN.Click += new System.EventHandler(this.label8_Click);
             // 
             // LblRegistartionDate
             // 
@@ -274,26 +274,26 @@
             this.LblRegistartionDate.Text = "Date :";
             this.LblRegistartionDate.Click += new System.EventHandler(this.label11_Click);
             // 
-            // LblRegistartionRollno
+            // LblRegistartionRollNo
             // 
-            this.LblRegistartionRollno.AutoSize = true;
-            this.LblRegistartionRollno.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionRollno.Location = new System.Drawing.Point(404, 95);
-            this.LblRegistartionRollno.Name = "LblRegistartionRollno";
-            this.LblRegistartionRollno.Size = new System.Drawing.Size(66, 17);
-            this.LblRegistartionRollno.TabIndex = 11;
-            this.LblRegistartionRollno.Text = "Roll No :";
+            this.LblRegistartionRollNo.AutoSize = true;
+            this.LblRegistartionRollNo.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionRollNo.Location = new System.Drawing.Point(404, 95);
+            this.LblRegistartionRollNo.Name = "LblRegistartionRollNo";
+            this.LblRegistartionRollNo.Size = new System.Drawing.Size(66, 17);
+            this.LblRegistartionRollNo.TabIndex = 11;
+            this.LblRegistartionRollNo.Text = "Roll No :";
             // 
-            // LblRegistartionFathersname
+            // LblRegistartionFathersName
             // 
-            this.LblRegistartionFathersname.AutoSize = true;
-            this.LblRegistartionFathersname.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionFathersname.Location = new System.Drawing.Point(36, 95);
-            this.LblRegistartionFathersname.Name = "LblRegistartionFathersname";
-            this.LblRegistartionFathersname.Size = new System.Drawing.Size(108, 17);
-            this.LblRegistartionFathersname.TabIndex = 12;
-            this.LblRegistartionFathersname.Text = "Fathers Name :";
-            this.LblRegistartionFathersname.Click += new System.EventHandler(this.label9_Click);
+            this.LblRegistartionFathersName.AutoSize = true;
+            this.LblRegistartionFathersName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionFathersName.Location = new System.Drawing.Point(36, 95);
+            this.LblRegistartionFathersName.Name = "LblRegistartionFathersName";
+            this.LblRegistartionFathersName.Size = new System.Drawing.Size(108, 17);
+            this.LblRegistartionFathersName.TabIndex = 12;
+            this.LblRegistartionFathersName.Text = "Fathers Name :";
+            this.LblRegistartionFathersName.Click += new System.EventHandler(this.label9_Click);
             // 
             // LblRegistrationName
             // 
@@ -405,22 +405,22 @@
         private System.Windows.Forms.GroupBox groupBoxRegistrationStudentDetails;
         private System.Windows.Forms.DateTimePicker dateTimePickerRegistartionDate;
         private System.Windows.Forms.ComboBox comboBoxRegistartionEvent;
-        private System.Windows.Forms.ComboBox comboBoxRegistartionSchoolname;
+        private System.Windows.Forms.ComboBox comboBoxRegistartionSchoolName;
         private System.Windows.Forms.ComboBox comboBoxRegistartionQualification;
-        private System.Windows.Forms.TextBox TxtRegistartionEventrollno;
-        private System.Windows.Forms.TextBox TxtRegistartionFathersname;
+        private System.Windows.Forms.TextBox TxtRegistartionEventRollNo;
+        private System.Windows.Forms.TextBox TxtRegistartionFathersName;
         private System.Windows.Forms.TextBox TxtRegistartionName;
-        private System.Windows.Forms.Label LblRegistartionSchoolname;
-        private System.Windows.Forms.Label LblRegistartionEventrollno;
+        private System.Windows.Forms.Label LblRegistartionSchoolName;
+        private System.Windows.Forms.Label LblRegistartionEventRollNo;
         private System.Windows.Forms.Label LblRegistartionEvent;
         private System.Windows.Forms.Label LblRegistartionCategory;
         private System.Windows.Forms.Label LblRegistartionQualification;
-        private System.Windows.Forms.Label LblRegistartionRolln;
-        private System.Windows.Forms.Label LblRegistartionRollno;
-        private System.Windows.Forms.Label LblRegistartionFathersname;
+        private System.Windows.Forms.Label LblRegistartionRollN;
+        private System.Windows.Forms.Label LblRegistartionRollNo;
+        private System.Windows.Forms.Label LblRegistartionFathersName;
         private System.Windows.Forms.Label LblRegistrationName;
-        private System.Windows.Forms.Button BtnRegistartionSchoolnamenew;
-        private System.Windows.Forms.TextBox TxtRegistartionPhoneno;
+        private System.Windows.Forms.Button BtnRegistartionSchoolnameNew;
+        private System.Windows.Forms.TextBox TxtRegistartionPhoneNo;
         private System.Windows.Forms.Label LblRegistartionDate;
         private System.Windows.Forms.Button BtnRegistartionNew;
         private System.Windows.Forms.Button BtnRegistartionDelete;
@@ -429,7 +429,7 @@
         private System.Windows.Forms.Button BtnRegistartionSave;
         private System.Windows.Forms.Button BtnRegistartionExit;
         private System.Windows.Forms.ComboBox comboBoxRegistartionCategory;
-        private System.Windows.Forms.Label LblRegistartionPhoneno;
+        private System.Windows.Forms.Label LblRegistartionPhoneNo;
         private System.Windows.Forms.StatusStrip statusStripRegistartion;
     }
 }
