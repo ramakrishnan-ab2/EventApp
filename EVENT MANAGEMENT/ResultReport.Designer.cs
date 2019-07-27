@@ -28,14 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridViewResultReport = new System.Windows.Forms.DataGridView();
             this.SlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EventRollNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RollNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,16 +37,23 @@
             this.Judge2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Judge3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvgMarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.LblResultReportEvents = new System.Windows.Forms.ToolStripLabel();
+            this.ComboBoxResultReportEvents = new System.Windows.Forms.ToolStripComboBox();
+            this.LblResultReportGo = new System.Windows.Forms.ToolStripLabel();
+            this.ResultReportErrorMsg = new System.Windows.Forms.StatusStrip();
+            this.btnResultReportExit = new System.Windows.Forms.Button();
+            this.btnResultReportPrint = new System.Windows.Forms.Button();
+            this.btnResultReportCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultReport)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewResultReport
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewResultReport.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridViewResultReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewResultReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SlNo,
             this.EventRollNo,
             this.RollNo,
@@ -62,73 +62,11 @@
             this.Judge2,
             this.Judge3,
             this.AvgMarks});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(888, 432);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripComboBox1,
-            this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(910, 35);
-            this.toolStrip1.TabIndex = 19;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(55, 32);
-            this.toolStripLabel1.Text = "Events";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.toolStripComboBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(250, 35);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(22, 32);
-            this.toolStripLabel2.Text = "Go";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 515);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(910, 22);
-            this.statusStrip1.TabIndex = 20;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(792, 481);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 28);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(689, 481);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 28);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Print";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dataGridViewResultReport.Location = new System.Drawing.Point(12, 38);
+            this.dataGridViewResultReport.Name = "dataGridViewResultReport";
+            this.dataGridViewResultReport.RowHeadersVisible = false;
+            this.dataGridViewResultReport.Size = new System.Drawing.Size(888, 432);
+            this.dataGridViewResultReport.TabIndex = 0;
             // 
             // SlNo
             // 
@@ -175,32 +113,94 @@
             this.AvgMarks.HeaderText = "Avg. Marks";
             this.AvgMarks.Name = "AvgMarks";
             // 
-            // button1
+            // toolStrip1
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(586, 481);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 28);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.toolStrip1.AutoSize = false;
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LblResultReportEvents,
+            this.ComboBoxResultReportEvents,
+            this.LblResultReportGo});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(910, 35);
+            this.toolStrip1.TabIndex = 19;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // LblResultReportEvents
+            // 
+            this.LblResultReportEvents.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblResultReportEvents.Name = "LblResultReportEvents";
+            this.LblResultReportEvents.Size = new System.Drawing.Size(55, 32);
+            this.LblResultReportEvents.Text = "Events";
+            // 
+            // ComboBoxResultReportEvents
+            // 
+            this.ComboBoxResultReportEvents.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ComboBoxResultReportEvents.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxResultReportEvents.Name = "ComboBoxResultReportEvents";
+            this.ComboBoxResultReportEvents.Size = new System.Drawing.Size(250, 35);
+            // 
+            // LblResultReportGo
+            // 
+            this.LblResultReportGo.Name = "LblResultReportGo";
+            this.LblResultReportGo.Size = new System.Drawing.Size(22, 32);
+            this.LblResultReportGo.Text = "Go";
+            // 
+            // ResultReportErrorMsg
+            // 
+            this.ResultReportErrorMsg.Location = new System.Drawing.Point(0, 515);
+            this.ResultReportErrorMsg.Name = "ResultReportErrorMsg";
+            this.ResultReportErrorMsg.Size = new System.Drawing.Size(910, 22);
+            this.ResultReportErrorMsg.TabIndex = 20;
+            this.ResultReportErrorMsg.Text = "statusStrip1";
+            // 
+            // btnResultReportExit
+            // 
+            this.btnResultReportExit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResultReportExit.Location = new System.Drawing.Point(792, 481);
+            this.btnResultReportExit.Name = "btnResultReportExit";
+            this.btnResultReportExit.Size = new System.Drawing.Size(93, 28);
+            this.btnResultReportExit.TabIndex = 21;
+            this.btnResultReportExit.Text = "Exit";
+            this.btnResultReportExit.UseVisualStyleBackColor = true;
+            // 
+            // btnResultReportPrint
+            // 
+            this.btnResultReportPrint.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResultReportPrint.Location = new System.Drawing.Point(689, 481);
+            this.btnResultReportPrint.Name = "btnResultReportPrint";
+            this.btnResultReportPrint.Size = new System.Drawing.Size(97, 28);
+            this.btnResultReportPrint.TabIndex = 22;
+            this.btnResultReportPrint.Text = "Print";
+            this.btnResultReportPrint.UseVisualStyleBackColor = true;
+            // 
+            // btnResultReportCancel
+            // 
+            this.btnResultReportCancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResultReportCancel.Location = new System.Drawing.Point(586, 481);
+            this.btnResultReportCancel.Name = "btnResultReportCancel";
+            this.btnResultReportCancel.Size = new System.Drawing.Size(97, 28);
+            this.btnResultReportCancel.TabIndex = 23;
+            this.btnResultReportCancel.Text = "Cancel";
+            this.btnResultReportCancel.UseVisualStyleBackColor = true;
             // 
             // ResultReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 537);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.btnResultReportCancel);
+            this.Controls.Add(this.btnResultReportExit);
+            this.Controls.Add(this.btnResultReportPrint);
+            this.Controls.Add(this.ResultReportErrorMsg);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewResultReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            //this.Name = "ResultReport";
+            this.Name = "ResultReport";
             this.Text = "Result Report";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultReport)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -210,14 +210,14 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewResultReport;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripLabel LblResultReportEvents;
+        private System.Windows.Forms.ToolStripComboBox ComboBoxResultReportEvents;
+        private System.Windows.Forms.ToolStripLabel LblResultReportGo;
+        private System.Windows.Forms.StatusStrip ResultReportErrorMsg;
+        private System.Windows.Forms.Button btnResultReportExit;
+        private System.Windows.Forms.Button btnResultReportPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn SlNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventRollNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn RollNo;
@@ -226,6 +226,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Judge2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Judge3;
         private System.Windows.Forms.DataGridViewTextBoxColumn AvgMarks;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnResultReportCancel;
     }
 }
