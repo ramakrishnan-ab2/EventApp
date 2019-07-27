@@ -4,32 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace EVENT_MANAGEMENT.Model
 {
-   public class Login
+   public class EventCategory
     {
         public int Id
         {
-            get;set;
+            get; set;
         }
-        public string Name
-        {
-            get;set;
-        }
-        public string Address
+        public int CategoryId
         {
             get; set;
         }
-        public string Username
-        {
-            get; set;
-        }
-        public string Password
-        {
-            get; set;
-        }
-        public string Type
+        public int EventId
         {
             get; set;
         }
