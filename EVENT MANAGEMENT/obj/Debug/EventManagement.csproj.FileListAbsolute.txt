@@ -1,0 +1,16 @@
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojAssemblyReference.cache
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Login.resources
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.MarkEntry.resources
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Properties.Resources.resources
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Registration.resources
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.ResultReport.resources
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.SchoolRegistration.resources
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EventManagement.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EventManagement.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.EventReport.resources
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.exe.config
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.exe
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.pdb
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.exe
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.pdb
+C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Container.resources
