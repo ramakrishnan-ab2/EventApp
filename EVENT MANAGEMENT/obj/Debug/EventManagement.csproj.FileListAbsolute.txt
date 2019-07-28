@@ -53,3 +53,17 @@ C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csproj.Ge
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csproj.CoreCompileInputs.cache
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.exe
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.pdb
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.exe.config
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.exe
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.pdb
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\BouncyCastle.Crypto.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\EntityFramework.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\EntityFramework.SqlServer.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\JetEntityFrameworkProvider.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\EntityFramework.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\EntityFramework.SqlServer.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csproj.CopyComplete
