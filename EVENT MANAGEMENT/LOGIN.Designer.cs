@@ -1,6 +1,6 @@
 ﻿namespace EVENT_MANAGEMENT
 {
-    partial class FormLogin
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -111,7 +111,7 @@
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
+            //this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

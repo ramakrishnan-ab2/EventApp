@@ -1,6 +1,6 @@
 ﻿namespace EVENT_MANAGEMENT
 {
-    partial class MarkEntry
+    partial class FormMarkEntry
     {
         /// <summary>
         /// Required designer variable.
