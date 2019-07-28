@@ -198,7 +198,7 @@
             this.Controls.Add(this.dataGridViewResultReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ResultReport";
+            //this.Name = "ResultReport";
             this.Text = "Result Report";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultReport)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -221,7 +221,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SlNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventRollNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn RollNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Judge1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Judge2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Judge3;

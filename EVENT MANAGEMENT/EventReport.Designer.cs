@@ -157,7 +157,7 @@
             this.Controls.Add(this.dataGridViewEventReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "EventReport";
+            //this.Name = "EventReport";
             this.Text = "Event Report";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -177,7 +177,7 @@
         private System.Windows.Forms.DataGridView dataGridViewEventReport;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventRollNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn RollNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qualification;
         private System.Windows.Forms.StatusStrip ResultReportErrorMsg;
     }
