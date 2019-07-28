@@ -46,6 +46,7 @@
             this.BtnLoginLogin.TabIndex = 11;
             this.BtnLoginLogin.Text = "Login";
             this.BtnLoginLogin.UseVisualStyleBackColor = true;
+            this.BtnLoginLogin.Click += new System.EventHandler(this.BtnLoginLogin_Click);
             // 
             // BtnLoginCancel
             // 

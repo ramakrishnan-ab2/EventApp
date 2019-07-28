@@ -16,5 +16,10 @@ namespace EVENT_MANAGEMENT
         {
             InitializeComponent();
         }
+
+        private void MarkEntry_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -14,3 +14,28 @@ C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\bin\Debug\EVENT MANAG
 C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.exe
 C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.pdb
 C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Container.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Container.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Login.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.MarkEntry.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Properties.Resources.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Registration.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.EventReport.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.ResultReport.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.SchoolRegistration.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csproj.GenerateResource.Cache
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.exe
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.pdb
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.exe.config
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.exe
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.pdb
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\EntityFramework.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\EntityFramework.SqlServer.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\EntityFramework.xml
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\EntityFramework.SqlServer.xml
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\BouncyCastle.Crypto.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\JetEntityFrameworkProvider.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.xml
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.xml
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources

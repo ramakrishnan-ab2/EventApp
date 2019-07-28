@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EVENT_MANAGEMENT
 {
-    public partial class FormLogin : Form
+    public partial class Login : Form
     {
-        public FormLogin()
+        public Login()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace EVENT_MANAGEMENT
 
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void BtnLoginLogin_Click(object sender, EventArgs e)
         {
 
         }
