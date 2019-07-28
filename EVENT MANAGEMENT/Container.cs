@@ -24,8 +24,8 @@ namespace EVENT_MANAGEMENT
 
         private void registrationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Registration R = new Registration();
-            R.Show();
+            //Registration R = new Registration();
+            //R.Show();
         }
     }
 }
