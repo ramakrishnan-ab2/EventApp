@@ -10,130 +10,90 @@ using System.Threading.Tasks;
 
 namespace EVENT_MANAGEMENT.Manager
 {
-   public class RegisterManager
+    public class RegisterManager
     {
-        public Register GetRegisterById(long RegisterId)
-        {
-            Register RegisterInfo = null;
-            using (AccountContext Context=new AccountContext())
-            {
-                RegisterInfo = Context.Registers.Find(RegisterId);
-                if (RegisterInfo != null)
-                {
-                    RegisterInfo = Context.Registers.Include("StudentName").Include("PhoneNo").Include("FathersName").FirstOrDefault(x => x.Id == RegisterId);
-                }
-                return RegisterInfo;
-            }
-        }
-        public Register AddRegisterInfo(Register Register)
-        {
-            Register RegisterInfo = null;
-            using (AccountContext Context = new AccountContext())
-            {
-                using (var dbContextTransaction = Context.Database.BeginTransaction())
-                {
-                    try
-                    {
-                        RegisterInfo = Context.Registers.Add(Register);
-                        Context.SaveChanges();
-                        dbContextTransaction.Commit();
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                        RegisterInfo = null;
-                        dbContextTransaction.Rollback();
-                        throw (e);
-                    }
-                }
-            }
-            return RegisterInfo;
-        }
-        public Register UpdateRegister(Register Register)
-        {
 
-
+        public Register AddRegister(Register RegisterFromForm)
+        {
             Register RegisterInfo = null;
-            using (AccountContext Context = new AccountContext())
+            if (RegisterFromForm != null)
             {
-                RegisterInfo = Context.Registers.Find(Register.Id);
-                using (var dbContextTransaction = Context.Database.BeginTransaction())
+                using (AccountContext AccountContext = new AccountContext())
                 {
                     try
                     {
                         if (RegisterInfo != null)
                         {
-                            Context.Entry(RegisterInfo).CurrentValues.SetValues(Register);
-                            Context.SaveChanges();
-
-                            Register SupplierInfoFromDB = GetRegisterById(Register.Id);
-
-
-                            Context.Entry(SupplierInfoFromDB).State = EntityState.Modified;
-
-                            Context.SaveChanges();
+                            RegisterInfo = AccountContext.Registers.Add(RegisterFromForm);
+                            AccountContext.SaveChanges();
                         }
-
-                            dbContextTransaction.Commit();
-                        
+                      
                     }
-                    catch (Exception e)
+                    catch(Exception ex)
                     {
-                        Console.WriteLine(e.Message);
+                        Console.WriteLine(ex);
                         RegisterInfo = null;
-                        dbContextTransaction.Rollback();
-                        throw (e);
                     }
                 }
             }
             return RegisterInfo;
+
         }
-        public bool DeleteRegister(long RegisterId)
+        public Register GetRegisterByName(string RegName)
         {
-
-            bool deleted = false;
-            using (AccountContext context = new AccountContext())
+            Register RegInfo = null;
+            using (AccountContext Context = new AccountContext())
             {
-                using (var dbContextTransaction = context.Database.BeginTransaction())
+                RegInfo = Context.Registers.FirstOrDefault(x => x.StudentName == RegName);
+                return RegInfo;
+            }
+        }
+        public Register UpdateRegister(Register StudentId)
+        {
+            Register Reginfo = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                Reginfo = Context.Registers.Find(Reginfo.Id);
+                try
                 {
-                    try
+                    Reginfo = Context.Registers.Where(i => i.Id == StudentId.Id).FirstOrDefault();
+                    if (Reginfo != null)
                     {
-                        Register Register = context.Registers.Include("FathersName").Include("PhoneNo").Include("StudentName").Include("Qualification").Where(p => p.Id== RegisterId).First<Register>();
-
-                        //if (Register != null)
-                        //{
-                        //    if (Register.StudentName != null)
-                        //    {
-                        //        context.Registers.Where(Badd => Badd.StudentName== Register.StudentName).ToList().ForEach(Badd => context.Registers.Remove(Badd));
-                        //    }
-                        //    if (Register.PhoneNo!= null)
-                        //    {
-                        //        context.ContactInfos.Where(ci => ci.Id == Register.ContactInfo.Id).ToList().ForEach(ci => context.ContactInfos.Remove(ci));
-                        //    }
-                        //    if (Register.ShippingAddress != null)
-                        //    {
-                        //        context.Addresses.Where(Sadd => Sadd.AddressId == Register.ShippingAddress.AddressId).ToList().ForEach(Sadd => context.Addresses.Remove(Sadd));
-                        //    }
-
-                        //    if (Register.RegisterLicenceDetail.Count > 0)
-                        //    {
-                        //        context.RegisterLicenceDetails.Where(p => p.RegisterId == Register.Id).ToList().ForEach(p => context.RegisterLicenceDetails.Remove(p));
-                        //    }
-
-                        //}
-                        context.Registers.Remove(Register);
-                        context.SaveChanges();
-                        dbContextTransaction.Commit();
-                        deleted = true;
+                        Context.Entry(Reginfo).State=EntityState.Modified;
+                        Context.SaveChanges();
                     }
-                    catch (Exception e)
+                   
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+                return Reginfo;
+
+            }
+        }
+        public Register DeleteRegister(Register StudentId)
+        {
+            Register Reginfo = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                 Reginfo = Context.Registers.Where(i => i.Id == StudentId.Id).FirstOrDefault();
+                try
+                {
+                    if (Reginfo != null)
                     {
-                        dbContextTransaction.Rollback();
-                        deleted = false;
+                        Context.Entry(Reginfo).State = EntityState.Deleted;
+                        Context.SaveChanges();
                     }
+                  
+                    
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e);
                 }
             }
-            return deleted;
+            return Reginfo;
         }
     }
 }

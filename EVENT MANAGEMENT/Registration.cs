@@ -78,6 +78,16 @@ namespace EVENT_MANAGEMENT
         private void BtnRegistartionNew_Click(object sender, EventArgs e)
         {
             //listBoxRgistrationlistbox.SelectedIndex = 0;
+            TextBoxRegId.Text =Convert.ToString(0);
+            TxtRegistartionName.Text = "";
+            TxtRegistartionFathersName.Text = "";
+            TxtRegistartionEventRollNo.Text = "";
+            TxtRegistartionPhoneNo.Text = "";
+            comboBoxRegistartionCategory.ResetText();
+            comboBoxRegistartionEvent.ResetText();
+            comboBoxRegistartionQualification.ResetText();
+            comboBoxRegistartionSchoolName.ResetText();
+            LblRegistartionRollN.Text = Convert.ToString( 000000);
             BtnRegistartionDelete.Enabled = false;
             BtnRegistartionEdit.Enabled = false;
             BtnRegistartionNew.Enabled = false;
@@ -89,10 +99,69 @@ namespace EVENT_MANAGEMENT
         {
             
         }
-       
+      private Register GetRegisterFromForm()
+        {
+            int id = 0;
+            Register R = new Register();
+            if (R.Id == 0)
+            {
+                R.Id =Convert.ToInt32(TextBoxRegId.Text);
+                R.StudentName = TxtRegistartionName.Text.Trim();
+                R.FathersName = TxtRegistartionFathersName.Text.Trim();
+                // R.Qualification = comboBoxRegistartionQualification.Text.ToString(
+                //R.Event=
+                R.EventRollNo = Convert.ToInt32(TxtRegistartionEventRollNo.Text.Trim());
+                // R.School=
+                R.PhoneNo = TxtRegistartionPhoneNo.Text.Trim();
+                R.Date = Convert.ToDateTime(dateTimePickerRegistartionDate.Text);
+              
+            }
+            else
+            {
+
+            }
+            return R;
+
+        }
+
             private void BtnRegistartionSave_Click(object sender, EventArgs e)
             {
              Cursor.Current = Cursors.WaitCursor;
+             Register R = new Register();
+           
+            if (R.Id == 0)
+            {
+                R.Id = Convert.ToInt32(TextBoxRegId.Text);
+                R.StudentName = TxtRegistartionName.Text.Trim();
+                R.FathersName = TxtRegistartionFathersName.Text.Trim();
+                // R.Qualification = comboBoxRegistartionQualification.Text.ToString(
+                //R.Event=
+                R.EventRollNo = Convert.ToInt32(TxtRegistartionEventRollNo.Text.Trim());
+                // R.School=
+                R.PhoneNo = TxtRegistartionPhoneNo.Text.Trim();
+                R.Date = Convert.ToDateTime(dateTimePickerRegistartionDate.Text);
+
+            }
+            try
+            {
+                if (R.Id==0)
+                {
+                    RegisterManager RegisterManager = new RegisterManager();
+                    Register Reg = RegisterManager.AddRegister(R);
+                    MessageBox.Show("Saved");
+                }
+                else
+                {
+                    RegisterManager RegisterManager = new RegisterManager();
+                    Register Reg = RegisterManager.UpdateRegister(R);
+                    MessageBox.Show("Edited");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+
+            }
            
             }
      
@@ -125,6 +194,16 @@ namespace EVENT_MANAGEMENT
             }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxRegistartionQualification_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxRgistrationlistbox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

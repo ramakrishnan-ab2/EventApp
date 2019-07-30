@@ -22,5 +22,6 @@ namespace EVENT_MANAGEMENT.Model
         public string PhoneNo { get; set; }
         public string FathersName { get; set; }
         public DateTime Date { get; set; }
+        
     }
 }

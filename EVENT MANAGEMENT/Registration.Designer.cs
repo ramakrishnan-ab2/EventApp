@@ -58,7 +58,7 @@
             this.BtnRegistartionSave = new System.Windows.Forms.Button();
             this.BtnRegistartionExit = new System.Windows.Forms.Button();
             this.statusStripRegistartion = new System.Windows.Forms.StatusStrip();
-            this.TextBoxCustomerAccountId = new System.Windows.Forms.TextBox();
+            this.TextBoxRegId = new System.Windows.Forms.TextBox();
             this.groupBoxRegistrationStudentDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,7 @@
             this.listBoxRgistrationlistbox.Name = "listBoxRgistrationlistbox";
             this.listBoxRgistrationlistbox.Size = new System.Drawing.Size(271, 446);
             this.listBoxRgistrationlistbox.TabIndex = 5;
+            this.listBoxRgistrationlistbox.SelectedIndexChanged += new System.EventHandler(this.listBoxRgistrationlistbox_SelectedIndexChanged);
             // 
             // groupBoxRegistrationStudentDetails
             // 
@@ -136,6 +137,17 @@
             // 
             this.comboBoxRegistartionCategory.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRegistartionCategory.FormattingEnabled = true;
+            this.comboBoxRegistartionCategory.Items.AddRange(new object[] {
+            "A1",
+            "A2",
+            "A3",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "College"});
             this.comboBoxRegistartionCategory.Location = new System.Drawing.Point(407, 174);
             this.comboBoxRegistartionCategory.Name = "comboBoxRegistartionCategory";
             this.comboBoxRegistartionCategory.Size = new System.Drawing.Size(154, 25);
@@ -156,10 +168,27 @@
             // 
             this.comboBoxRegistartionQualification.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRegistartionQualification.FormattingEnabled = true;
+            this.comboBoxRegistartionQualification.Items.AddRange(new object[] {
+            "LKG",
+            "UKG",
+            "Std I",
+            "Std II",
+            "Std III",
+            "Std IV",
+            "Std V",
+            "Std VI",
+            "Std VII",
+            "Std VIII",
+            "Std IX",
+            "Std X",
+            "Std XI",
+            "Std XII",
+            "College"});
             this.comboBoxRegistartionQualification.Location = new System.Drawing.Point(36, 172);
             this.comboBoxRegistartionQualification.Name = "comboBoxRegistartionQualification";
             this.comboBoxRegistartionQualification.Size = new System.Drawing.Size(258, 25);
             this.comboBoxRegistartionQualification.TabIndex = 18;
+            this.comboBoxRegistartionQualification.SelectedIndexChanged += new System.EventHandler(this.comboBoxRegistartionQualification_SelectedIndexChanged);
             // 
             // TxtRegistartionEventRollNo
             // 
@@ -260,9 +289,9 @@
             this.LblRegistartionRollN.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblRegistartionRollN.Location = new System.Drawing.Point(404, 115);
             this.LblRegistartionRollN.Name = "LblRegistartionRollN";
-            this.LblRegistartionRollN.Size = new System.Drawing.Size(68, 28);
+            this.LblRegistartionRollN.Size = new System.Drawing.Size(96, 28);
             this.LblRegistartionRollN.TabIndex = 10;
-            this.LblRegistartionRollN.Text = "0000";
+            this.LblRegistartionRollN.Text = "000000";
             this.LblRegistartionRollN.Click += new System.EventHandler(this.label8_Click);
             // 
             // LblRegistartionDate
@@ -380,13 +409,13 @@
             this.statusStripRegistartion.TabIndex = 8;
             this.statusStripRegistartion.Text = "statusStrip1";
             // 
-            // TextBoxCustomerAccountId
+            // TextBoxRegId
             // 
-            this.TextBoxCustomerAccountId.Location = new System.Drawing.Point(307, 474);
-            this.TextBoxCustomerAccountId.Name = "TextBoxCustomerAccountId";
-            this.TextBoxCustomerAccountId.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxCustomerAccountId.TabIndex = 9;
-            this.TextBoxCustomerAccountId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.TextBoxRegId.Location = new System.Drawing.Point(307, 474);
+            this.TextBoxRegId.Name = "TextBoxRegId";
+            this.TextBoxRegId.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxRegId.TabIndex = 9;
+            this.TextBoxRegId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // FormRegistration
             // 
@@ -394,7 +423,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(982, 550);
-            this.Controls.Add(this.TextBoxCustomerAccountId);
+            this.Controls.Add(this.TextBoxRegId);
             this.Controls.Add(this.statusStripRegistartion);
             this.Controls.Add(this.BtnRegistartionExit);
             this.Controls.Add(this.BtnRegistartionSave);
@@ -449,6 +478,6 @@
         private System.Windows.Forms.ComboBox comboBoxRegistartionCategory;
         private System.Windows.Forms.Label LblRegistartionPhoneNo;
         private System.Windows.Forms.StatusStrip statusStripRegistartion;
-        private System.Windows.Forms.TextBox TextBoxCustomerAccountId;
+        private System.Windows.Forms.TextBox TextBoxRegId;
     }
 }
