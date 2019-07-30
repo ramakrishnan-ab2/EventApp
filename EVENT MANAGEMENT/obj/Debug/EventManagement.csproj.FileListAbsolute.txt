@@ -39,7 +39,6 @@ E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.dll
 E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.xml
 E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.xml
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
-C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojAssemblyReference.cache
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Container.resources
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Login.resources
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormMarkEntry.resources
