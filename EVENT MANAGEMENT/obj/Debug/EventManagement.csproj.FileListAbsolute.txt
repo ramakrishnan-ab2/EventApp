@@ -42,7 +42,6 @@ E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrati
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Container.resources
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Login.resources
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormMarkEntry.resources
-C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Properties.Resources.resources
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormRegistration.resources
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.EventReport.resources
@@ -91,3 +90,4 @@ E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EntityFramework.xml
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EntityFramework.SqlServer.xml
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.xml
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.a.resources

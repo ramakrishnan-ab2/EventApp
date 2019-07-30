@@ -23,6 +23,7 @@ namespace EVENT_MANAGEMENT.Context
         public virtual DbSet<Register> Registers { get; set; }
         public virtual DbSet<Result> Results { get; set; }
         public virtual DbSet<School> Schools { get; set; }
+        public virtual DbSet<QualificationCategory> QualificationCategorys { get; set; }
 
     }
 

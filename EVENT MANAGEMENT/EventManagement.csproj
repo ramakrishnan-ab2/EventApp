@@ -103,6 +103,10 @@
     <Compile Include="MarkEntry.Designer.cs">
       <DependentUpon>MarkEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907301130529_a.cs" />
+    <Compile Include="Migrations\201907301130529_a.Designer.cs">
+      <DependentUpon>201907301130529_a.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Event.cs" />
@@ -148,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MarkEntry.resx">
       <DependentUpon>MarkEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907301130529_a.resx">
+      <DependentUpon>201907301130529_a.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
