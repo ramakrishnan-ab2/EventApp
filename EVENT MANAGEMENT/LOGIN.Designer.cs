@@ -58,6 +58,7 @@
             this.BtnLoginCancel.TabIndex = 10;
             this.BtnLoginCancel.Text = "Cancel";
             this.BtnLoginCancel.UseVisualStyleBackColor = true;
+            this.BtnLoginCancel.Click += new System.EventHandler(this.BtnLoginCancel_Click);
             // 
             // TxtLoginPassword
             // 
@@ -67,6 +68,7 @@
             this.TxtLoginPassword.PasswordChar = '*';
             this.TxtLoginPassword.Size = new System.Drawing.Size(260, 20);
             this.TxtLoginPassword.TabIndex = 9;
+            this.TxtLoginPassword.TextChanged += new System.EventHandler(this.TxtLoginPassword_TextChanged);
             // 
             // TxtLoginLogin
             // 
@@ -75,6 +77,7 @@
             this.TxtLoginLogin.Name = "TxtLoginLogin";
             this.TxtLoginLogin.Size = new System.Drawing.Size(260, 20);
             this.TxtLoginLogin.TabIndex = 8;
+            this.TxtLoginLogin.TextChanged += new System.EventHandler(this.TxtLoginLogin_TextChanged);
             // 
             // LblLoginPassword
             // 
@@ -96,7 +99,7 @@
             this.LblLoginLogin.TabIndex = 6;
             this.LblLoginLogin.Text = "Login";
             // 
-            // FormLogin
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,9 +112,9 @@
             this.Controls.Add(this.LblLoginLogin);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormLogin";
+            this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            //this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

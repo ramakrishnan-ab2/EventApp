@@ -53,6 +53,7 @@
             this.btnEventReportExit.TabIndex = 16;
             this.btnEventReportExit.Text = "Exit";
             this.btnEventReportExit.UseVisualStyleBackColor = true;
+            this.btnEventReportExit.Click += new System.EventHandler(this.btnEventReportExit_Click);
             // 
             // btnEventReportPrint
             // 
@@ -157,7 +158,8 @@
             this.Controls.Add(this.dataGridViewEventReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            //this.Name = "EventReport";
+          //  this.Name = "EventReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event Report";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

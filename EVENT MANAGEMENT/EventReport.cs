@@ -16,5 +16,10 @@ namespace EVENT_MANAGEMENT
         {
             InitializeComponent();
         }
+
+        private void btnEventReportExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

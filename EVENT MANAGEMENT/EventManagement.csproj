@@ -60,6 +60,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
@@ -79,6 +80,7 @@
       <DependentUpon>Container.cs</DependentUpon>
     </Compile>
     <Compile Include="Context\AccountContext.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +88,13 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager\CategoryManager.cs" />
+    <Compile Include="Manager\EventCategoryManager.cs" />
+    <Compile Include="Manager\EventManager.cs" />
+    <Compile Include="Manager\JudgesManager.cs" />
+    <Compile Include="Manager\QualificationManager.cs" />
+    <Compile Include="Manager\RegisterManager.cs" />
+    <Compile Include="Manager\ResultManager.cs" />
+    <Compile Include="Manager\SchoolManager.cs" />
     <Compile Include="Manager\UserLoginManager.cs" />
     <Compile Include="MarkEntry.cs">
       <SubType>Form</SubType>
@@ -194,6 +203,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ab2_square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Graphicloads-Colorful-Long-Shadow-Home.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

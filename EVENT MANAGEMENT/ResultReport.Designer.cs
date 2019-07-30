@@ -198,7 +198,8 @@
             this.Controls.Add(this.dataGridViewResultReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            //this.Name = "ResultReport";
+           // this.Name = "ResultReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Result Report";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultReport)).EndInit();
             this.toolStrip1.ResumeLayout(false);

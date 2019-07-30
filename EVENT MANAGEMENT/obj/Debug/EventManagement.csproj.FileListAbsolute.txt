@@ -66,3 +66,4 @@ C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\EntityFramework.SqlServer
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.xml
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.xml
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csproj.CopyComplete
+C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojAssemblyReference.cache

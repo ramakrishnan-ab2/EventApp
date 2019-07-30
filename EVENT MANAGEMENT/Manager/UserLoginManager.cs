@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace EVENT_MANAGEMENT.Manager
 {
+   
     public class UserLoginManager
     {
+        public static UserLoginManager Instance { get; internal set; }
+
         public UserLogin AddUserLogin(UserLogin UserLoginFromForm)
         {
             UserLogin UserLogin = null;
@@ -24,5 +27,16 @@ namespace EVENT_MANAGEMENT.Manager
 
         }
 
-    }
+        public UserLogin GetUserByLogin(string Login)
+        {
+            UserLogin UserInfo = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                UserInfo= Context.UserLogins.FirstOrDefault(x=>x.Username == Login);         
+                return UserInfo;
+            }
+
+        }
+        
+    } 
 }
