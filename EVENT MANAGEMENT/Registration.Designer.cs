@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistration));
             this.listBoxRgistrationlistbox = new System.Windows.Forms.ListBox();
             this.groupBoxRegistrationStudentDetails = new System.Windows.Forms.GroupBox();
             this.BtnRegistartionSchoolnameNew = new System.Windows.Forms.Button();
@@ -64,11 +65,12 @@
             // 
             // listBoxRgistrationlistbox
             // 
-            this.listBoxRgistrationlistbox.FormattingEnabled = true;
+            this.listBoxRgistrationlistbox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxRgistrationlistbox.ItemHeight = 14;
             this.listBoxRgistrationlistbox.Location = new System.Drawing.Point(12, 12);
             this.listBoxRgistrationlistbox.Name = "listBoxRgistrationlistbox";
-            this.listBoxRgistrationlistbox.Size = new System.Drawing.Size(271, 446);
-            this.listBoxRgistrationlistbox.TabIndex = 5;
+            this.listBoxRgistrationlistbox.Size = new System.Drawing.Size(236, 396);
+            this.listBoxRgistrationlistbox.TabIndex = 0;
             this.listBoxRgistrationlistbox.SelectedIndexChanged += new System.EventHandler(this.listBoxRgistrationlistbox_SelectedIndexChanged);
             // 
             // groupBoxRegistrationStudentDetails
@@ -95,20 +97,20 @@
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionRollNo);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionFathersName);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistrationName);
-            this.groupBoxRegistrationStudentDetails.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxRegistrationStudentDetails.Location = new System.Drawing.Point(289, 12);
+            this.groupBoxRegistrationStudentDetails.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxRegistrationStudentDetails.Location = new System.Drawing.Point(254, 12);
             this.groupBoxRegistrationStudentDetails.Name = "groupBoxRegistrationStudentDetails";
-            this.groupBoxRegistrationStudentDetails.Size = new System.Drawing.Size(653, 446);
+            this.groupBoxRegistrationStudentDetails.Size = new System.Drawing.Size(620, 396);
             this.groupBoxRegistrationStudentDetails.TabIndex = 6;
             this.groupBoxRegistrationStudentDetails.TabStop = false;
             this.groupBoxRegistrationStudentDetails.Text = "Student Details";
             // 
             // BtnRegistartionSchoolnameNew
             // 
-            this.BtnRegistartionSchoolnameNew.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegistartionSchoolnameNew.Location = new System.Drawing.Point(300, 345);
+            this.BtnRegistartionSchoolnameNew.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistartionSchoolnameNew.Location = new System.Drawing.Point(315, 265);
             this.BtnRegistartionSchoolnameNew.Name = "BtnRegistartionSchoolnameNew";
-            this.BtnRegistartionSchoolnameNew.Size = new System.Drawing.Size(59, 23);
+            this.BtnRegistartionSchoolnameNew.Size = new System.Drawing.Size(59, 22);
             this.BtnRegistartionSchoolnameNew.TabIndex = 20;
             this.BtnRegistartionSchoolnameNew.Text = "New";
             this.BtnRegistartionSchoolnameNew.UseVisualStyleBackColor = true;
@@ -117,25 +119,25 @@
             // dateTimePickerRegistartionDate
             // 
             this.dateTimePickerRegistartionDate.CustomFormat = "DD/MM/YYYY";
-            this.dateTimePickerRegistartionDate.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerRegistartionDate.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerRegistartionDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerRegistartionDate.Location = new System.Drawing.Point(407, 52);
+            this.dateTimePickerRegistartionDate.Location = new System.Drawing.Point(501, 47);
             this.dateTimePickerRegistartionDate.Name = "dateTimePickerRegistartionDate";
-            this.dateTimePickerRegistartionDate.Size = new System.Drawing.Size(125, 25);
+            this.dateTimePickerRegistartionDate.Size = new System.Drawing.Size(88, 22);
             this.dateTimePickerRegistartionDate.TabIndex = 19;
             // 
             // comboBoxRegistartionEvent
             // 
-            this.comboBoxRegistartionEvent.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRegistartionEvent.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRegistartionEvent.FormattingEnabled = true;
-            this.comboBoxRegistartionEvent.Location = new System.Drawing.Point(36, 229);
+            this.comboBoxRegistartionEvent.Location = new System.Drawing.Point(19, 221);
             this.comboBoxRegistartionEvent.Name = "comboBoxRegistartionEvent";
-            this.comboBoxRegistartionEvent.Size = new System.Drawing.Size(258, 25);
-            this.comboBoxRegistartionEvent.TabIndex = 16;
+            this.comboBoxRegistartionEvent.Size = new System.Drawing.Size(291, 22);
+            this.comboBoxRegistartionEvent.TabIndex = 4;
             // 
             // comboBoxRegistartionCategory
             // 
-            this.comboBoxRegistartionCategory.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRegistartionCategory.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRegistartionCategory.FormattingEnabled = true;
             this.comboBoxRegistartionCategory.Items.AddRange(new object[] {
             "A1",
@@ -148,25 +150,25 @@
             "E",
             "F",
             "College"});
-            this.comboBoxRegistartionCategory.Location = new System.Drawing.Point(407, 174);
+            this.comboBoxRegistartionCategory.Location = new System.Drawing.Point(19, 177);
             this.comboBoxRegistartionCategory.Name = "comboBoxRegistartionCategory";
-            this.comboBoxRegistartionCategory.Size = new System.Drawing.Size(154, 25);
-            this.comboBoxRegistartionCategory.TabIndex = 17;
+            this.comboBoxRegistartionCategory.Size = new System.Drawing.Size(291, 22);
+            this.comboBoxRegistartionCategory.TabIndex = 5;
             this.comboBoxRegistartionCategory.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // comboBoxRegistartionSchoolName
             // 
-            this.comboBoxRegistartionSchoolName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRegistartionSchoolName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRegistartionSchoolName.FormattingEnabled = true;
-            this.comboBoxRegistartionSchoolName.Location = new System.Drawing.Point(36, 345);
+            this.comboBoxRegistartionSchoolName.Location = new System.Drawing.Point(18, 265);
             this.comboBoxRegistartionSchoolName.Name = "comboBoxRegistartionSchoolName";
-            this.comboBoxRegistartionSchoolName.Size = new System.Drawing.Size(258, 25);
-            this.comboBoxRegistartionSchoolName.TabIndex = 17;
+            this.comboBoxRegistartionSchoolName.Size = new System.Drawing.Size(291, 22);
+            this.comboBoxRegistartionSchoolName.TabIndex = 6;
             this.comboBoxRegistartionSchoolName.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // comboBoxRegistartionQualification
             // 
-            this.comboBoxRegistartionQualification.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxRegistartionQualification.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxRegistartionQualification.FormattingEnabled = true;
             this.comboBoxRegistartionQualification.Items.AddRange(new object[] {
             "LKG",
@@ -184,112 +186,112 @@
             "Std XI",
             "Std XII",
             "College"});
-            this.comboBoxRegistartionQualification.Location = new System.Drawing.Point(36, 172);
+            this.comboBoxRegistartionQualification.Location = new System.Drawing.Point(18, 133);
             this.comboBoxRegistartionQualification.Name = "comboBoxRegistartionQualification";
-            this.comboBoxRegistartionQualification.Size = new System.Drawing.Size(258, 25);
-            this.comboBoxRegistartionQualification.TabIndex = 18;
+            this.comboBoxRegistartionQualification.Size = new System.Drawing.Size(291, 22);
+            this.comboBoxRegistartionQualification.TabIndex = 3;
             this.comboBoxRegistartionQualification.SelectedIndexChanged += new System.EventHandler(this.comboBoxRegistartionQualification_SelectedIndexChanged);
             // 
             // TxtRegistartionEventRollNo
             // 
-            this.TxtRegistartionEventRollNo.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRegistartionEventRollNo.Location = new System.Drawing.Point(36, 286);
+            this.TxtRegistartionEventRollNo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRegistartionEventRollNo.Location = new System.Drawing.Point(18, 309);
             this.TxtRegistartionEventRollNo.Name = "TxtRegistartionEventRollNo";
-            this.TxtRegistartionEventRollNo.Size = new System.Drawing.Size(258, 25);
-            this.TxtRegistartionEventRollNo.TabIndex = 13;
+            this.TxtRegistartionEventRollNo.Size = new System.Drawing.Size(166, 22);
+            this.TxtRegistartionEventRollNo.TabIndex = 7;
             // 
             // TxtRegistartionPhoneNo
             // 
-            this.TxtRegistartionPhoneNo.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRegistartionPhoneNo.Location = new System.Drawing.Point(36, 395);
+            this.TxtRegistartionPhoneNo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRegistartionPhoneNo.Location = new System.Drawing.Point(18, 353);
             this.TxtRegistartionPhoneNo.Name = "TxtRegistartionPhoneNo";
-            this.TxtRegistartionPhoneNo.Size = new System.Drawing.Size(258, 26);
-            this.TxtRegistartionPhoneNo.TabIndex = 14;
+            this.TxtRegistartionPhoneNo.Size = new System.Drawing.Size(166, 22);
+            this.TxtRegistartionPhoneNo.TabIndex = 8;
             // 
             // TxtRegistartionFathersName
             // 
-            this.TxtRegistartionFathersName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRegistartionFathersName.Location = new System.Drawing.Point(36, 115);
+            this.TxtRegistartionFathersName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRegistartionFathersName.Location = new System.Drawing.Point(18, 89);
             this.TxtRegistartionFathersName.Name = "TxtRegistartionFathersName";
-            this.TxtRegistartionFathersName.Size = new System.Drawing.Size(258, 25);
-            this.TxtRegistartionFathersName.TabIndex = 15;
+            this.TxtRegistartionFathersName.Size = new System.Drawing.Size(356, 22);
+            this.TxtRegistartionFathersName.TabIndex = 2;
             this.TxtRegistartionFathersName.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // LblRegistartionPhoneNo
             // 
             this.LblRegistartionPhoneNo.AutoSize = true;
-            this.LblRegistartionPhoneNo.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionPhoneNo.Location = new System.Drawing.Point(37, 375);
+            this.LblRegistartionPhoneNo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionPhoneNo.Location = new System.Drawing.Point(16, 335);
             this.LblRegistartionPhoneNo.Name = "LblRegistartionPhoneNo";
-            this.LblRegistartionPhoneNo.Size = new System.Drawing.Size(81, 17);
+            this.LblRegistartionPhoneNo.Size = new System.Drawing.Size(74, 14);
             this.LblRegistartionPhoneNo.TabIndex = 5;
             this.LblRegistartionPhoneNo.Text = "Phone No :";
             // 
             // TxtRegistartionName
             // 
-            this.TxtRegistartionName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRegistartionName.Location = new System.Drawing.Point(36, 55);
+            this.TxtRegistartionName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRegistartionName.Location = new System.Drawing.Point(18, 45);
             this.TxtRegistartionName.Name = "TxtRegistartionName";
-            this.TxtRegistartionName.Size = new System.Drawing.Size(258, 25);
-            this.TxtRegistartionName.TabIndex = 15;
+            this.TxtRegistartionName.Size = new System.Drawing.Size(356, 22);
+            this.TxtRegistartionName.TabIndex = 1;
             // 
             // LblRegistartionSchoolName
             // 
             this.LblRegistartionSchoolName.AutoSize = true;
-            this.LblRegistartionSchoolName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionSchoolName.Location = new System.Drawing.Point(37, 325);
+            this.LblRegistartionSchoolName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionSchoolName.Location = new System.Drawing.Point(15, 247);
             this.LblRegistartionSchoolName.Name = "LblRegistartionSchoolName";
-            this.LblRegistartionSchoolName.Size = new System.Drawing.Size(104, 17);
+            this.LblRegistartionSchoolName.Size = new System.Drawing.Size(93, 14);
             this.LblRegistartionSchoolName.TabIndex = 5;
             this.LblRegistartionSchoolName.Text = "School Name :";
             // 
             // LblRegistartionEventRollNo
             // 
             this.LblRegistartionEventRollNo.AutoSize = true;
-            this.LblRegistartionEventRollNo.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionEventRollNo.Location = new System.Drawing.Point(37, 266);
+            this.LblRegistartionEventRollNo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionEventRollNo.Location = new System.Drawing.Point(16, 291);
             this.LblRegistartionEventRollNo.Name = "LblRegistartionEventRollNo";
-            this.LblRegistartionEventRollNo.Size = new System.Drawing.Size(108, 17);
+            this.LblRegistartionEventRollNo.Size = new System.Drawing.Size(97, 14);
             this.LblRegistartionEventRollNo.TabIndex = 6;
             this.LblRegistartionEventRollNo.Text = "Event Roll No :";
             // 
             // LblRegistartionEvent
             // 
             this.LblRegistartionEvent.AutoSize = true;
-            this.LblRegistartionEvent.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionEvent.Location = new System.Drawing.Point(37, 209);
+            this.LblRegistartionEvent.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionEvent.Location = new System.Drawing.Point(16, 203);
             this.LblRegistartionEvent.Name = "LblRegistartionEvent";
-            this.LblRegistartionEvent.Size = new System.Drawing.Size(54, 17);
+            this.LblRegistartionEvent.Size = new System.Drawing.Size(50, 14);
             this.LblRegistartionEvent.TabIndex = 7;
             this.LblRegistartionEvent.Text = "Event :";
             // 
             // LblRegistartionCategory
             // 
             this.LblRegistartionCategory.AutoSize = true;
-            this.LblRegistartionCategory.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionCategory.Location = new System.Drawing.Point(404, 154);
+            this.LblRegistartionCategory.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionCategory.Location = new System.Drawing.Point(16, 159);
             this.LblRegistartionCategory.Name = "LblRegistartionCategory";
-            this.LblRegistartionCategory.Size = new System.Drawing.Size(77, 17);
+            this.LblRegistartionCategory.Size = new System.Drawing.Size(71, 14);
             this.LblRegistartionCategory.TabIndex = 8;
             this.LblRegistartionCategory.Text = "Category :";
             // 
             // LblRegistartionQualification
             // 
             this.LblRegistartionQualification.AutoSize = true;
-            this.LblRegistartionQualification.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionQualification.Location = new System.Drawing.Point(37, 152);
+            this.LblRegistartionQualification.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionQualification.Location = new System.Drawing.Point(15, 115);
             this.LblRegistartionQualification.Name = "LblRegistartionQualification";
-            this.LblRegistartionQualification.Size = new System.Drawing.Size(105, 17);
+            this.LblRegistartionQualification.Size = new System.Drawing.Size(91, 14);
             this.LblRegistartionQualification.TabIndex = 9;
             this.LblRegistartionQualification.Text = "Qualification :";
             // 
             // LblRegistartionRollN
             // 
             this.LblRegistartionRollN.AutoSize = true;
-            this.LblRegistartionRollN.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionRollN.Location = new System.Drawing.Point(404, 115);
+            this.LblRegistartionRollN.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionRollN.Location = new System.Drawing.Point(390, 47);
             this.LblRegistartionRollN.Name = "LblRegistartionRollN";
-            this.LblRegistartionRollN.Size = new System.Drawing.Size(96, 28);
+            this.LblRegistartionRollN.Size = new System.Drawing.Size(50, 16);
             this.LblRegistartionRollN.TabIndex = 10;
             this.LblRegistartionRollN.Text = "000000";
             this.LblRegistartionRollN.Click += new System.EventHandler(this.label8_Click);
@@ -297,10 +299,10 @@
             // LblRegistartionDate
             // 
             this.LblRegistartionDate.AutoSize = true;
-            this.LblRegistartionDate.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionDate.Location = new System.Drawing.Point(404, 32);
+            this.LblRegistartionDate.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionDate.Location = new System.Drawing.Point(498, 27);
             this.LblRegistartionDate.Name = "LblRegistartionDate";
-            this.LblRegistartionDate.Size = new System.Drawing.Size(47, 17);
+            this.LblRegistartionDate.Size = new System.Drawing.Size(44, 14);
             this.LblRegistartionDate.TabIndex = 11;
             this.LblRegistartionDate.Text = "Date :";
             this.LblRegistartionDate.Click += new System.EventHandler(this.label11_Click);
@@ -308,20 +310,20 @@
             // LblRegistartionRollNo
             // 
             this.LblRegistartionRollNo.AutoSize = true;
-            this.LblRegistartionRollNo.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionRollNo.Location = new System.Drawing.Point(404, 95);
+            this.LblRegistartionRollNo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionRollNo.Location = new System.Drawing.Point(390, 27);
             this.LblRegistartionRollNo.Name = "LblRegistartionRollNo";
-            this.LblRegistartionRollNo.Size = new System.Drawing.Size(66, 17);
+            this.LblRegistartionRollNo.Size = new System.Drawing.Size(58, 14);
             this.LblRegistartionRollNo.TabIndex = 11;
             this.LblRegistartionRollNo.Text = "Roll No :";
             // 
             // LblRegistartionFathersName
             // 
             this.LblRegistartionFathersName.AutoSize = true;
-            this.LblRegistartionFathersName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionFathersName.Location = new System.Drawing.Point(36, 95);
+            this.LblRegistartionFathersName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistartionFathersName.Location = new System.Drawing.Point(15, 71);
             this.LblRegistartionFathersName.Name = "LblRegistartionFathersName";
-            this.LblRegistartionFathersName.Size = new System.Drawing.Size(108, 17);
+            this.LblRegistartionFathersName.Size = new System.Drawing.Size(97, 14);
             this.LblRegistartionFathersName.TabIndex = 12;
             this.LblRegistartionFathersName.Text = "Fathers Name :";
             this.LblRegistartionFathersName.Click += new System.EventHandler(this.label9_Click);
@@ -329,17 +331,17 @@
             // LblRegistrationName
             // 
             this.LblRegistrationName.AutoSize = true;
-            this.LblRegistrationName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistrationName.Location = new System.Drawing.Point(36, 35);
+            this.LblRegistrationName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistrationName.Location = new System.Drawing.Point(15, 27);
             this.LblRegistrationName.Name = "LblRegistrationName";
-            this.LblRegistrationName.Size = new System.Drawing.Size(54, 17);
+            this.LblRegistrationName.Size = new System.Drawing.Size(48, 14);
             this.LblRegistrationName.TabIndex = 12;
             this.LblRegistrationName.Text = "Name :";
             // 
             // BtnRegistartionNew
             // 
-            this.BtnRegistartionNew.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegistartionNew.Location = new System.Drawing.Point(12, 472);
+            this.BtnRegistartionNew.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistartionNew.Location = new System.Drawing.Point(12, 419);
             this.BtnRegistartionNew.Name = "BtnRegistartionNew";
             this.BtnRegistartionNew.Size = new System.Drawing.Size(84, 23);
             this.BtnRegistartionNew.TabIndex = 7;
@@ -349,8 +351,8 @@
             // 
             // BtnRegistartionDelete
             // 
-            this.BtnRegistartionDelete.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegistartionDelete.Location = new System.Drawing.Point(102, 472);
+            this.BtnRegistartionDelete.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistartionDelete.Location = new System.Drawing.Point(102, 419);
             this.BtnRegistartionDelete.Name = "BtnRegistartionDelete";
             this.BtnRegistartionDelete.Size = new System.Drawing.Size(84, 23);
             this.BtnRegistartionDelete.TabIndex = 7;
@@ -359,8 +361,8 @@
             // 
             // BtnRegistartionEdit
             // 
-            this.BtnRegistartionEdit.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegistartionEdit.Location = new System.Drawing.Point(192, 472);
+            this.BtnRegistartionEdit.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistartionEdit.Location = new System.Drawing.Point(192, 419);
             this.BtnRegistartionEdit.Name = "BtnRegistartionEdit";
             this.BtnRegistartionEdit.Size = new System.Drawing.Size(75, 23);
             this.BtnRegistartionEdit.TabIndex = 7;
@@ -370,8 +372,8 @@
             // 
             // BtnRegistartionCancel
             // 
-            this.BtnRegistartionCancel.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegistartionCancel.Location = new System.Drawing.Point(701, 472);
+            this.BtnRegistartionCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistartionCancel.Location = new System.Drawing.Point(624, 419);
             this.BtnRegistartionCancel.Name = "BtnRegistartionCancel";
             this.BtnRegistartionCancel.Size = new System.Drawing.Size(78, 23);
             this.BtnRegistartionCancel.TabIndex = 7;
@@ -381,8 +383,8 @@
             // 
             // BtnRegistartionSave
             // 
-            this.BtnRegistartionSave.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegistartionSave.Location = new System.Drawing.Point(785, 472);
+            this.BtnRegistartionSave.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistartionSave.Location = new System.Drawing.Point(708, 419);
             this.BtnRegistartionSave.Name = "BtnRegistartionSave";
             this.BtnRegistartionSave.Size = new System.Drawing.Size(75, 23);
             this.BtnRegistartionSave.TabIndex = 7;
@@ -392,8 +394,8 @@
             // 
             // BtnRegistartionExit
             // 
-            this.BtnRegistartionExit.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRegistartionExit.Location = new System.Drawing.Point(866, 472);
+            this.BtnRegistartionExit.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegistartionExit.Location = new System.Drawing.Point(789, 419);
             this.BtnRegistartionExit.Name = "BtnRegistartionExit";
             this.BtnRegistartionExit.Size = new System.Drawing.Size(76, 23);
             this.BtnRegistartionExit.TabIndex = 7;
@@ -403,17 +405,19 @@
             // 
             // statusStripRegistartion
             // 
-            this.statusStripRegistartion.Location = new System.Drawing.Point(0, 528);
+            this.statusStripRegistartion.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusStripRegistartion.Location = new System.Drawing.Point(0, 451);
             this.statusStripRegistartion.Name = "statusStripRegistartion";
-            this.statusStripRegistartion.Size = new System.Drawing.Size(982, 22);
+            this.statusStripRegistartion.Size = new System.Drawing.Size(886, 22);
             this.statusStripRegistartion.TabIndex = 8;
             this.statusStripRegistartion.Text = "statusStrip1";
             // 
             // TextBoxRegId
             // 
-            this.TextBoxRegId.Location = new System.Drawing.Point(307, 474);
+            this.TextBoxRegId.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxRegId.Location = new System.Drawing.Point(307, 421);
             this.TextBoxRegId.Name = "TextBoxRegId";
-            this.TextBoxRegId.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxRegId.Size = new System.Drawing.Size(100, 22);
             this.TextBoxRegId.TabIndex = 9;
             this.TextBoxRegId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -421,8 +425,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(982, 550);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(886, 473);
             this.Controls.Add(this.TextBoxRegId);
             this.Controls.Add(this.statusStripRegistartion);
             this.Controls.Add(this.BtnRegistartionExit);
@@ -433,6 +437,8 @@
             this.Controls.Add(this.BtnRegistartionNew);
             this.Controls.Add(this.groupBoxRegistrationStudentDetails);
             this.Controls.Add(this.listBoxRgistrationlistbox);
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormRegistration";

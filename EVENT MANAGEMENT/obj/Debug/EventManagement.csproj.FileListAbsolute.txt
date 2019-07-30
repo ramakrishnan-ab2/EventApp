@@ -67,3 +67,27 @@ C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.xml
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.xml
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csproj.CopyComplete
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojAssemblyReference.cache
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Container.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Login.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormMarkEntry.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Properties.Resources.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormRegistration.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.EventReport.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.ResultReport.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormSchoolRegistration.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EventManagement.csproj.GenerateResource.Cache
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.exe
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.pdb
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.exe.config
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.exe
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EVENT MANAGEMENT.pdb
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\BouncyCastle.Crypto.dll
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EntityFramework.dll
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EntityFramework.SqlServer.dll
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.dll
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\JetEntityFrameworkProvider.dll
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.dll
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EntityFramework.xml
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EntityFramework.SqlServer.xml
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.xml
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.xml

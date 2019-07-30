@@ -8,6 +8,17 @@ using System.Threading.Tasks;
 
 namespace EVENT_MANAGEMENT.Manager
 {
+    public class EventManager
+    {
+        public IList<Event> ListEvent()
+        {
+            IList<Event> Event = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                Event = Context.Events.ToList();
+            }
+            return Event;
+        }
    public class EventManager
     {
       

@@ -39,6 +39,15 @@ namespace EVENT_MANAGEMENT.Manager
             return RegisterInfo;
 
         }
+        public IList<Register> ListRegistration()
+        {
+            IList<Register> RegInfo = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                RegInfo = Context.Registers.ToList();
+            }
+            return RegInfo;
+        }
         public Register GetRegisterByName(string RegName)
         {
             Register RegInfo = null;

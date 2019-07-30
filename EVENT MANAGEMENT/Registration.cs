@@ -14,8 +14,10 @@ namespace EVENT_MANAGEMENT
 {
     public partial class FormRegistration : Form
     {
+        RegisterManager RegisterManager = null;
         public FormRegistration()
         {
+            RegisterManager = new RegisterManager();
             InitializeComponent();
         }
 
@@ -68,59 +70,88 @@ namespace EVENT_MANAGEMENT
         {
 
         }
+        private void LoadRegistration()
+        {
+            listBoxRgistrationlistbox.Items.Clear();
+            IList<Register> Register = RegisterManager.ListRegistration();
+            if(Register!=null && Register.Count>0)
+            {
+                listBoxRgistrationlistbox.Items.AddRange(Register.ToArray<Register>());
+                listBoxRgistrationlistbox.SelectedIndex = 0;
+            }            
+        }
+        private void loadCombo()
+        {
 
+        }
+        private void EnableForm(bool enable)
+        {
+            if(enable)
+            {
+                BtnRegistartionDelete.Enabled = !enable;
+                BtnRegistartionEdit.Enabled = !enable;
+                BtnRegistartionNew.Enabled = !enable;
+                BtnRegistartionSave.Enabled = enable;
+                BtnRegistartionCancel.Enabled = enable;
+            }
+            else
+            {
+                BtnRegistartionDelete.Enabled = enable;
+                BtnRegistartionEdit.Enabled = enable;
+                BtnRegistartionNew.Enabled = enable;
+                BtnRegistartionSave.Enabled = !enable;
+                BtnRegistartionCancel.Enabled = !enable;
+            }
+            
+        }
         private void FormRegistration_Load(object sender, EventArgs e)
         {
-            BtnRegistartionDelete.Enabled = false;
-            BtnRegistartionEdit.Enabled = false;
+            ResetForm();
+            EnableForm(true);
+            LoadRegistration();
         }
-
-        private void BtnRegistartionNew_Click(object sender, EventArgs e)
+        private void ResetForm()
         {
-            //listBoxRgistrationlistbox.SelectedIndex = 0;
-            TextBoxRegId.Text =Convert.ToString(0);
+            TextBoxRegId.Text = Convert.ToString(0);
             TxtRegistartionName.Text = "";
             TxtRegistartionFathersName.Text = "";
-            TxtRegistartionEventRollNo.Text = "";
+            TxtRegistartionEventRollNo.Text = Convert.ToString(000);
             TxtRegistartionPhoneNo.Text = "";
+            comboBoxRegistartionCategory.SelectedIndex=-1;
+            comboBoxRegistartionEvent.SelectedIndex = -1;
+            comboBoxRegistartionQualification.SelectedIndex = -1;
+            comboBoxRegistartionSchoolName.SelectedIndex = -1;
             comboBoxRegistartionCategory.ResetText();
             comboBoxRegistartionEvent.ResetText();
             comboBoxRegistartionQualification.ResetText();
             comboBoxRegistartionSchoolName.ResetText();
-            LblRegistartionRollN.Text = Convert.ToString( 000000);
-            BtnRegistartionDelete.Enabled = false;
-            BtnRegistartionEdit.Enabled = false;
-            BtnRegistartionNew.Enabled = false;
-            TxtRegistartionName.Focus();
-
+            LblRegistartionRollN.Text = Convert.ToString(000);          
         }
-
+        private void BtnRegistartionNew_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+            EnableForm(true);
+            TxtRegistartionName.Select();
+        }
         private void BtnRegistartionEdit_Click(object sender, EventArgs e)
         {
             
         }
-      private Register GetRegisterFromForm()
+        private Register GetRegisterFromForm()
         {
-            int id = 0;
-            Register R = new Register();
-            if (R.Id == 0)
-            {
-                R.Id =Convert.ToInt32(TextBoxRegId.Text);
-                R.StudentName = TxtRegistartionName.Text.Trim();
-                R.FathersName = TxtRegistartionFathersName.Text.Trim();
-                // R.Qualification = comboBoxRegistartionQualification.Text.ToString(
-                //R.Event=
-                R.EventRollNo = Convert.ToInt32(TxtRegistartionEventRollNo.Text.Trim());
-                // R.School=
-                R.PhoneNo = TxtRegistartionPhoneNo.Text.Trim();
-                R.Date = Convert.ToDateTime(dateTimePickerRegistartionDate.Text);
-              
-            }
-            else
-            {
+            Register Register = new Register();
 
-            }
-            return R;
+            Register.Id = string.IsNullOrEmpty(TextBoxRegId.Text)?0:Convert.ToInt32(TextBoxRegId.Text);
+            Register.StudentName = TxtRegistartionName.Text.Trim();
+            Register.FathersName = TxtRegistartionFathersName.Text.Trim();
+            // R.Qualification = comboBoxRegistartionQualification.Text.ToString(
+            //R.Event=
+            Register.EventRollNo = Convert.ToInt32(TxtRegistartionEventRollNo.Text.Trim());
+            // R.School=
+            Register.PhoneNo = TxtRegistartionPhoneNo.Text.Trim();
+            Register.Date = Convert.ToDateTime(dateTimePickerRegistartionDate.Text);
+                 
+            return Register;
 
         }
 
