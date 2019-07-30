@@ -58,6 +58,7 @@
             this.BtnRegistartionSave = new System.Windows.Forms.Button();
             this.BtnRegistartionExit = new System.Windows.Forms.Button();
             this.statusStripRegistartion = new System.Windows.Forms.StatusStrip();
+            this.TextBoxCustomerAccountId = new System.Windows.Forms.TextBox();
             this.groupBoxRegistrationStudentDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +111,7 @@
             this.BtnRegistartionSchoolnameNew.TabIndex = 20;
             this.BtnRegistartionSchoolnameNew.Text = "New";
             this.BtnRegistartionSchoolnameNew.UseVisualStyleBackColor = true;
+            this.BtnRegistartionSchoolnameNew.Click += new System.EventHandler(this.BtnRegistartionSchoolnameNew_Click);
             // 
             // dateTimePickerRegistartionDate
             // 
@@ -314,6 +316,7 @@
             this.BtnRegistartionNew.TabIndex = 7;
             this.BtnRegistartionNew.Text = "New";
             this.BtnRegistartionNew.UseVisualStyleBackColor = true;
+            this.BtnRegistartionNew.Click += new System.EventHandler(this.BtnRegistartionNew_Click);
             // 
             // BtnRegistartionDelete
             // 
@@ -334,6 +337,7 @@
             this.BtnRegistartionEdit.TabIndex = 7;
             this.BtnRegistartionEdit.Text = "Edit";
             this.BtnRegistartionEdit.UseVisualStyleBackColor = true;
+            this.BtnRegistartionEdit.Click += new System.EventHandler(this.BtnRegistartionEdit_Click);
             // 
             // BtnRegistartionCancel
             // 
@@ -344,6 +348,7 @@
             this.BtnRegistartionCancel.TabIndex = 7;
             this.BtnRegistartionCancel.Text = "Cancel";
             this.BtnRegistartionCancel.UseVisualStyleBackColor = true;
+            this.BtnRegistartionCancel.Click += new System.EventHandler(this.BtnRegistartionCancel_Click);
             // 
             // BtnRegistartionSave
             // 
@@ -354,6 +359,7 @@
             this.BtnRegistartionSave.TabIndex = 7;
             this.BtnRegistartionSave.Text = "Save";
             this.BtnRegistartionSave.UseVisualStyleBackColor = true;
+            this.BtnRegistartionSave.Click += new System.EventHandler(this.BtnRegistartionSave_Click);
             // 
             // BtnRegistartionExit
             // 
@@ -364,6 +370,7 @@
             this.BtnRegistartionExit.TabIndex = 7;
             this.BtnRegistartionExit.Text = "Exit";
             this.BtnRegistartionExit.UseVisualStyleBackColor = true;
+            this.BtnRegistartionExit.Click += new System.EventHandler(this.BtnRegistartionExit_Click);
             // 
             // statusStripRegistartion
             // 
@@ -373,12 +380,21 @@
             this.statusStripRegistartion.TabIndex = 8;
             this.statusStripRegistartion.Text = "statusStrip1";
             // 
+            // TextBoxCustomerAccountId
+            // 
+            this.TextBoxCustomerAccountId.Location = new System.Drawing.Point(307, 474);
+            this.TextBoxCustomerAccountId.Name = "TextBoxCustomerAccountId";
+            this.TextBoxCustomerAccountId.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxCustomerAccountId.TabIndex = 9;
+            this.TextBoxCustomerAccountId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // FormRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(982, 550);
+            this.Controls.Add(this.TextBoxCustomerAccountId);
             this.Controls.Add(this.statusStripRegistartion);
             this.Controls.Add(this.BtnRegistartionExit);
             this.Controls.Add(this.BtnRegistartionSave);
@@ -391,7 +407,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.FormRegistration_Load);
             this.groupBoxRegistrationStudentDetails.ResumeLayout(false);
             this.groupBoxRegistrationStudentDetails.PerformLayout();
             this.ResumeLayout(false);
@@ -431,5 +449,6 @@
         private System.Windows.Forms.ComboBox comboBoxRegistartionCategory;
         private System.Windows.Forms.Label LblRegistartionPhoneNo;
         private System.Windows.Forms.StatusStrip statusStripRegistartion;
+        private System.Windows.Forms.TextBox TextBoxCustomerAccountId;
     }
 }

@@ -41,6 +41,7 @@
             this.LblSchoolRegistrationAddress = new System.Windows.Forms.Label();
             this.groupBoxSchoolRegistrationSchoolDetails = new System.Windows.Forms.GroupBox();
             this.statusStripBtnSchoolRegistration = new System.Windows.Forms.StatusStrip();
+            this.TxtSchoolRegId = new System.Windows.Forms.TextBox();
             this.groupBoxSchoolRegistrationSchoolDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +71,7 @@
             this.BtnSchoolRegistrationExit.TabIndex = 10;
             this.BtnSchoolRegistrationExit.Text = "Exit";
             this.BtnSchoolRegistrationExit.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationExit.Click += new System.EventHandler(this.BtnSchoolRegistrationExit_Click);
             // 
             // BtnSchoolRegistrationSave
             // 
@@ -80,6 +82,7 @@
             this.BtnSchoolRegistrationSave.TabIndex = 11;
             this.BtnSchoolRegistrationSave.Text = "Save";
             this.BtnSchoolRegistrationSave.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationSave.Click += new System.EventHandler(this.BtnSchoolRegistrationSave_Click);
             // 
             // BtnSchoolRegistrationCancel
             // 
@@ -90,6 +93,7 @@
             this.BtnSchoolRegistrationCancel.TabIndex = 12;
             this.BtnSchoolRegistrationCancel.Text = "Cancel";
             this.BtnSchoolRegistrationCancel.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationCancel.Click += new System.EventHandler(this.BtnSchoolRegistrationCancel_Click);
             // 
             // BtnSchoolRegistrationEdit
             // 
@@ -100,6 +104,7 @@
             this.BtnSchoolRegistrationEdit.TabIndex = 13;
             this.BtnSchoolRegistrationEdit.Text = "Edit";
             this.BtnSchoolRegistrationEdit.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationEdit.Click += new System.EventHandler(this.BtnSchoolRegistrationEdit_Click);
             // 
             // LblSchoolRegistrationSchoolName
             // 
@@ -120,6 +125,7 @@
             this.BtnSchoolRegistrationDelete.TabIndex = 14;
             this.BtnSchoolRegistrationDelete.Text = "Delete";
             this.BtnSchoolRegistrationDelete.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationDelete.Click += new System.EventHandler(this.BtnSchoolRegistrationDelete_Click);
             // 
             // BtnSchoolRegistrationNew
             // 
@@ -130,6 +136,7 @@
             this.BtnSchoolRegistrationNew.TabIndex = 15;
             this.BtnSchoolRegistrationNew.Text = "New";
             this.BtnSchoolRegistrationNew.UseVisualStyleBackColor = true;
+            this.BtnSchoolRegistrationNew.Click += new System.EventHandler(this.BtnSchoolRegistrationNew_Click);
             // 
             // listBoxSchoolRegistration
             // 
@@ -140,6 +147,7 @@
             this.listBoxSchoolRegistration.Name = "listBoxSchoolRegistration";
             this.listBoxSchoolRegistration.Size = new System.Drawing.Size(264, 340);
             this.listBoxSchoolRegistration.TabIndex = 8;
+            this.listBoxSchoolRegistration.SelectedIndexChanged += new System.EventHandler(this.listBoxSchoolRegistration_SelectedIndexChanged);
             // 
             // LblSchoolRegistrationAddress
             // 
@@ -175,11 +183,19 @@
             this.statusStripBtnSchoolRegistration.TabIndex = 16;
             this.statusStripBtnSchoolRegistration.Text = "statusStrip1";
             // 
+            // TxtSchoolRegId
+            // 
+            this.TxtSchoolRegId.Location = new System.Drawing.Point(330, 367);
+            this.TxtSchoolRegId.Name = "TxtSchoolRegId";
+            this.TxtSchoolRegId.Size = new System.Drawing.Size(100, 21);
+            this.TxtSchoolRegId.TabIndex = 17;
+            // 
             // FormSchoolRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 423);
+            this.Controls.Add(this.TxtSchoolRegId);
             this.Controls.Add(this.statusStripBtnSchoolRegistration);
             this.Controls.Add(this.BtnSchoolRegistrationExit);
             this.Controls.Add(this.BtnSchoolRegistrationSave);
@@ -193,7 +209,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSchoolRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "School Registration";
+            this.Load += new System.EventHandler(this.FormSchoolRegistration_Load);
             this.groupBoxSchoolRegistrationSchoolDetails.ResumeLayout(false);
             this.groupBoxSchoolRegistrationSchoolDetails.PerformLayout();
             this.ResumeLayout(false);
@@ -216,5 +234,6 @@
         private System.Windows.Forms.Label LblSchoolRegistrationAddress;
         private System.Windows.Forms.GroupBox groupBoxSchoolRegistrationSchoolDetails;
         private System.Windows.Forms.StatusStrip statusStripBtnSchoolRegistration;
+        private System.Windows.Forms.TextBox TxtSchoolRegId;
     }
 }
