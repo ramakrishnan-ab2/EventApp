@@ -58,6 +58,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(578, 346);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // SlNo
             // 
@@ -142,12 +143,15 @@
             this.toolStripComboBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(250, 35);
+            this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
+            this.toolStripComboBox1.Click += new System.EventHandler(this.toolStripComboBox1_Click);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(22, 32);
             this.toolStripLabel2.Text = "Go";
+            this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
             // button1
             // 
@@ -158,6 +162,7 @@
             this.button1.TabIndex = 27;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormMarkEntry
             // 

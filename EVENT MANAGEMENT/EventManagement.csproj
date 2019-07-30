@@ -91,6 +91,7 @@
     <Compile Include="Manager\EventCategoryManager.cs" />
     <Compile Include="Manager\EventManager.cs" />
     <Compile Include="Manager\JudgesManager.cs" />
+    <Compile Include="Manager\MarkEntryManager.cs" />
     <Compile Include="Manager\QualificationManager.cs" />
     <Compile Include="Manager\RegisterManager.cs" />
     <Compile Include="Manager\ResultManager.cs" />
