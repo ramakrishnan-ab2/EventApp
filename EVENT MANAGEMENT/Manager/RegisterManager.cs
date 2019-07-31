@@ -82,12 +82,8 @@ namespace EVENT_MANAGEMENT.Manager
                 {
                     try
                     {
-                        if (RegisterInfo != null)
-                        {
                             RegisterInfo = AccountContext.Registers.Add(RegisterFromForm);
                             AccountContext.SaveChanges();
-                        }
-
                     }
                     catch (Exception ex)
                     {
@@ -99,29 +95,26 @@ namespace EVENT_MANAGEMENT.Manager
             return RegisterInfo;
 
         }
-        public Register UpdateRegister(Register Register)
+        public Register UpdateRegister(Register RegisterFF)
         {
             Register Reginfo = null;
-            using (AccountContext Context = new AccountContext())
+            try
             {
-                Reginfo = Context.Registers.Find(Reginfo.Id);
-                try
+                using (AccountContext Context = new AccountContext())
                 {
-                    Reginfo = Context.Registers.Where(i => i.Id == Register.Id).FirstOrDefault();
+                    Reginfo = Context.Registers.Find(RegisterFF.Id);
                     if (Reginfo != null)
                     {
-                        Context.Entry(Register).State=EntityState.Modified;
+                        Context.Entry(Reginfo).CurrentValues.SetValues(RegisterFF);
                         Context.SaveChanges();
                     }
-                   
-                }
-                catch(Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
-                return Reginfo;
-
+                }                   
             }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+                return Reginfo;
         }
         public bool DeleteRegister(int Id)
         {

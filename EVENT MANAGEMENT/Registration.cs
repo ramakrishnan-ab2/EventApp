@@ -51,11 +51,10 @@ namespace EVENT_MANAGEMENT
             TxtRegistrationFee.TabStop = enable;
 
             comboBoxRegistartionQualification.Enabled = enable;
-            comboBoxRegistartionCategory.Enabled = enable;
+            comboBoxRegistartionCategory.Enabled = false;
             comboBoxRegistartionEvent.Enabled = false;
             comboBoxRegistartionSchoolName.Enabled = enable;
-
-            LblRegistartionRollN.Text = Convert.ToString(000);
+            dateTimePickerRegistartionDate.Enabled = enable;
 
             if (enable)
             {
@@ -67,11 +66,11 @@ namespace EVENT_MANAGEMENT
             }
             else
             {
-                BtnRegistartionDelete.Enabled = enable;
-                BtnRegistartionEdit.Enabled = enable;
-                BtnRegistartionNew.Enabled = enable;
-                BtnRegistartionSave.Enabled = !enable;
-                BtnRegistartionCancel.Enabled = !enable;
+                BtnRegistartionDelete.Enabled = !enable;
+                BtnRegistartionEdit.Enabled = !enable;
+                BtnRegistartionNew.Enabled = !enable;
+                BtnRegistartionSave.Enabled = enable;
+                BtnRegistartionCancel.Enabled = enable;
             }
             
         }
@@ -84,6 +83,7 @@ namespace EVENT_MANAGEMENT
         }
         private void ResetForm()
         {
+            ErrorMsg.Text = string.Empty;
             TextBoxRegId.Text = Convert.ToString(0);
             TxtRegistartionName.Text = "";
             TxtRegistartionFathersName.Text = "";
@@ -97,8 +97,9 @@ namespace EVENT_MANAGEMENT
             comboBoxRegistartionEvent.ResetText();
             comboBoxRegistartionQualification.ResetText();
             comboBoxRegistartionSchoolName.ResetText();
-            LblRegistartionRollN.Text = Convert.ToString(000);
+            TxtRollNo.Text = Convert.ToString(000);
             TxtRegistrationFee.Text = "0.00";
+            dateTimePickerRegistartionDate.Value = DateTime.Now;
         }
         private void BtnRegistartionNew_Click(object sender, EventArgs e)
         {
@@ -109,6 +110,8 @@ namespace EVENT_MANAGEMENT
         private void BtnRegistartionEdit_Click(object sender, EventArgs e)
         {
             EnableForm(true);
+            comboBoxRegistartionCategory.Enabled = true;
+            comboBoxRegistartionEvent.Enabled = true;
             TxtRegistartionName.Select();
         }
         private void BtnRegistartionDelete_Click(object sender, EventArgs e)
@@ -253,61 +256,72 @@ namespace EVENT_MANAGEMENT
         
         private void comboBoxRegistartionQualification_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadCategoryCombo();
+            comboBoxRegistartionCategory.ResetText();
+            if (comboBoxRegistartionQualification.SelectedIndex > -1)
+            {
+                comboBoxRegistartionCategory.Enabled = true;
+                LoadCategoryCombo();
+                comboBoxRegistartionCategory.SelectedIndex = -1;
+            }
+            else
+            {
+                comboBoxRegistartionCategory.SelectedIndex = -1;
+                comboBoxRegistartionCategory.Enabled = false;
+            }
         }
         private void LoadCategoryCombo()
         {
-            string Temp = comboBoxRegistartionCategory.Text.Trim();
+            //string Temp = comboBoxRegistartionCategory.Text.Trim();
 
             int QualificationId = (comboBoxRegistartionQualification.SelectedIndex>-1)?((Qualification)comboBoxRegistartionQualification.Items[comboBoxRegistartionQualification.SelectedIndex]).Id:0;
             CategoryManager CategoryManager =new  CategoryManager();
             comboBoxRegistartionCategory.Items.Clear();
             comboBoxRegistartionCategory.Items.AddRange(CategoryManager.ListCategory(QualificationId).ToArray<Category>());
 
-            if (string.IsNullOrEmpty(Temp) || comboBoxRegistartionCategory.Items.Count == 0 || comboBoxRegistartionCategory.FindStringExact(Temp) < 0)
-            {
+            //if (string.IsNullOrEmpty(Temp) || comboBoxRegistartionCategory.Items.Count == 0 || comboBoxRegistartionCategory.FindStringExact(Temp) < 0)
+            //{
                 comboBoxRegistartionCategory.SelectedIndex = -1;
-            }
-            else
-            {
-                comboBoxRegistartionCategory.SelectedIndex = comboBoxRegistartionCategory.FindStringExact(Temp);
-            }
+            //}
+            //else
+            //{
+            //    comboBoxRegistartionCategory.SelectedIndex = comboBoxRegistartionCategory.FindStringExact(Temp);
+            //}
         }
         private void LoadQualificationCombo()
         {
-            string Temp = comboBoxRegistartionQualification.Text.Trim();
+            //string Temp = comboBoxRegistartionQualification.Text.Trim();
 
             int CategoryId = (comboBoxRegistartionCategory.SelectedIndex > -1) ? ((Category)comboBoxRegistartionCategory.Items[comboBoxRegistartionCategory.SelectedIndex]).Id : 0;
             QualificationManager QualificationManager = new QualificationManager();
             comboBoxRegistartionQualification.Items.Clear();
             comboBoxRegistartionQualification.Items.AddRange(QualificationManager.ListQualification(CategoryId).ToArray<Qualification>());
 
-            if (string.IsNullOrEmpty(Temp) || comboBoxRegistartionQualification.Items.Count == 0 || comboBoxRegistartionQualification.FindStringExact(Temp) < 0)
-            {
+            //if (string.IsNullOrEmpty(Temp) || comboBoxRegistartionQualification.Items.Count == 0 || comboBoxRegistartionQualification.FindStringExact(Temp) < 0)
+            //{
                 comboBoxRegistartionQualification.SelectedIndex = -1;
-            }
-            else
-            {
-                comboBoxRegistartionQualification.SelectedIndex = comboBoxRegistartionQualification.FindStringExact(Temp);
-            }
+            //}
+            //else
+            //{
+            //    comboBoxRegistartionQualification.SelectedIndex = comboBoxRegistartionQualification.FindStringExact(Temp);
+            //}
         }
         private void LoadEventCombo()
         {
-            string Temp = comboBoxRegistartionEvent.Text.Trim();
+            //string Temp = comboBoxRegistartionEvent.Text.Trim();
 
             int CategoryId = (comboBoxRegistartionCategory.SelectedIndex > -1) ? ((Category)comboBoxRegistartionCategory.Items[comboBoxRegistartionCategory.SelectedIndex]).Id : 0;
             EventManager EventManager = new EventManager();
             comboBoxRegistartionEvent.Items.Clear();
             comboBoxRegistartionEvent.Items.AddRange(EventManager.ListEvent(CategoryId).ToArray<Event>());
 
-            if (string.IsNullOrEmpty(Temp)|| comboBoxRegistartionEvent.Items.Count==0 || comboBoxRegistartionEvent.FindStringExact(Temp)<0)
-            {
+            //if (string.IsNullOrEmpty(Temp)|| comboBoxRegistartionEvent.Items.Count==0 || comboBoxRegistartionEvent.FindStringExact(Temp)<0)
+            //{
                 comboBoxRegistartionEvent.SelectedIndex = -1;
-            }
-            else
-            {
-                comboBoxRegistartionEvent.SelectedIndex = comboBoxRegistartionEvent.FindStringExact(Temp);
-            }
+            //}
+            //else
+            //{
+            //    comboBoxRegistartionEvent.SelectedIndex = comboBoxRegistartionEvent.FindStringExact(Temp);
+            //}
 
         }
         private void LoadSchoolCombo()
@@ -330,16 +344,16 @@ namespace EVENT_MANAGEMENT
                         TextBoxRegId.Text = Register.Id.ToString();
                         TxtRegistartionName.Text = Register.StudentName;
                         TxtRegistartionFathersName.Text = Register.FathersName;
-                        TxtRegistartionEventRollNo.Text = Convert.ToString(000);
+                        TxtRegistartionEventRollNo.Text = Register.EventRollNo.ToString();
                         TxtRegistartionPhoneNo.Text = Register.PhoneNo;
                         TxtRegistrationFee.Text = Register.Fee.ToString();
-
+                        dateTimePickerRegistartionDate.Value = Register.Date;
                         comboBoxRegistartionQualification.SelectedIndex = comboBoxRegistartionQualification.FindStringExact(Register.Qualification.Name);
                         comboBoxRegistartionCategory.SelectedIndex = comboBoxRegistartionCategory.FindStringExact(Register.Category.CategoryName);
                         comboBoxRegistartionEvent.SelectedIndex = comboBoxRegistartionEvent.FindStringExact(Register.Event.EventName);
                         comboBoxRegistartionSchoolName.SelectedIndex = comboBoxRegistartionSchoolName.FindStringExact(Register.School.Name);
 
-                        LblRegistartionRollN.Text = Register.Id.ToString();
+                        TxtRollNo.Text = Register.Id.ToString();
                     }
                 }
             }
@@ -348,14 +362,16 @@ namespace EVENT_MANAGEMENT
 
         private void comboBoxRegistartionCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadQualificationCombo();
-            LoadEventCombo();
-            if(comboBoxRegistartionCategory.SelectedIndex>-1)
+            comboBoxRegistartionEvent.ResetText();
+            if (comboBoxRegistartionCategory.SelectedIndex>-1)
             {
                 comboBoxRegistartionEvent.Enabled = true;
+                LoadEventCombo();
+                comboBoxRegistartionEvent.SelectedIndex = -1;
             }
             else
             {
+                comboBoxRegistartionEvent.SelectedIndex = -1;
                 comboBoxRegistartionEvent.Enabled = false;
             }
         }
@@ -385,6 +401,34 @@ namespace EVENT_MANAGEMENT
                 {
                     e.Handled = true;
                 }
+            }
+        }
+
+        private void BtnRegistartionSave_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                TxtRegistartionName.Select();
+            }
+            if (e.Modifiers == Keys.Shift && e.KeyCode == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                TxtRegistrationFee.Select();
+            }
+        }
+
+        private void TxtRegistartionName_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                TxtRegistartionFathersName.Select();
+            }
+            if (e.Modifiers == Keys.Shift && e.KeyCode == Keys.Tab)
+            {
+                e.IsInputKey = true;
+                BtnRegistartionSave.Select();
             }
         }
     }

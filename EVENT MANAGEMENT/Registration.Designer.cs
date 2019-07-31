@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistration));
             this.listBoxRgistrationlistbox = new System.Windows.Forms.ListBox();
             this.groupBoxRegistrationStudentDetails = new System.Windows.Forms.GroupBox();
+            this.TxtRegistrationFee = new System.Windows.Forms.TextBox();
+            this.LblRegistrationFee = new System.Windows.Forms.Label();
             this.BtnRegistartionSchoolnameNew = new System.Windows.Forms.Button();
             this.dateTimePickerRegistartionDate = new System.Windows.Forms.DateTimePicker();
             this.comboBoxRegistartionEvent = new System.Windows.Forms.ComboBox();
@@ -47,7 +49,6 @@
             this.LblRegistartionEvent = new System.Windows.Forms.Label();
             this.LblRegistartionCategory = new System.Windows.Forms.Label();
             this.LblRegistartionQualification = new System.Windows.Forms.Label();
-            this.LblRegistartionRollN = new System.Windows.Forms.Label();
             this.LblRegistartionDate = new System.Windows.Forms.Label();
             this.LblRegistartionRollNo = new System.Windows.Forms.Label();
             this.LblRegistartionFathersName = new System.Windows.Forms.Label();
@@ -59,10 +60,9 @@
             this.BtnRegistartionSave = new System.Windows.Forms.Button();
             this.BtnRegistartionExit = new System.Windows.Forms.Button();
             this.statusStripRegistartion = new System.Windows.Forms.StatusStrip();
-            this.TextBoxRegId = new System.Windows.Forms.TextBox();
             this.ErrorMsg = new System.Windows.Forms.ToolStripStatusLabel();
-            this.TxtRegistrationFee = new System.Windows.Forms.TextBox();
-            this.LblRegistrationFee = new System.Windows.Forms.Label();
+            this.TextBoxRegId = new System.Windows.Forms.TextBox();
+            this.TxtRollNo = new System.Windows.Forms.TextBox();
             this.groupBoxRegistrationStudentDetails.SuspendLayout();
             this.statusStripRegistartion.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +80,7 @@
             // groupBoxRegistrationStudentDetails
             // 
             this.groupBoxRegistrationStudentDetails.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRollNo);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRegistrationFee);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistrationFee);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.BtnRegistartionSchoolnameNew);
@@ -98,7 +99,6 @@
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionEvent);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionCategory);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionQualification);
-            this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionRollN);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionDate);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionRollNo);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistartionFathersName);
@@ -110,6 +110,27 @@
             this.groupBoxRegistrationStudentDetails.TabIndex = 6;
             this.groupBoxRegistrationStudentDetails.TabStop = false;
             this.groupBoxRegistrationStudentDetails.Text = "Student Details";
+            // 
+            // TxtRegistrationFee
+            // 
+            this.TxtRegistrationFee.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRegistrationFee.Location = new System.Drawing.Point(189, 353);
+            this.TxtRegistrationFee.MaxLength = 10;
+            this.TxtRegistrationFee.Name = "TxtRegistrationFee";
+            this.TxtRegistrationFee.Size = new System.Drawing.Size(120, 22);
+            this.TxtRegistrationFee.TabIndex = 9;
+            this.TxtRegistrationFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtRegistrationFee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtRegistrationFee_KeyPress);
+            // 
+            // LblRegistrationFee
+            // 
+            this.LblRegistrationFee.AutoSize = true;
+            this.LblRegistrationFee.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblRegistrationFee.Location = new System.Drawing.Point(188, 335);
+            this.LblRegistrationFee.Name = "LblRegistrationFee";
+            this.LblRegistrationFee.Size = new System.Drawing.Size(35, 14);
+            this.LblRegistrationFee.TabIndex = 21;
+            this.LblRegistrationFee.Text = "Fee :";
             // 
             // BtnRegistartionSchoolnameNew
             // 
@@ -249,6 +270,7 @@
             this.TxtRegistartionName.Name = "TxtRegistartionName";
             this.TxtRegistartionName.Size = new System.Drawing.Size(356, 22);
             this.TxtRegistartionName.TabIndex = 1;
+            this.TxtRegistartionName.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.TxtRegistartionName_PreviewKeyDown);
             // 
             // LblRegistartionSchoolName
             // 
@@ -300,16 +322,6 @@
             this.LblRegistartionQualification.TabIndex = 9;
             this.LblRegistartionQualification.Text = "Qualification :";
             // 
-            // LblRegistartionRollN
-            // 
-            this.LblRegistartionRollN.AutoSize = true;
-            this.LblRegistartionRollN.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistartionRollN.Location = new System.Drawing.Point(390, 47);
-            this.LblRegistartionRollN.Name = "LblRegistartionRollN";
-            this.LblRegistartionRollN.Size = new System.Drawing.Size(50, 16);
-            this.LblRegistartionRollN.TabIndex = 10;
-            this.LblRegistartionRollN.Text = "000000";
-            // 
             // LblRegistartionDate
             // 
             this.LblRegistartionDate.AutoSize = true;
@@ -356,7 +368,7 @@
             this.BtnRegistartionNew.Location = new System.Drawing.Point(12, 419);
             this.BtnRegistartionNew.Name = "BtnRegistartionNew";
             this.BtnRegistartionNew.Size = new System.Drawing.Size(84, 23);
-            this.BtnRegistartionNew.TabIndex = 7;
+            this.BtnRegistartionNew.TabIndex = 12;
             this.BtnRegistartionNew.Text = "New";
             this.BtnRegistartionNew.UseVisualStyleBackColor = true;
             this.BtnRegistartionNew.Click += new System.EventHandler(this.BtnRegistartionNew_Click);
@@ -367,7 +379,7 @@
             this.BtnRegistartionDelete.Location = new System.Drawing.Point(102, 419);
             this.BtnRegistartionDelete.Name = "BtnRegistartionDelete";
             this.BtnRegistartionDelete.Size = new System.Drawing.Size(84, 23);
-            this.BtnRegistartionDelete.TabIndex = 7;
+            this.BtnRegistartionDelete.TabIndex = 13;
             this.BtnRegistartionDelete.Text = "Delete";
             this.BtnRegistartionDelete.UseVisualStyleBackColor = true;
             this.BtnRegistartionDelete.Click += new System.EventHandler(this.BtnRegistartionDelete_Click);
@@ -378,7 +390,7 @@
             this.BtnRegistartionEdit.Location = new System.Drawing.Point(192, 419);
             this.BtnRegistartionEdit.Name = "BtnRegistartionEdit";
             this.BtnRegistartionEdit.Size = new System.Drawing.Size(75, 23);
-            this.BtnRegistartionEdit.TabIndex = 7;
+            this.BtnRegistartionEdit.TabIndex = 14;
             this.BtnRegistartionEdit.Text = "Edit";
             this.BtnRegistartionEdit.UseVisualStyleBackColor = true;
             this.BtnRegistartionEdit.Click += new System.EventHandler(this.BtnRegistartionEdit_Click);
@@ -389,7 +401,7 @@
             this.BtnRegistartionCancel.Location = new System.Drawing.Point(624, 419);
             this.BtnRegistartionCancel.Name = "BtnRegistartionCancel";
             this.BtnRegistartionCancel.Size = new System.Drawing.Size(78, 23);
-            this.BtnRegistartionCancel.TabIndex = 7;
+            this.BtnRegistartionCancel.TabIndex = 11;
             this.BtnRegistartionCancel.Text = "Cancel";
             this.BtnRegistartionCancel.UseVisualStyleBackColor = true;
             this.BtnRegistartionCancel.Click += new System.EventHandler(this.BtnRegistartionCancel_Click);
@@ -400,10 +412,11 @@
             this.BtnRegistartionSave.Location = new System.Drawing.Point(708, 419);
             this.BtnRegistartionSave.Name = "BtnRegistartionSave";
             this.BtnRegistartionSave.Size = new System.Drawing.Size(75, 23);
-            this.BtnRegistartionSave.TabIndex = 7;
+            this.BtnRegistartionSave.TabIndex = 10;
             this.BtnRegistartionSave.Text = "Save";
             this.BtnRegistartionSave.UseVisualStyleBackColor = true;
             this.BtnRegistartionSave.Click += new System.EventHandler(this.BtnRegistartionSave_Click);
+            this.BtnRegistartionSave.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.BtnRegistartionSave_PreviewKeyDown);
             // 
             // BtnRegistartionExit
             // 
@@ -411,7 +424,7 @@
             this.BtnRegistartionExit.Location = new System.Drawing.Point(789, 419);
             this.BtnRegistartionExit.Name = "BtnRegistartionExit";
             this.BtnRegistartionExit.Size = new System.Drawing.Size(76, 23);
-            this.BtnRegistartionExit.TabIndex = 7;
+            this.BtnRegistartionExit.TabIndex = 15;
             this.BtnRegistartionExit.Text = "Exit";
             this.BtnRegistartionExit.UseVisualStyleBackColor = true;
             this.BtnRegistartionExit.Click += new System.EventHandler(this.BtnRegistartionExit_Click);
@@ -427,6 +440,12 @@
             this.statusStripRegistartion.TabIndex = 8;
             this.statusStripRegistartion.Text = "statusStrip1";
             // 
+            // ErrorMsg
+            // 
+            this.ErrorMsg.Name = "ErrorMsg";
+            this.ErrorMsg.Size = new System.Drawing.Size(39, 17);
+            this.ErrorMsg.Text = "        ";
+            // 
             // TextBoxRegId
             // 
             this.TextBoxRegId.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -434,33 +453,18 @@
             this.TextBoxRegId.Name = "TextBoxRegId";
             this.TextBoxRegId.Size = new System.Drawing.Size(100, 22);
             this.TextBoxRegId.TabIndex = 9;
+            this.TextBoxRegId.Visible = false;
             // 
-            // ErrorMsg
+            // TxtRollNo
             // 
-            this.ErrorMsg.Name = "ErrorMsg";
-            this.ErrorMsg.Size = new System.Drawing.Size(39, 17);
-            this.ErrorMsg.Text = "        ";
-            // 
-            // TxtRegistrationFee
-            // 
-            this.TxtRegistrationFee.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRegistrationFee.Location = new System.Drawing.Point(189, 353);
-            this.TxtRegistrationFee.MaxLength = 10;
-            this.TxtRegistrationFee.Name = "TxtRegistrationFee";
-            this.TxtRegistrationFee.Size = new System.Drawing.Size(120, 22);
-            this.TxtRegistrationFee.TabIndex = 9;
-            this.TxtRegistrationFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.TxtRegistrationFee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtRegistrationFee_KeyPress);
-            // 
-            // LblRegistrationFee
-            // 
-            this.LblRegistrationFee.AutoSize = true;
-            this.LblRegistrationFee.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistrationFee.Location = new System.Drawing.Point(188, 335);
-            this.LblRegistrationFee.Name = "LblRegistrationFee";
-            this.LblRegistrationFee.Size = new System.Drawing.Size(35, 14);
-            this.LblRegistrationFee.TabIndex = 21;
-            this.LblRegistrationFee.Text = "Fee :";
+            this.TxtRollNo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRollNo.Location = new System.Drawing.Point(393, 45);
+            this.TxtRollNo.Name = "TxtRollNo";
+            this.TxtRollNo.ReadOnly = true;
+            this.TxtRollNo.Size = new System.Drawing.Size(68, 22);
+            this.TxtRollNo.TabIndex = 22;
+            this.TxtRollNo.TabStop = false;
+            this.TxtRollNo.Text = "000";
             // 
             // FormRegistration
             // 
@@ -511,7 +515,6 @@
         private System.Windows.Forms.Label LblRegistartionEvent;
         private System.Windows.Forms.Label LblRegistartionCategory;
         private System.Windows.Forms.Label LblRegistartionQualification;
-        private System.Windows.Forms.Label LblRegistartionRollN;
         private System.Windows.Forms.Label LblRegistartionRollNo;
         private System.Windows.Forms.Label LblRegistartionFathersName;
         private System.Windows.Forms.Label LblRegistrationName;
@@ -531,5 +534,6 @@
         private System.Windows.Forms.ToolStripStatusLabel ErrorMsg;
         private System.Windows.Forms.TextBox TxtRegistrationFee;
         private System.Windows.Forms.Label LblRegistrationFee;
+        private System.Windows.Forms.TextBox TxtRollNo;
     }
 }
