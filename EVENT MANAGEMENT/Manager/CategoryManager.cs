@@ -10,16 +10,22 @@ namespace EVENT_MANAGEMENT.Manager
 {
    public class CategoryManager
     {
+        public int?[] CategoryIds { get; set; }
+
         public IList<Category> ListCategory(int QualificationId)
-        {
-           
+        {           
             IList<Category> Category = null;
             using (AccountContext Context = new AccountContext())
             {
-               // int[] CategoryIds = Context.Qualifications.Where(x=>x.)
-
-
-                Category = Context.Categorys.ToList();
+                CategoryIds = Context.QualificationCategorys.Where(x => x.QualificationId == QualificationId).Select(y => y.CategoryId).ToArray();
+                if(CategoryIds.Length>0)
+                {
+                    Category = (from Categorys in Context.Categorys where CategoryIds.Contains(Categorys.Id) select Categorys).ToList<Category>();
+                }
+                else
+                {
+                    Category = (from Categorys in Context.Categorys select Categorys).ToList();
+                }
             }
             return Category;
         }

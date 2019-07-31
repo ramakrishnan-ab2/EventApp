@@ -11,8 +11,26 @@ namespace EVENT_MANAGEMENT.Manager
     
    public class EventManager
     {
-       
-            public IList<Event> ListEvent()
+        public int?[] EventIds { get; set; }
+        public IList<Event> ListEvent(int CategoryId)
+        {
+            IList<Event> Event = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                EventIds = Context.EventCategories.Where(x => x.CategoryId == CategoryId).Select(y => y.EventId).ToArray();
+                if (EventIds.Length>0)
+                {
+                    Event = (from Events in Context.Events where EventIds.Contains(Events.Id) select Events).ToList();
+                }
+                else
+                {
+                    Event = (from Events in Context.Events select Events).ToList();
+                }
+            }
+            return Event;
+        }
+
+        public IList<Event> ListEvent()
             {
                 IList<Event> Event = null;
                 using (AccountContext Context = new AccountContext())

@@ -20,56 +20,7 @@ namespace EVENT_MANAGEMENT
             RegisterManager = new RegisterManager();
             InitializeComponent();
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+   
         private void LoadRegistration()
         {
             listBoxRgistrationlistbox.Items.Clear();
@@ -82,11 +33,31 @@ namespace EVENT_MANAGEMENT
         }
         private void loadCombo()
         {
-
+            LoadQualificationCombo();
+            LoadCategoryCombo();
+            LoadEventCombo();
+            LoadSchoolCombo();
         }
         private void EnableForm(bool enable)
         {
-            if(enable)
+            TxtRegistartionName.ReadOnly = !enable;
+            TxtRegistartionFathersName.ReadOnly = !enable;
+            TxtRegistartionPhoneNo.ReadOnly = !enable;
+            TxtRegistrationFee.ReadOnly = !enable;
+
+            TxtRegistartionName.TabStop = enable;
+            TxtRegistartionFathersName.TabStop = enable;
+            TxtRegistartionPhoneNo.TabStop = enable;
+            TxtRegistrationFee.TabStop = enable;
+
+            comboBoxRegistartionQualification.Enabled = enable;
+            comboBoxRegistartionCategory.Enabled = enable;
+            comboBoxRegistartionEvent.Enabled = false;
+            comboBoxRegistartionSchoolName.Enabled = enable;
+
+            LblRegistartionRollN.Text = Convert.ToString(000);
+
+            if (enable)
             {
                 BtnRegistartionDelete.Enabled = !enable;
                 BtnRegistartionEdit.Enabled = !enable;
@@ -108,6 +79,7 @@ namespace EVENT_MANAGEMENT
         {
             ResetForm();
             EnableForm(true);
+            loadCombo();
             LoadRegistration();
         }
         private void ResetForm()
@@ -125,7 +97,8 @@ namespace EVENT_MANAGEMENT
             comboBoxRegistartionEvent.ResetText();
             comboBoxRegistartionQualification.ResetText();
             comboBoxRegistartionSchoolName.ResetText();
-            LblRegistartionRollN.Text = Convert.ToString(000);          
+            LblRegistartionRollN.Text = Convert.ToString(000);
+            TxtRegistrationFee.Text = "0.00";
         }
         private void BtnRegistartionNew_Click(object sender, EventArgs e)
         {
@@ -135,108 +108,284 @@ namespace EVENT_MANAGEMENT
         }
         private void BtnRegistartionEdit_Click(object sender, EventArgs e)
         {
-            
+            EnableForm(true);
+            TxtRegistartionName.Select();
+        }
+        private void BtnRegistartionDelete_Click(object sender, EventArgs e)
+        {
+            ErrorMsg.Text = "";
+               DialogResult Result = MessageBox.Show("Do you want to delete the "+ TxtRegistartionName.Text+ " registration.", "Delete Confirm",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (Result == DialogResult.Yes)
+            {
+                if(RegisterManager.DeleteRegister(int.Parse(TextBoxRegId.Text)))
+                {
+                    ErrorMsg.Text = "Successfully removed.";
+                }
+                else
+                {
+                    ErrorMsg.Text = "Some thing went wrong, Error in delete";
+                }
+            }
         }
         private Register GetRegisterFromForm()
         {
             Register Register = new Register();
-
             Register.Id = string.IsNullOrEmpty(TextBoxRegId.Text)?0:Convert.ToInt32(TextBoxRegId.Text);
             Register.StudentName = TxtRegistartionName.Text.Trim();
             Register.FathersName = TxtRegistartionFathersName.Text.Trim();
-            // R.Qualification = comboBoxRegistartionQualification.Text.ToString(
-            //R.Event=
-            Register.EventRollNo = Convert.ToInt32(TxtRegistartionEventRollNo.Text.Trim());
-            // R.School=
+            Register.QualificationId = ((Qualification)comboBoxRegistartionQualification.Items[comboBoxRegistartionQualification.SelectedIndex]).Id;
+            Register.CategoryId = ((Category)comboBoxRegistartionCategory.Items[comboBoxRegistartionCategory.SelectedIndex]).Id;
+            Register.EventId = ((Event)comboBoxRegistartionEvent.Items[comboBoxRegistartionEvent.SelectedIndex]).Id;
+            Register.SchoolId = ((School)comboBoxRegistartionSchoolName.Items[comboBoxRegistartionSchoolName.SelectedIndex]).Id;
+
+            Register.EventRollNo = string.IsNullOrEmpty(TxtRegistartionEventRollNo.Text) ?0 :int.Parse(TxtRegistartionEventRollNo.Text);
             Register.PhoneNo = TxtRegistartionPhoneNo.Text.Trim();
             Register.Date = Convert.ToDateTime(dateTimePickerRegistartionDate.Text);
-                 
+            Register.Fee = double.Parse(TxtRegistrationFee.Text);
             return Register;
 
         }
 
-            private void BtnRegistartionSave_Click(object sender, EventArgs e)
+        private void BtnRegistartionSave_Click(object sender, EventArgs e)
+        {
+            if (validate())
             {
-             Cursor.Current = Cursors.WaitCursor;
-             Register R = new Register();
-           
-            if (R.Id == 0)
-            {
-                R.Id = Convert.ToInt32(TextBoxRegId.Text);
-                R.StudentName = TxtRegistartionName.Text.Trim();
-                R.FathersName = TxtRegistartionFathersName.Text.Trim();
-                // R.Qualification = comboBoxRegistartionQualification.Text.ToString(
-                //R.Event=
-                R.EventRollNo = Convert.ToInt32(TxtRegistartionEventRollNo.Text.Trim());
-                // R.School=
-                R.PhoneNo = TxtRegistartionPhoneNo.Text.Trim();
-                R.Date = Convert.ToDateTime(dateTimePickerRegistartionDate.Text);
-
-            }
-            try
-            {
-                if (R.Id==0)
+                Cursor.Current = Cursors.WaitCursor;
+                Register Register = GetRegisterFromForm();
+                if (!RegisterManager.IsSameRegistration(Register))
                 {
-                    RegisterManager RegisterManager = new RegisterManager();
-                    Register Reg = RegisterManager.AddRegister(R);
-                    MessageBox.Show("Saved");
+                    Register RegisterDB = null;
+                    if (Register.Id == 0)
+                    {
+                        Register.EventRollNo = RegisterManager.GetEventRollNo((int)Register.CategoryId, (int)Register.EventId);
+                        RegisterDB = RegisterManager.AddRegister(Register);
+                    }
+                    else
+                    {
+                        RegisterDB = RegisterManager.UpdateRegister(Register);
+                    }
+                    ResetForm();
+                    loadCombo();
+                    LoadRegistration();
+                    listBoxRgistrationlistbox.SelectedIndex = listBoxRgistrationlistbox.FindStringExact(RegisterDB.StudentName);
                 }
                 else
                 {
-                    RegisterManager RegisterManager = new RegisterManager();
-                    Register Reg = RegisterManager.UpdateRegister(R);
-                    MessageBox.Show("Edited");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-
-            }
-           
-            }
-     
-            private void BtnRegistartionExit_Click(object sender, EventArgs e)
-            {
-                this.Close();
-            }
-
-            private void BtnRegistartionCancel_Click(object sender, EventArgs e)
-            {
-                BtnRegistartionNew.Enabled = true;
-                TxtRegistartionEventRollNo.Text = "";
-                TxtRegistartionName.Text = "";
-                TxtRegistartionFathersName.Text = "";
-                TxtRegistartionPhoneNo.Text = "";
-                LblRegistartionRollN.Text = "0000";
-                comboBoxRegistartionCategory.ResetText();
-                comboBoxRegistartionEvent.ResetText();
-                comboBoxRegistartionQualification.ResetText();
-                comboBoxRegistartionSchoolName.ResetText();
-                dateTimePickerRegistartionDate.ResetText();
-
-
-            }
-
-            private void BtnRegistartionSchoolnameNew_Click(object sender, EventArgs e)
-            {
-                FormSchoolRegistration S = new FormSchoolRegistration();
-                S.Show();
-            }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+                    ErrorMsg.Text = "This person already register in "+comboBoxRegistartionEvent.Text+" event ";
+                }               
+            }            
+        }
+        private bool validate()
         {
+            if(string.IsNullOrEmpty(TxtRegistartionName.Text.Trim()))
+            {
+                ErrorMsg.Text = "please enter name";
+                TxtRegistartionName.Select();
+                return false;
+            }
+            if (string.IsNullOrEmpty(TxtRegistartionFathersName.Text.Trim()))
+            {
+                ErrorMsg.Text = "please enter fathers name";
+                TxtRegistartionFathersName.Select();
+                return false;
+            }
+            if (comboBoxRegistartionQualification.SelectedIndex<0)
+            {
+                ErrorMsg.Text = "please select qualification";
+                comboBoxRegistartionQualification.Select();
+                return false;
+            }
+            if (comboBoxRegistartionCategory.SelectedIndex < 0)
+            {
+                ErrorMsg.Text = "please select category";
+                comboBoxRegistartionCategory.Select();
+                return false;
+            }
+            if (comboBoxRegistartionEvent.SelectedIndex < 0)
+            {
+                ErrorMsg.Text = "please select event";
+                comboBoxRegistartionEvent.Select();
+                return false;
+            }
+            if (comboBoxRegistartionSchoolName.SelectedIndex < 0)
+            {
+                ErrorMsg.Text = "please select school";
+                comboBoxRegistartionSchoolName.Select();
+                return false;
+            }
+            if (string.IsNullOrEmpty(TxtRegistartionPhoneNo.Text.Trim()))
+            {
+                ErrorMsg.Text = "please enter phone number";
+                TxtRegistartionPhoneNo.Select();
+                return false;
+            }
 
+            return true;
+        }
+        private void BtnRegistartionExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
+        private void BtnRegistartionCancel_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+            loadCombo();
+            LoadRegistration();
+        }
+
+        private void BtnRegistartionSchoolnameNew_Click(object sender, EventArgs e)
+        {
+            string Temp = comboBoxRegistartionSchoolName.Text;
+            FormSchoolRegistration FormSchoolRegistration = new FormSchoolRegistration();
+            FormSchoolRegistration.ShowDialog();
+            LoadSchoolCombo();
+            if(comboBoxRegistartionSchoolName.Items.Count>0 && comboBoxRegistartionSchoolName.FindStringExact(Temp)>-1)
+            {
+                comboBoxRegistartionSchoolName.FindStringExact(Temp);
+            }
+            else
+            {
+                comboBoxRegistartionSchoolName.SelectedIndex = -1;
+            }
+        }
+        
         private void comboBoxRegistartionQualification_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LoadCategoryCombo();
+        }
+        private void LoadCategoryCombo()
+        {
+            string Temp = comboBoxRegistartionCategory.Text.Trim();
+
+            int QualificationId = (comboBoxRegistartionQualification.SelectedIndex>-1)?((Qualification)comboBoxRegistartionQualification.Items[comboBoxRegistartionQualification.SelectedIndex]).Id:0;
+            CategoryManager CategoryManager =new  CategoryManager();
+            comboBoxRegistartionCategory.Items.Clear();
+            comboBoxRegistartionCategory.Items.AddRange(CategoryManager.ListCategory(QualificationId).ToArray<Category>());
+
+            if (string.IsNullOrEmpty(Temp) || comboBoxRegistartionCategory.Items.Count == 0 || comboBoxRegistartionCategory.FindStringExact(Temp) < 0)
+            {
+                comboBoxRegistartionCategory.SelectedIndex = -1;
+            }
+            else
+            {
+                comboBoxRegistartionCategory.SelectedIndex = comboBoxRegistartionCategory.FindStringExact(Temp);
+            }
+        }
+        private void LoadQualificationCombo()
+        {
+            string Temp = comboBoxRegistartionQualification.Text.Trim();
+
+            int CategoryId = (comboBoxRegistartionCategory.SelectedIndex > -1) ? ((Category)comboBoxRegistartionCategory.Items[comboBoxRegistartionCategory.SelectedIndex]).Id : 0;
+            QualificationManager QualificationManager = new QualificationManager();
+            comboBoxRegistartionQualification.Items.Clear();
+            comboBoxRegistartionQualification.Items.AddRange(QualificationManager.ListQualification(CategoryId).ToArray<Qualification>());
+
+            if (string.IsNullOrEmpty(Temp) || comboBoxRegistartionQualification.Items.Count == 0 || comboBoxRegistartionQualification.FindStringExact(Temp) < 0)
+            {
+                comboBoxRegistartionQualification.SelectedIndex = -1;
+            }
+            else
+            {
+                comboBoxRegistartionQualification.SelectedIndex = comboBoxRegistartionQualification.FindStringExact(Temp);
+            }
+        }
+        private void LoadEventCombo()
+        {
+            string Temp = comboBoxRegistartionEvent.Text.Trim();
+
+            int CategoryId = (comboBoxRegistartionCategory.SelectedIndex > -1) ? ((Category)comboBoxRegistartionCategory.Items[comboBoxRegistartionCategory.SelectedIndex]).Id : 0;
+            EventManager EventManager = new EventManager();
+            comboBoxRegistartionEvent.Items.Clear();
+            comboBoxRegistartionEvent.Items.AddRange(EventManager.ListEvent(CategoryId).ToArray<Event>());
+
+            if (string.IsNullOrEmpty(Temp)|| comboBoxRegistartionEvent.Items.Count==0 || comboBoxRegistartionEvent.FindStringExact(Temp)<0)
+            {
+                comboBoxRegistartionEvent.SelectedIndex = -1;
+            }
+            else
+            {
+                comboBoxRegistartionEvent.SelectedIndex = comboBoxRegistartionEvent.FindStringExact(Temp);
+            }
 
         }
-
+        private void LoadSchoolCombo()
+        {
+            SchoolManager SchoolManager = new SchoolManager();
+            comboBoxRegistartionSchoolName.Items.Clear();
+            comboBoxRegistartionSchoolName.Items.AddRange(SchoolManager.ListSchool().ToArray<School>());
+        }
         private void listBoxRgistrationlistbox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ResetForm();
+            if(listBoxRgistrationlistbox.SelectedIndex>-1)
+            {
+                Register RegisterFF = ((Register)listBoxRgistrationlistbox.Items[listBoxRgistrationlistbox.SelectedIndex]);
+                if (RegisterFF != null)
+                {
+                    Register Register = RegisterManager.GetRegisterById(RegisterFF.Id);
+                    if (Register != null)
+                    {
+                        TextBoxRegId.Text = Register.Id.ToString();
+                        TxtRegistartionName.Text = Register.StudentName;
+                        TxtRegistartionFathersName.Text = Register.FathersName;
+                        TxtRegistartionEventRollNo.Text = Convert.ToString(000);
+                        TxtRegistartionPhoneNo.Text = Register.PhoneNo;
+                        TxtRegistrationFee.Text = Register.Fee.ToString();
 
+                        comboBoxRegistartionQualification.SelectedIndex = comboBoxRegistartionQualification.FindStringExact(Register.Qualification.Name);
+                        comboBoxRegistartionCategory.SelectedIndex = comboBoxRegistartionCategory.FindStringExact(Register.Category.CategoryName);
+                        comboBoxRegistartionEvent.SelectedIndex = comboBoxRegistartionEvent.FindStringExact(Register.Event.EventName);
+                        comboBoxRegistartionSchoolName.SelectedIndex = comboBoxRegistartionSchoolName.FindStringExact(Register.School.Name);
+
+                        LblRegistartionRollN.Text = Register.Id.ToString();
+                    }
+                }
+            }
+            EnableForm(false);
+        }
+
+        private void comboBoxRegistartionCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadQualificationCombo();
+            LoadEventCombo();
+            if(comboBoxRegistartionCategory.SelectedIndex>-1)
+            {
+                comboBoxRegistartionEvent.Enabled = true;
+            }
+            else
+            {
+                comboBoxRegistartionEvent.Enabled = false;
+            }
+        }
+
+        private void TxtRegistartionPhoneNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && e.KeyChar != Convert.ToChar(Keys.Enter) && e.KeyChar != Convert.ToChar(Keys.Escape) && !char.IsControl(e.KeyChar))
+            {
+
+                if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void TxtRegistrationFee_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && e.KeyChar != Convert.ToChar(Keys.Enter) && e.KeyChar != Convert.ToChar(Keys.Escape) && !char.IsControl(e.KeyChar))
+            {
+
+                if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (e.KeyChar == '.')))
+                {
+                    e.Handled = true;
+                }
+                else if (e.KeyChar == '.' && TxtRegistrationFee.Text.IndexOf('.') > -1)
+                {
+                    e.Handled = true;
+                }
+            }
         }
     }
 }

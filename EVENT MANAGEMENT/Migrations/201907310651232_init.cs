@@ -3,7 +3,7 @@ namespace EVENT_MANAGEMENT.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class a : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -78,18 +78,22 @@ namespace EVENT_MANAGEMENT.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         StudentName = c.String(unicode: false),
                         QualificationId = c.Int(),
+                        CategoryId = c.Int(),
                         EventId = c.Int(),
                         EventRollNo = c.Int(nullable: false),
                         SchoolId = c.Int(),
                         PhoneNo = c.String(unicode: false),
                         FathersName = c.String(unicode: false),
                         Date = c.DateTime(nullable: false),
+                        Fee = c.Double(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Categories", t => t.CategoryId)
                 .ForeignKey("dbo.Events", t => t.EventId)
                 .ForeignKey("dbo.Qualifications", t => t.QualificationId)
                 .ForeignKey("dbo.Schools", t => t.SchoolId)
                 .Index(t => t.QualificationId)
+                .Index(t => t.CategoryId)
                 .Index(t => t.EventId)
                 .Index(t => t.SchoolId);
             
@@ -140,6 +144,7 @@ namespace EVENT_MANAGEMENT.Migrations
             DropForeignKey("dbo.Registers", "SchoolId", "dbo.Schools");
             DropForeignKey("dbo.Registers", "QualificationId", "dbo.Qualifications");
             DropForeignKey("dbo.Registers", "EventId", "dbo.Events");
+            DropForeignKey("dbo.Registers", "CategoryId", "dbo.Categories");
             DropForeignKey("dbo.QualificationCategories", "QualificationId", "dbo.Qualifications");
             DropForeignKey("dbo.QualificationCategories", "CategoryId", "dbo.Categories");
             DropForeignKey("dbo.EventCategories", "EventId", "dbo.Events");
@@ -148,6 +153,7 @@ namespace EVENT_MANAGEMENT.Migrations
             DropIndex("dbo.Results", new[] { "JudgesId" });
             DropIndex("dbo.Registers", new[] { "SchoolId" });
             DropIndex("dbo.Registers", new[] { "EventId" });
+            DropIndex("dbo.Registers", new[] { "CategoryId" });
             DropIndex("dbo.Registers", new[] { "QualificationId" });
             DropIndex("dbo.QualificationCategories", new[] { "CategoryId" });
             DropIndex("dbo.QualificationCategories", new[] { "QualificationId" });

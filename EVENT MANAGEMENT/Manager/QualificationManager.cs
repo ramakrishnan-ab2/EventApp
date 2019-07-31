@@ -10,14 +10,33 @@ namespace EVENT_MANAGEMENT.Manager
 {
    public class QualificationManager
     {
-        public IList<Qualification> ListQualification()
+        public int?[] QualificationIds { get; set; }
+
+        public IList<Qualification> ListQualification(int CategoryId)
         {
             IList<Qualification> Qualification = null;
             using (AccountContext Context = new AccountContext())
             {
-                Qualification = Context.Qualifications.Distinct().ToList();
+                 QualificationIds = Context.QualificationCategorys.Where(x => x.CategoryId == CategoryId).Select(y => y.QualificationId).ToArray();
+                if (QualificationIds.Length >0)
+                {
+                    Qualification = (from Qualifications in Context.Qualifications where QualificationIds.Contains(Qualifications.Id) select Qualifications).ToList();
+                }
+                else
+                {
+                    Qualification = (from Qualifications in Context.Qualifications select Qualifications).ToList();
+                }
             }
             return Qualification;
         }
+        //public IList<Qualification> ListQualification()
+        //{
+        //    IList<Qualification> Qualification = null;
+        //    using (AccountContext Context = new AccountContext())
+        //    {
+        //        Qualification = Context.Qualifications.Distinct().ToList();
+        //    }
+        //    return Qualification;
+        //}
     }
 }
