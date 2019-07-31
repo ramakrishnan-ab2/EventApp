@@ -37,11 +37,11 @@
             this.LblSchoolRegistrationSchoolName = new System.Windows.Forms.Label();
             this.BtnSchoolRegistrationDelete = new System.Windows.Forms.Button();
             this.BtnSchoolRegistrationNew = new System.Windows.Forms.Button();
-            this.listBoxSchoolRegistration = new System.Windows.Forms.ListBox();
             this.LblSchoolRegistrationAddress = new System.Windows.Forms.Label();
             this.groupBoxSchoolRegistrationSchoolDetails = new System.Windows.Forms.GroupBox();
             this.statusStripBtnSchoolRegistration = new System.Windows.Forms.StatusStrip();
             this.TxtSchoolRegId = new System.Windows.Forms.TextBox();
+            this.listBoxSchoolRegistration = new System.Windows.Forms.ListBox();
             this.groupBoxSchoolRegistrationSchoolDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,17 +138,6 @@
             this.BtnSchoolRegistrationNew.UseVisualStyleBackColor = true;
             this.BtnSchoolRegistrationNew.Click += new System.EventHandler(this.BtnSchoolRegistrationNew_Click);
             // 
-            // listBoxSchoolRegistration
-            // 
-            this.listBoxSchoolRegistration.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxSchoolRegistration.FormattingEnabled = true;
-            this.listBoxSchoolRegistration.ItemHeight = 16;
-            this.listBoxSchoolRegistration.Location = new System.Drawing.Point(12, 9);
-            this.listBoxSchoolRegistration.Name = "listBoxSchoolRegistration";
-            this.listBoxSchoolRegistration.Size = new System.Drawing.Size(264, 340);
-            this.listBoxSchoolRegistration.TabIndex = 8;
-            this.listBoxSchoolRegistration.SelectedIndexChanged += new System.EventHandler(this.listBoxSchoolRegistration_SelectedIndexChanged);
-            // 
             // LblSchoolRegistrationAddress
             // 
             this.LblSchoolRegistrationAddress.AutoSize = true;
@@ -173,6 +162,7 @@
             this.groupBoxSchoolRegistrationSchoolDetails.TabIndex = 9;
             this.groupBoxSchoolRegistrationSchoolDetails.TabStop = false;
             this.groupBoxSchoolRegistrationSchoolDetails.Text = "School Details";
+            this.groupBoxSchoolRegistrationSchoolDetails.Enter += new System.EventHandler(this.groupBoxSchoolRegistrationSchoolDetails_Enter);
             // 
             // statusStripBtnSchoolRegistration
             // 
@@ -190,11 +180,21 @@
             this.TxtSchoolRegId.Size = new System.Drawing.Size(100, 21);
             this.TxtSchoolRegId.TabIndex = 17;
             // 
+            // listBoxSchoolRegistration
+            // 
+            this.listBoxSchoolRegistration.FormattingEnabled = true;
+            this.listBoxSchoolRegistration.Location = new System.Drawing.Point(12, 39);
+            this.listBoxSchoolRegistration.Name = "listBoxSchoolRegistration";
+            this.listBoxSchoolRegistration.Size = new System.Drawing.Size(264, 316);
+            this.listBoxSchoolRegistration.TabIndex = 18;
+            this.listBoxSchoolRegistration.SelectedIndexChanged += new System.EventHandler(this.listBoxSchoolRegistration_SelectedIndexChanged);
+            // 
             // FormSchoolRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 423);
+            this.Controls.Add(this.listBoxSchoolRegistration);
             this.Controls.Add(this.TxtSchoolRegId);
             this.Controls.Add(this.statusStripBtnSchoolRegistration);
             this.Controls.Add(this.BtnSchoolRegistrationExit);
@@ -203,7 +203,6 @@
             this.Controls.Add(this.BtnSchoolRegistrationEdit);
             this.Controls.Add(this.BtnSchoolRegistrationDelete);
             this.Controls.Add(this.BtnSchoolRegistrationNew);
-            this.Controls.Add(this.listBoxSchoolRegistration);
             this.Controls.Add(this.groupBoxSchoolRegistrationSchoolDetails);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
@@ -230,10 +229,10 @@
         private System.Windows.Forms.Label LblSchoolRegistrationSchoolName;
         private System.Windows.Forms.Button BtnSchoolRegistrationDelete;
         private System.Windows.Forms.Button BtnSchoolRegistrationNew;
-        private System.Windows.Forms.ListBox listBoxSchoolRegistration;
         private System.Windows.Forms.Label LblSchoolRegistrationAddress;
         private System.Windows.Forms.GroupBox groupBoxSchoolRegistrationSchoolDetails;
         private System.Windows.Forms.StatusStrip statusStripBtnSchoolRegistration;
         private System.Windows.Forms.TextBox TxtSchoolRegId;
+        private System.Windows.Forms.ListBox listBoxSchoolRegistration;
     }
 }
