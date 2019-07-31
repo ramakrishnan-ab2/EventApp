@@ -164,6 +164,7 @@
             this.btnResultReportExit.TabIndex = 21;
             this.btnResultReportExit.Text = "Exit";
             this.btnResultReportExit.UseVisualStyleBackColor = true;
+            this.btnResultReportExit.Click += new System.EventHandler(this.btnResultReportExit_Click);
             // 
             // btnResultReportPrint
             // 

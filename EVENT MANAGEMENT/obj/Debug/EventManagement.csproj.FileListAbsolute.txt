@@ -90,7 +90,6 @@ E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EntityFramework.xml
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\EntityFramework.SqlServer.xml
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Google.Protobuf.xml
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Renci.SshNet.xml
-C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.a.resources
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\envdte.dll
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
@@ -107,3 +106,18 @@ E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
 E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojResolveAssemblyReference.cache
 E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\envdte.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\stdole.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.MSXML.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\envdte.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
