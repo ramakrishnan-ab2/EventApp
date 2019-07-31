@@ -11,24 +11,25 @@ namespace EVENT_MANAGEMENT.Manager
     
    public class EventManager
     {
-        private static volatile EventManager instance;
-        private static object syncRoot = new Object();
-        public static EventManager Instance
+        public int?[] EventIds { get; set; }
+        public IList<Event> ListEvent(int CategoryId)
         {
-            get
+            IList<Event> Event = null;
+            using (AccountContext Context = new AccountContext())
             {
-                if (instance == null)
+                EventIds = Context.EventCategories.Where(x => x.CategoryId == CategoryId).Select(y => y.EventId).ToArray();
+                if (EventIds.Length>0)
                 {
-                    lock (syncRoot)
-                    {
-                        if (instance == null)
-                            instance = new EventManager();
-                    }
+                    Event = (from Events in Context.Events where EventIds.Contains(Events.Id) select Events).ToList();
                 }
-
-                return instance;
+                else
+                {
+                    Event = (from Events in Context.Events select Events).ToList();
+                }
             }
+            return Event;
         }
+
         public IList<Event> ListEvent()
             {
                 IList<Event> Event = null;

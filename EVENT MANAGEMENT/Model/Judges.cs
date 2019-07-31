@@ -12,5 +12,9 @@ namespace EVENT_MANAGEMENT.Model
         [Key]
         public int Id { get; set; }
         public string JudgeName{ get; set; }
+        public override string ToString()
+        {
+            return JudgeName;
+        }
     }
 }
