@@ -43,6 +43,15 @@ namespace EVENT_MANAGEMENT.Manager
            
            
         }
+        public IList<School> ListSchool()
+        {
+            IList<School> SchoolInfo = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                SchoolInfo = Context.Schools.ToList();
+            }
+            return SchoolInfo;
+        }
         public School GetSchoolByName(String Name)
         {
             School SchoolInfo = null;
