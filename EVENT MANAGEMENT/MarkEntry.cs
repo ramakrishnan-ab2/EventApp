@@ -15,40 +15,57 @@ namespace EVENT_MANAGEMENT
 {
     public partial class FormMarkEntry : Form
     {
+        MarkEntryManager MarkEntryManager = null;
         public FormMarkEntry()
         {
+            MarkEntryManager = new MarkEntryManager(); 
             InitializeComponent();
         }
       
-        public IList<Event> ListEventId(long EventId)
-        {
-            using (AccountContext Context = new AccountContext())
-            {
-                IList<Event> EventInfo = (from Event in Context.Events select Event).ToList();
-                return EventInfo;
-            }
-        }
+      
         private void MarkEntry_Load(object sender, EventArgs e)
-        {
-            int i;
-            dataGridView1.Rows.Clear();
-            Event a = new Event();
-            foreach (DataGridViewRow dr in dataGridView1.Rows)
-            {
-
-
-                for (i = 0; i <= dataGridView1.Rows.Count; i++)
-                {
-                    a.Id = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value.ToString());
-                    a.EventName = dataGridView1.Rows[i].Cells[1].Value.ToString();
-                    dataGridView1.Rows.Add(a);
-                    dataGridView1.DataSource = a.EventName.ToList();
-                }
-            }
+        { 
+                LoadEvent();
            
 
         }
-
+        private void LoadEvent()
+        {
+            string FilterString = toolStripComboBox1.Text.Trim();
+            toolStripComboBox1.Items.Clear();
+            IList<Event> Events =MarkEntryManager.ListEvent();
+            foreach (var lEvent in Events)
+            {
+                
+                    toolStripComboBox1.Items.Add(lEvent);
+                
+                if (toolStripComboBox1.Items.Count > 0)
+                {
+                    toolStripComboBox1.SelectedIndex = 0;
+                }
+                Event CurrencyFromDB = GetEventByName();
+                if (CurrencyFromDB != null)
+                {
+                   
+                    var CurrencyPricision = CurrencyFromDB.EventName;
+                    toolStripComboBox1.SelectedIndex = toolStripComboBox1.FindStringExact("" + CurrencyFromDB.EventName);
+                }
+            }
+        }
+        private Event GetEventByName()
+        {
+            int Index =toolStripComboBox1.SelectedIndex;
+            if (Index > -1)
+            {
+                Event lCurrency = (Event)toolStripComboBox1.Items[Index];
+                if (lCurrency != null)
+                {
+                    Event CurrencyFromDB = MarkEntryManager.GetEventById(lCurrency.Id);
+                    return CurrencyFromDB;
+                }
+            }
+            return null;
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -56,17 +73,33 @@ namespace EVENT_MANAGEMENT
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            Event Eve = new Event();
 
+            MarkEntryManager MarkEntryManager = new MarkEntryManager();
+            Event Reg = MarkEntryManager.AddEvent(Eve);
+            MessageBox.Show("Saved");
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
         }
-
+        private void EnableButtons(bool Enable)
+        {
+            btnMarkSave.Enabled = Enable;
+            btnMarkExit.Enabled = Enable;
+           
+        }
+        private void ResetForm()
+        {
+            dataGridView1.Rows.Clear();
+            toolStripComboBox1.SelectedIndex = -1;
+            EnableButtons(true);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            ResetForm();
         }
 
         private void toolStripComboBox1_Click(object sender, EventArgs e)
@@ -85,7 +118,7 @@ namespace EVENT_MANAGEMENT
 
         private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-
+           
         }
     }
 }

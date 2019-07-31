@@ -33,14 +33,14 @@
             this.EventRollNo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Judges = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.AvgMark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnMarkExit = new System.Windows.Forms.Button();
+            this.btnMarkSave = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMarkCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,27 +86,27 @@
             this.AvgMark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.AvgMark.Width = 125;
             // 
-            // button3
+            // btnMarkExit
             // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(497, 399);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 28);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Exit";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnMarkExit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarkExit.Location = new System.Drawing.Point(497, 399);
+            this.btnMarkExit.Name = "btnMarkExit";
+            this.btnMarkExit.Size = new System.Drawing.Size(93, 28);
+            this.btnMarkExit.TabIndex = 24;
+            this.btnMarkExit.Text = "Exit";
+            this.btnMarkExit.UseVisualStyleBackColor = true;
+            this.btnMarkExit.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnMarkSave
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(394, 399);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 28);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnMarkSave.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarkSave.Location = new System.Drawing.Point(394, 399);
+            this.btnMarkSave.Name = "btnMarkSave";
+            this.btnMarkSave.Size = new System.Drawing.Size(97, 28);
+            this.btnMarkSave.TabIndex = 25;
+            this.btnMarkSave.Text = "Save";
+            this.btnMarkSave.UseVisualStyleBackColor = true;
+            this.btnMarkSave.Click += new System.EventHandler(this.button2_Click);
             // 
             // statusStrip1
             // 
@@ -153,26 +153,26 @@
             this.toolStripLabel2.Text = "Go";
             this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
-            // button1
+            // btnMarkCancel
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(291, 399);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 28);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnMarkCancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarkCancel.Location = new System.Drawing.Point(291, 399);
+            this.btnMarkCancel.Name = "btnMarkCancel";
+            this.btnMarkCancel.Size = new System.Drawing.Size(97, 28);
+            this.btnMarkCancel.TabIndex = 27;
+            this.btnMarkCancel.Text = "Cancel";
+            this.btnMarkCancel.UseVisualStyleBackColor = true;
+            this.btnMarkCancel.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormMarkEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(606, 473);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnMarkCancel);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnMarkExit);
+            this.Controls.Add(this.btnMarkSave);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormMarkEntry";
@@ -190,14 +190,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnMarkExit;
+        private System.Windows.Forms.Button btnMarkSave;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMarkCancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn SlNo;
         private System.Windows.Forms.DataGridViewComboBoxColumn EventRollNo;
         private System.Windows.Forms.DataGridViewComboBoxColumn Judges;

@@ -11,8 +11,25 @@ namespace EVENT_MANAGEMENT.Manager
     
    public class EventManager
     {
-       
-            public IList<Event> ListEvent()
+        private static volatile EventManager instance;
+        private static object syncRoot = new Object();
+        public static EventManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (instance == null)
+                            instance = new EventManager();
+                    }
+                }
+
+                return instance;
+            }
+        }
+        public IList<Event> ListEvent()
             {
                 IList<Event> Event = null;
                 using (AccountContext Context = new AccountContext())

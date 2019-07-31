@@ -115,7 +115,7 @@ namespace EVENT_MANAGEMENT
             TextBoxRegId.Text = Convert.ToString(0);
             TxtRegistartionName.Text = "";
             TxtRegistartionFathersName.Text = "";
-            TxtRegistartionEventRollNo.Text = Convert.ToString(000);
+            TxtRegistartionEventRollNo.Text = Convert.ToString(000000);
             TxtRegistartionPhoneNo.Text = "";
             comboBoxRegistartionCategory.SelectedIndex=-1;
             comboBoxRegistartionEvent.SelectedIndex = -1;
@@ -125,7 +125,7 @@ namespace EVENT_MANAGEMENT
             comboBoxRegistartionEvent.ResetText();
             comboBoxRegistartionQualification.ResetText();
             comboBoxRegistartionSchoolName.ResetText();
-            LblRegistartionRollN.Text = Convert.ToString(000);          
+            LblRegistartionRollN.Text = Convert.ToString(000000);          
         }
         private void BtnRegistartionNew_Click(object sender, EventArgs e)
         {
