@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistration));
             this.listBoxRgistrationlistbox = new System.Windows.Forms.ListBox();
             this.groupBoxRegistrationStudentDetails = new System.Windows.Forms.GroupBox();
@@ -64,23 +65,28 @@
             this.ErrorMsg = new System.Windows.Forms.ToolStripStatusLabel();
             this.TextBoxRegId = new System.Windows.Forms.TextBox();
             this.BtnRegistrationPrint = new System.Windows.Forms.Button();
+            this.ImageList = new System.Windows.Forms.ImageList(this.components);
+            this.PicBox = new System.Windows.Forms.PictureBox();
+            this.TxtRegistrationSearch = new EVENT_MANAGEMENT.Control.DelayBox();
             this.groupBoxRegistrationStudentDetails.SuspendLayout();
             this.statusStripRegistartion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxRgistrationlistbox
             // 
             this.listBoxRgistrationlistbox.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxRgistrationlistbox.ItemHeight = 14;
-            this.listBoxRgistrationlistbox.Location = new System.Drawing.Point(12, 12);
+            this.listBoxRgistrationlistbox.Location = new System.Drawing.Point(12, 37);
             this.listBoxRgistrationlistbox.Name = "listBoxRgistrationlistbox";
-            this.listBoxRgistrationlistbox.Size = new System.Drawing.Size(236, 396);
+            this.listBoxRgistrationlistbox.Size = new System.Drawing.Size(236, 368);
             this.listBoxRgistrationlistbox.TabIndex = 0;
             this.listBoxRgistrationlistbox.SelectedIndexChanged += new System.EventHandler(this.listBoxRgistrationlistbox_SelectedIndexChanged);
             // 
             // groupBoxRegistrationStudentDetails
             // 
             this.groupBoxRegistrationStudentDetails.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBoxRegistrationStudentDetails.Controls.Add(this.PicBox);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRollNo);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.TxtRegistrationFee);
             this.groupBoxRegistrationStudentDetails.Controls.Add(this.LblRegistrationFee);
@@ -107,7 +113,7 @@
             this.groupBoxRegistrationStudentDetails.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxRegistrationStudentDetails.Location = new System.Drawing.Point(254, 12);
             this.groupBoxRegistrationStudentDetails.Name = "groupBoxRegistrationStudentDetails";
-            this.groupBoxRegistrationStudentDetails.Size = new System.Drawing.Size(620, 396);
+            this.groupBoxRegistrationStudentDetails.Size = new System.Drawing.Size(620, 393);
             this.groupBoxRegistrationStudentDetails.TabIndex = 6;
             this.groupBoxRegistrationStudentDetails.TabStop = false;
             this.groupBoxRegistrationStudentDetails.Text = "Student Details";
@@ -126,7 +132,7 @@
             // TxtRegistrationFee
             // 
             this.TxtRegistrationFee.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtRegistrationFee.Location = new System.Drawing.Point(444, 317);
+            this.TxtRegistrationFee.Location = new System.Drawing.Point(491, 355);
             this.TxtRegistrationFee.MaxLength = 10;
             this.TxtRegistrationFee.Name = "TxtRegistrationFee";
             this.TxtRegistrationFee.Size = new System.Drawing.Size(120, 22);
@@ -140,7 +146,7 @@
             // 
             this.LblRegistrationFee.AutoSize = true;
             this.LblRegistrationFee.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblRegistrationFee.Location = new System.Drawing.Point(443, 299);
+            this.LblRegistrationFee.Location = new System.Drawing.Point(549, 335);
             this.LblRegistrationFee.Name = "LblRegistrationFee";
             this.LblRegistrationFee.Size = new System.Drawing.Size(35, 14);
             this.LblRegistrationFee.TabIndex = 21;
@@ -481,12 +487,40 @@
             this.BtnRegistrationPrint.UseVisualStyleBackColor = true;
             this.BtnRegistrationPrint.Click += new System.EventHandler(this.BtnRegistrationPrint_Click);
             // 
+            // ImageList
+            // 
+            this.ImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImageList.ImageStream")));
+            this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ImageList.Images.SetKeyName(0, "rotary.jpeg");
+            // 
+            // PicBox
+            // 
+            this.PicBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PicBox.Image = global::EVENT_MANAGEMENT.Properties.Resources.rotary;
+            this.PicBox.Location = new System.Drawing.Point(590, 299);
+            this.PicBox.Name = "PicBox";
+            this.PicBox.Size = new System.Drawing.Size(21, 50);
+            this.PicBox.TabIndex = 23;
+            this.PicBox.TabStop = false;
+            this.PicBox.Visible = false;
+            // 
+            // TxtRegistrationSearch
+            // 
+            this.TxtRegistrationSearch.Delay = 1000;
+            this.TxtRegistrationSearch.Location = new System.Drawing.Point(12, 12);
+            this.TxtRegistrationSearch.Name = "TxtRegistrationSearch";
+            this.TxtRegistrationSearch.Size = new System.Drawing.Size(236, 21);
+            this.TxtRegistrationSearch.TabIndex = 24;
+            this.TxtRegistrationSearch.TextChanged += new System.EventHandler(this.TxtRegistrationSearch_TextChanged);
+            this.TxtRegistrationSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtRegistrationSearch_KeyDown);
+            // 
             // FormRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(886, 473);
+            this.Controls.Add(this.TxtRegistrationSearch);
             this.Controls.Add(this.BtnRegistrationPrint);
             this.Controls.Add(this.TextBoxRegId);
             this.Controls.Add(this.statusStripRegistartion);
@@ -510,6 +544,7 @@
             this.groupBoxRegistrationStudentDetails.PerformLayout();
             this.statusStripRegistartion.ResumeLayout(false);
             this.statusStripRegistartion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,5 +587,8 @@
         private System.Windows.Forms.Label LblRegistrationFee;
         private System.Windows.Forms.TextBox TxtRollNo;
         private System.Windows.Forms.Button BtnRegistrationPrint;
+        private System.Windows.Forms.ImageList ImageList;
+        private System.Windows.Forms.PictureBox PicBox;
+        private Control.DelayBox TxtRegistrationSearch;
     }
 }

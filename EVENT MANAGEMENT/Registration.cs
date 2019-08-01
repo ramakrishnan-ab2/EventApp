@@ -1,5 +1,6 @@
 ﻿using EVENT_MANAGEMENT.Manager;
 using EVENT_MANAGEMENT.Model;
+using EVENT_MANAGEMENT.Printing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,13 +24,22 @@ namespace EVENT_MANAGEMENT
    
         private void LoadRegistration()
         {
+            string FilterString = TxtRegistrationSearch.Text.Trim();
             listBoxRgistrationlistbox.Items.Clear();
             IList<Register> Register = RegisterManager.ListRegistration();
-            if(Register!=null && Register.Count>0)
+            foreach (var lRegister in Register)
             {
-                listBoxRgistrationlistbox.Items.AddRange(Register.ToArray<Register>());
+                if (FilterString == null || string.IsNullOrEmpty(FilterString.Trim()) || lRegister.StudentName.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1 || lRegister.PhoneNo.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1)
+                {
+                    listBoxRgistrationlistbox.Items.Add(lRegister);
+                }
+            }
+
+            if (listBoxRgistrationlistbox.Items.Count > 0)
+            {
                 listBoxRgistrationlistbox.SelectedIndex = 0;
-            }            
+            }
+                       
         }
         private void loadCombo()
         {
@@ -40,6 +50,19 @@ namespace EVENT_MANAGEMENT
         }
         private void EnableForm(bool enable)
         {
+            if (listBoxRgistrationlistbox.Items.Count > 0)
+            {
+                TxtRegistrationSearch.ReadOnly = enable;
+                TxtRegistrationSearch.TabStop = !enable;
+                listBoxRgistrationlistbox.Enabled = !enable;
+            }
+            else
+            {
+                listBoxRgistrationlistbox.Enabled = false;
+                TxtRegistrationSearch.ReadOnly = true;
+                TxtRegistrationSearch.TabStop = false;
+                BtnRegistartionNew.Select();
+            }
             TxtRegistartionName.ReadOnly = !enable;
             TxtRegistartionFathersName.ReadOnly = !enable;
             TxtRegistartionPhoneNo.ReadOnly = !enable;
@@ -58,6 +81,7 @@ namespace EVENT_MANAGEMENT
 
             if (enable)
             {
+                
                 BtnRegistrationPrint.Enabled = !enable;
                 BtnRegistartionDelete.Enabled = !enable;
                 BtnRegistartionEdit.Enabled = !enable;
@@ -67,9 +91,19 @@ namespace EVENT_MANAGEMENT
             }
             else
             {
-                BtnRegistrationPrint.Enabled = !enable;
-                BtnRegistartionDelete.Enabled = !enable;
-                BtnRegistartionEdit.Enabled = !enable;
+                if (listBoxRgistrationlistbox.SelectedIndex < 0)
+                {
+                    BtnRegistrationPrint.Enabled =enable;
+                    BtnRegistartionDelete.Enabled = enable;
+                    BtnRegistartionEdit.Enabled = enable;
+                }
+                else
+                {
+                    BtnRegistrationPrint.Enabled = !enable;
+                    BtnRegistartionDelete.Enabled = !enable;
+                    BtnRegistartionEdit.Enabled = !enable;
+                }
+                
                 BtnRegistartionNew.Enabled = !enable;
                 BtnRegistartionSave.Enabled = enable;
                 BtnRegistartionCancel.Enabled = enable;
@@ -79,7 +113,7 @@ namespace EVENT_MANAGEMENT
         private void FormRegistration_Load(object sender, EventArgs e)
         {
             ResetForm();
-            EnableForm(true);
+            EnableForm(false);
             loadCombo();
             LoadRegistration();
         }
@@ -126,6 +160,11 @@ namespace EVENT_MANAGEMENT
                 if(RegisterManager.DeleteRegister(int.Parse(TextBoxRegId.Text)))
                 {
                     ErrorMsg.Text = "Successfully removed.";
+                    ResetForm();
+                    loadCombo();
+                    LoadRegistration();
+                    TxtRegistrationSearch.Clear();
+                    EnableForm(false);
                 }
                 else
                 {
@@ -195,6 +234,12 @@ namespace EVENT_MANAGEMENT
                 TxtRegistartionFathersName.Select();
                 return false;
             }
+            if (string.IsNullOrEmpty(TxtRegistartionPhoneNo.Text.Trim()))
+            {
+                ErrorMsg.Text = "please enter phone number";
+                TxtRegistartionPhoneNo.Select();
+                return false;
+            }
             if (comboBoxRegistartionQualification.SelectedIndex<0)
             {
                 ErrorMsg.Text = "please select qualification";
@@ -219,12 +264,7 @@ namespace EVENT_MANAGEMENT
                 comboBoxRegistartionSchoolName.Select();
                 return false;
             }
-            if (string.IsNullOrEmpty(TxtRegistartionPhoneNo.Text.Trim()))
-            {
-                ErrorMsg.Text = "please enter phone number";
-                TxtRegistartionPhoneNo.Select();
-                return false;
-            }
+            
 
             return true;
         }
@@ -238,6 +278,7 @@ namespace EVENT_MANAGEMENT
             ResetForm();
             loadCombo();
             LoadRegistration();
+            EnableForm(false);
         }
 
         private void BtnRegistartionSchoolnameNew_Click(object sender, EventArgs e)
@@ -435,8 +476,27 @@ namespace EVENT_MANAGEMENT
 
         private void BtnRegistrationPrint_Click(object sender, EventArgs e)
         {
-
+            RegistrationPrinting RegistrationPrinting = new RegistrationPrinting();
+            RegistrationPrinting.GenerateRegistrationPrinting(int.Parse(TextBoxRegId.Text),PicBox.Image);
         }
+
+        private void TxtRegistrationSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                listBoxRgistrationlistbox.Select();
+            }
+            
+        }
+        private void TxtRegistrationSearch_TextChanged(object sender, EventArgs e)
+        {         
+            ResetForm();
+            loadCombo();
+            LoadRegistration();
+            if (listBoxRgistrationlistbox.Items.Count > 0) { BtnRegistartionEdit.Enabled = true; BtnRegistartionDelete.Enabled = true; }
+            else { BtnRegistartionEdit.Enabled = false; BtnRegistartionDelete.Enabled = false; }
+        }
+        
     }
 }
 
