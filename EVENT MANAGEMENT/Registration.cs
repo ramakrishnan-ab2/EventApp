@@ -58,6 +58,7 @@ namespace EVENT_MANAGEMENT
 
             if (enable)
             {
+                BtnRegistrationPrint.Enabled = !enable;
                 BtnRegistartionDelete.Enabled = !enable;
                 BtnRegistartionEdit.Enabled = !enable;
                 BtnRegistartionNew.Enabled = !enable;
@@ -66,6 +67,7 @@ namespace EVENT_MANAGEMENT
             }
             else
             {
+                BtnRegistrationPrint.Enabled = !enable;
                 BtnRegistartionDelete.Enabled = !enable;
                 BtnRegistartionEdit.Enabled = !enable;
                 BtnRegistartionNew.Enabled = !enable;
@@ -261,7 +263,6 @@ namespace EVENT_MANAGEMENT
             {
                 comboBoxRegistartionCategory.Enabled = true;
                 LoadCategoryCombo();
-                comboBoxRegistartionCategory.SelectedIndex = -1;
             }
             else
             {
@@ -278,10 +279,10 @@ namespace EVENT_MANAGEMENT
             comboBoxRegistartionCategory.Items.Clear();
             comboBoxRegistartionCategory.Items.AddRange(CategoryManager.ListCategory(QualificationId).ToArray<Category>());
 
-            //if (string.IsNullOrEmpty(Temp) || comboBoxRegistartionCategory.Items.Count == 0 || comboBoxRegistartionCategory.FindStringExact(Temp) < 0)
-            //{
-                comboBoxRegistartionCategory.SelectedIndex = -1;
-            //}
+            if (comboBoxRegistartionCategory.Items.Count > 0 )
+            {
+                comboBoxRegistartionCategory.SelectedIndex = 0;
+            }
             //else
             //{
             //    comboBoxRegistartionCategory.SelectedIndex = comboBoxRegistartionCategory.FindStringExact(Temp);
@@ -414,7 +415,7 @@ namespace EVENT_MANAGEMENT
             if (e.Modifiers == Keys.Shift && e.KeyCode == Keys.Tab)
             {
                 e.IsInputKey = true;
-                TxtRegistrationFee.Select();
+                comboBoxRegistartionSchoolName.Select();
             }
         }
 
@@ -430,6 +431,11 @@ namespace EVENT_MANAGEMENT
                 e.IsInputKey = true;
                 BtnRegistartionSave.Select();
             }
+        }
+
+        private void BtnRegistrationPrint_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

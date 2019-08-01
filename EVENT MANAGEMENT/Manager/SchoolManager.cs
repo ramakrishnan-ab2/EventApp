@@ -152,7 +152,6 @@ namespace EVENT_MANAGEMENT.Manager
                         Console.WriteLine(e.Message);
                         Deleted = false;
                         dbContextTransaction.Rollback();
-                        throw (e);
                     }
                 }
             }
