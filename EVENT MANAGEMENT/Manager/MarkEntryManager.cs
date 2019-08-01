@@ -13,23 +13,7 @@ namespace EVENT_MANAGEMENT.Manager
     {
         private static volatile MarkEntryManager instance;
         private static object syncRoot = new Object();
-        public static MarkEntryManager Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    lock (syncRoot)
-                    {
-                        if (instance == null)
-                            instance = new MarkEntryManager();
-                    }
-                }
-
-                return instance;
-            }
-        }
-       
+        
         public IList<Event> ListEvent()
         {
            
@@ -52,7 +36,7 @@ namespace EVENT_MANAGEMENT.Manager
         }
         public static void InitializeReferedCombo(ToolStripComboBox SelectBox)
         {
-            MarkEntryManager ReferedManager = MarkEntryManager.Instance;
+            MarkEntryManager ReferedManager =new MarkEntryManager();
             SelectBox.Items.Clear();
             SelectBox.Items.AddRange(ReferedManager.ListEvent().ToArray<Event>());
             SelectBox.SelectedIndex = -1;
@@ -86,6 +70,11 @@ namespace EVENT_MANAGEMENT.Manager
             }
             return EventInfo;
 
+        }
+
+        internal object ListEventRollNo(object eventId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -98,6 +98,7 @@
             this.LblEventReportGo.Name = "LblEventReportGo";
             this.LblEventReportGo.Size = new System.Drawing.Size(22, 32);
             this.LblEventReportGo.Text = "Go";
+            this.LblEventReportGo.Click += new System.EventHandler(this.LblEventReportGo_Click);
             // 
             // dataGridViewEventReport
             // 
@@ -158,9 +159,10 @@
             this.Controls.Add(this.dataGridViewEventReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-          //  this.Name = "EventReport";
+         //   this.Name = "EventReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event Report";
+            this.Load += new System.EventHandler(this.EventReport_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventReport)).EndInit();
