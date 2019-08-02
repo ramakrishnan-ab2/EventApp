@@ -81,6 +81,7 @@ namespace EVENT_MANAGEMENT.Migrations
                         CategoryId = c.Int(),
                         EventId = c.Int(),
                         EventRollNo = c.Int(nullable: false),
+                        RollNo = c.String(unicode: false),
                         SchoolId = c.Int(),
                         PhoneNo = c.String(unicode: false),
                         FathersName = c.String(unicode: false),
@@ -123,6 +124,15 @@ namespace EVENT_MANAGEMENT.Migrations
                 .Index(t => t.RegisterId);
             
             CreateTable(
+                "dbo.RollNoes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Number = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.UserLogins",
                 c => new
                     {
@@ -160,6 +170,7 @@ namespace EVENT_MANAGEMENT.Migrations
             DropIndex("dbo.EventCategories", new[] { "EventId" });
             DropIndex("dbo.EventCategories", new[] { "CategoryId" });
             DropTable("dbo.UserLogins");
+            DropTable("dbo.RollNoes");
             DropTable("dbo.Results");
             DropTable("dbo.Schools");
             DropTable("dbo.Registers");

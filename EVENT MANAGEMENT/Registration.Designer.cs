@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistration));
             this.listBoxRgistrationlistbox = new System.Windows.Forms.ListBox();
             this.groupBoxRegistrationStudentDetails = new System.Windows.Forms.GroupBox();
+            this.PicBox = new System.Windows.Forms.PictureBox();
             this.TxtRollNo = new System.Windows.Forms.TextBox();
             this.TxtRegistrationFee = new System.Windows.Forms.TextBox();
             this.LblRegistrationFee = new System.Windows.Forms.Label();
@@ -66,11 +67,10 @@
             this.TextBoxRegId = new System.Windows.Forms.TextBox();
             this.BtnRegistrationPrint = new System.Windows.Forms.Button();
             this.ImageList = new System.Windows.Forms.ImageList(this.components);
-            this.PicBox = new System.Windows.Forms.PictureBox();
             this.TxtRegistrationSearch = new EVENT_MANAGEMENT.Control.DelayBox();
             this.groupBoxRegistrationStudentDetails.SuspendLayout();
-            this.statusStripRegistartion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
+            this.statusStripRegistartion.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBoxRgistrationlistbox
@@ -114,9 +114,20 @@
             this.groupBoxRegistrationStudentDetails.Location = new System.Drawing.Point(254, 12);
             this.groupBoxRegistrationStudentDetails.Name = "groupBoxRegistrationStudentDetails";
             this.groupBoxRegistrationStudentDetails.Size = new System.Drawing.Size(620, 393);
-            this.groupBoxRegistrationStudentDetails.TabIndex = 6;
+            this.groupBoxRegistrationStudentDetails.TabIndex = 1;
             this.groupBoxRegistrationStudentDetails.TabStop = false;
             this.groupBoxRegistrationStudentDetails.Text = "Student Details";
+            // 
+            // PicBox
+            // 
+            this.PicBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PicBox.Image = global::EVENT_MANAGEMENT.Properties.Resources.rotary;
+            this.PicBox.Location = new System.Drawing.Point(590, 299);
+            this.PicBox.Name = "PicBox";
+            this.PicBox.Size = new System.Drawing.Size(21, 50);
+            this.PicBox.TabIndex = 23;
+            this.PicBox.TabStop = false;
+            this.PicBox.Visible = false;
             // 
             // TxtRollNo
             // 
@@ -266,6 +277,7 @@
             // 
             // TxtRegistartionFathersName
             // 
+            this.TxtRegistartionFathersName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtRegistartionFathersName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtRegistartionFathersName.Location = new System.Drawing.Point(25, 95);
             this.TxtRegistartionFathersName.MaxLength = 50;
@@ -285,6 +297,7 @@
             // 
             // TxtRegistartionName
             // 
+            this.TxtRegistartionName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtRegistartionName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtRegistartionName.Location = new System.Drawing.Point(25, 51);
             this.TxtRegistartionName.MaxLength = 50;
@@ -493,19 +506,9 @@
             this.ImageList.TransparentColor = System.Drawing.Color.Transparent;
             this.ImageList.Images.SetKeyName(0, "rotary.jpeg");
             // 
-            // PicBox
-            // 
-            this.PicBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PicBox.Image = global::EVENT_MANAGEMENT.Properties.Resources.rotary;
-            this.PicBox.Location = new System.Drawing.Point(590, 299);
-            this.PicBox.Name = "PicBox";
-            this.PicBox.Size = new System.Drawing.Size(21, 50);
-            this.PicBox.TabIndex = 23;
-            this.PicBox.TabStop = false;
-            this.PicBox.Visible = false;
-            // 
             // TxtRegistrationSearch
             // 
+            this.TxtRegistrationSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtRegistrationSearch.Delay = 1000;
             this.TxtRegistrationSearch.Location = new System.Drawing.Point(12, 12);
             this.TxtRegistrationSearch.Name = "TxtRegistrationSearch";
@@ -542,9 +545,9 @@
             this.Load += new System.EventHandler(this.FormRegistration_Load);
             this.groupBoxRegistrationStudentDetails.ResumeLayout(false);
             this.groupBoxRegistrationStudentDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.statusStripRegistartion.ResumeLayout(false);
             this.statusStripRegistartion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

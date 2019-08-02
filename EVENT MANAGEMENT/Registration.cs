@@ -29,7 +29,9 @@ namespace EVENT_MANAGEMENT
             IList<Register> Register = RegisterManager.ListRegistration();
             foreach (var lRegister in Register)
             {
-                if (FilterString == null || string.IsNullOrEmpty(FilterString.Trim()) || lRegister.StudentName.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1 || lRegister.PhoneNo.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1)
+                if (FilterString == null || string.IsNullOrEmpty(FilterString.Trim()) || lRegister.StudentName.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1 
+                    || lRegister.PhoneNo.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1
+                    || lRegister.RollNo.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1)
                 {
                     listBoxRgistrationlistbox.Items.Add(lRegister);
                 }
@@ -52,9 +54,9 @@ namespace EVENT_MANAGEMENT
         {
             if (listBoxRgistrationlistbox.Items.Count > 0)
             {
-                TxtRegistrationSearch.ReadOnly = enable;
-                TxtRegistrationSearch.TabStop = !enable;
-                listBoxRgistrationlistbox.Enabled = !enable;
+                TxtRegistrationSearch.ReadOnly = false;
+                TxtRegistrationSearch.TabStop = true;
+                listBoxRgistrationlistbox.Enabled = true;
             }
             else
             {
@@ -111,11 +113,12 @@ namespace EVENT_MANAGEMENT
             
         }
         private void FormRegistration_Load(object sender, EventArgs e)
-        {
-            ResetForm();
-            EnableForm(false);
+        {            
             loadCombo();
             LoadRegistration();
+            ResetForm();
+            EnableForm(true);
+            TxtRegistartionName.Select();
         }
         private void ResetForm()
         {
@@ -123,7 +126,7 @@ namespace EVENT_MANAGEMENT
             TextBoxRegId.Text = Convert.ToString(0);
             TxtRegistartionName.Text = "";
             TxtRegistartionFathersName.Text = "";
-            TxtRegistartionEventRollNo.Text = Convert.ToString(000);
+            TxtRegistartionEventRollNo.Text = Convert.ToString(0000);
             TxtRegistartionPhoneNo.Text = "";
             comboBoxRegistartionCategory.SelectedIndex=-1;
             comboBoxRegistartionEvent.SelectedIndex = -1;
@@ -133,7 +136,7 @@ namespace EVENT_MANAGEMENT
             comboBoxRegistartionEvent.ResetText();
             comboBoxRegistartionQualification.ResetText();
             comboBoxRegistartionSchoolName.ResetText();
-            TxtRollNo.Text = Convert.ToString(000);
+            TxtRollNo.Text = Convert.ToString(0000);
             TxtRegistrationFee.Text = "0.00";
             dateTimePickerRegistartionDate.Value = DateTime.Now;
         }
@@ -183,7 +186,7 @@ namespace EVENT_MANAGEMENT
             Register.EventId = ((Event)comboBoxRegistartionEvent.Items[comboBoxRegistartionEvent.SelectedIndex]).Id;
             Register.SchoolId = ((School)comboBoxRegistartionSchoolName.Items[comboBoxRegistartionSchoolName.SelectedIndex]).Id;
 
-            Register.EventRollNo = string.IsNullOrEmpty(TxtRegistartionEventRollNo.Text) ?0 :int.Parse(TxtRegistartionEventRollNo.Text);
+            Register.EventRollNo = string.IsNullOrEmpty(TxtRegistartionEventRollNo.Text) ?0 :int.Parse(TxtRegistartionEventRollNo.Text.Substring(TxtRegistartionEventRollNo.Text.Length-1));
             Register.PhoneNo = TxtRegistartionPhoneNo.Text.Trim();
             Register.Date = Convert.ToDateTime(dateTimePickerRegistartionDate.Text);
             Register.Fee = double.Parse(TxtRegistrationFee.Text);
@@ -202,6 +205,15 @@ namespace EVENT_MANAGEMENT
                     Register RegisterDB = null;
                     if (Register.Id == 0)
                     {
+                        if (RegisterManager.IsSamePersonDetailDiffSchool(Register))
+                        {
+                            DialogResult Result = MessageBox.Show("The same name, father name and phone number person already exist, But school name is different \n Do you want to Save?", "Save Confirm",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                            if (Result == DialogResult.No)
+                            {
+                                return;
+                            }
+                        }
                         Register.EventRollNo = RegisterManager.GetEventRollNo((int)Register.CategoryId, (int)Register.EventId);
                         RegisterDB = RegisterManager.AddRegister(Register);
                     }
@@ -386,7 +398,7 @@ namespace EVENT_MANAGEMENT
                         TextBoxRegId.Text = Register.Id.ToString();
                         TxtRegistartionName.Text = Register.StudentName;
                         TxtRegistartionFathersName.Text = Register.FathersName;
-                        TxtRegistartionEventRollNo.Text = Register.EventRollNo.ToString();
+                        TxtRegistartionEventRollNo.Text = NameSplit(Register.Event.EventName)+"-"+ Register.Category.CategoryName + "-"+Register.EventRollNo.ToString();
                         TxtRegistartionPhoneNo.Text = Register.PhoneNo;
                         TxtRegistrationFee.Text = Register.Fee.ToString();
                         dateTimePickerRegistartionDate.Value = Register.Date;
@@ -395,13 +407,23 @@ namespace EVENT_MANAGEMENT
                         comboBoxRegistartionEvent.SelectedIndex = comboBoxRegistartionEvent.FindStringExact(Register.Event.EventName);
                         comboBoxRegistartionSchoolName.SelectedIndex = comboBoxRegistartionSchoolName.FindStringExact(Register.School.Name);
 
-                        TxtRollNo.Text = Register.Id.ToString();
+                        TxtRollNo.Text = Register.RollNo;
                     }
                 }
             }
             EnableForm(false);
         }
 
+        private string NameSplit(string Ename)
+        {
+            string Output=string.Empty;
+            string[] split= Ename.Split(' ');
+            foreach (var word in split)
+            {
+                Output += word[0].ToString();
+            }
+            return Output;
+        }
         private void comboBoxRegistartionCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxRegistartionEvent.ResetText();
@@ -478,6 +500,11 @@ namespace EVENT_MANAGEMENT
         {
             RegistrationPrinting RegistrationPrinting = new RegistrationPrinting();
             RegistrationPrinting.GenerateRegistrationPrinting(int.Parse(TextBoxRegId.Text),PicBox.Image);
+            loadCombo();
+            LoadRegistration();
+            ResetForm();
+            EnableForm(true);
+            TxtRegistartionName.Select();
         }
 
         private void TxtRegistrationSearch_KeyDown(object sender, KeyEventArgs e)

@@ -101,7 +101,6 @@ E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Inter
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
-E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\envdte.dll
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
@@ -138,3 +137,5 @@ E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.T
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\itextsharp.dll
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\itextsharp.xml
 E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Control.DelayBox.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojResolveAssemblyReference.cache

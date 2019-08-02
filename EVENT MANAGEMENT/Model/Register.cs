@@ -19,12 +19,15 @@ namespace EVENT_MANAGEMENT.Model
         public int? EventId { get; set; }
         public virtual Event Event { get; set; }
         public int EventRollNo { get; set;  }
+        public string RollNo { get; set; }
         public int? SchoolId{ get; set; }
         public virtual School School { get; set; }
         public string PhoneNo { get; set; }
         public string FathersName { get; set; }
         public DateTime Date { get; set; }
         public double Fee { get; set; }
+        //public int? RollNoId { get; set; }
+        //public virtual RollNo RollNo { get; set; }
         public override string ToString()
         {
             return StudentName;

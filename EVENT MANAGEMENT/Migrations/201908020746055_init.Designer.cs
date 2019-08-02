@@ -13,7 +13,7 @@ namespace EVENT_MANAGEMENT.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201907310651232_init"; }
+            get { return "201908020746055_init"; }
         }
         
         string IMigrationMetadata.Source

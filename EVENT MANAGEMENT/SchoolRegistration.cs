@@ -30,10 +30,11 @@ namespace EVENT_MANAGEMENT
         }
 
         private void FormSchoolRegistration_Load(object sender, EventArgs e)
-        {
-            ResetForm();
-            EnableForm(true);           
+        {                    
             LoadSchoolsWithFilter();
+            ResetForm();
+            EnableForm(true);
+            TxtSchoolRegistrationSchoolName.Select();
         }
         private void EnableForm(bool enable)
         {
@@ -116,11 +117,13 @@ namespace EVENT_MANAGEMENT
                         if (lSchoolByName == null)
                         {
                             SchoolManager.AddSchoolInfo(lSchool);
-                            ResetForm();
                             LoadSchoolsWithFilter();
-                            listBoxSchoolRegistration.SelectedIndex = listBoxSchoolRegistration.FindStringExact(lSchool.Address);
-                        }
-                        else
+                            listBoxSchoolRegistration.SelectedIndex = -1;
+                            ResetForm();
+                            EnableForm(true);
+                        TxtSchoolRegistrationSchoolName.Select();
+                    }
+                    else
                         {
                             ErrorMsg.Text = lSchool.Name + " already exists";
                             TxtSchoolRegistrationSchoolName.Select();
@@ -135,9 +138,11 @@ namespace EVENT_MANAGEMENT
                             if (lCurrencyByName == null)
                             {
                                 School SchoolInfo = SchoolManager.UpdateSchool(lSchool);
-                                ResetForm();
                                 LoadSchoolsWithFilter();
-                                listBoxSchoolRegistration.SelectedIndex = listBoxSchoolRegistration.FindStringExact(lSchool.Name);
+                                listBoxSchoolRegistration.SelectedIndex =-1;
+                                ResetForm();
+                                EnableForm(true);
+                            TxtSchoolRegistrationSchoolName.Select();
                             }
                             else
                             {
