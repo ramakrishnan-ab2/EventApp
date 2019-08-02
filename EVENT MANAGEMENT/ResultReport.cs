@@ -28,7 +28,7 @@ namespace EVENT_MANAGEMENT
         {
             try
             {
-                string FilterString =ComboBoxResultReportEvents.Text.Trim();
+            
                 ComboBoxResultReportEvents.Items.Clear();
                 IList<Event> Events = MarkEntryManager.ListEvent();
                 foreach (var lEvent in Events)
