@@ -115,7 +115,6 @@ C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Sh
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
-C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojResolveAssemblyReference.cache
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormMarkEntry.resources
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormRegistration.resources
@@ -139,3 +138,6 @@ E:\EventManagement\EVENT MANAGEMENT\bin\Debug\itextsharp.xml
 E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Control.DelayBox.resources
 E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
 E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojResolveAssemblyReference.cache
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\itextsharp.dll
+C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\itextsharp.xml
+C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Control.DelayBox.resources
