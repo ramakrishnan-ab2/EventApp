@@ -10,9 +10,7 @@ namespace EVENT_MANAGEMENT.Manager
 {
   public  class ResultManager
     {
-        private static volatile ResultManager instance;
-        private static object syncRoot = new Object();
-
+     
         public IList<Result> ListEvent()
         {
 

@@ -11,9 +11,7 @@ namespace EVENT_MANAGEMENT.Manager
 {
     public class MarkEntryManager
     {
-        private static volatile MarkEntryManager instance;
-        private static object syncRoot = new Object();
-        
+      
         public IList<Event> ListEvent()
         {
            

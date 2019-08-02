@@ -17,6 +17,8 @@ namespace EVENT_MANAGEMENT
         MarkEntryManager MarkEntryManager = null;
         JudgesManager JudgesManager = null;
         RegisterManager RegisterManager = null;
+        // public IList<Register> RegisterEntryInfo=RegisterManager.ListRegistration();
+
         public EventReport()
         {
             {
@@ -64,22 +66,29 @@ namespace EVENT_MANAGEMENT
 
         private void Memory()
         {
+          
             Register Register = new Register();
-            foreach (DataGridViewRow row in dataGridViewEventReport.Rows)
+            IList<Register> RegisterEntryInfo = RegisterManager.ListRegistration();
+
+            if (RegisterEntryInfo.Count > 0)
             {
-                if (dataGridViewEventReport.Rows.Count > 0)
+                dataGridViewEventReport.Rows.Add(RegisterEntryInfo.Count);
+                int i = 0;
+                foreach (var lSaleEntryInfo in RegisterEntryInfo)
                 {
-                    row.Cells[0].Value= Register.EventRollNo;
-                    row.Cells[1].Value = Register.Id;
-                    row.Cells[2].Value = Register.StudentName;
-                    row.Cells[3].Value = Register.Qualification;
-                       
+
+                    dataGridViewEventReport.Rows[i].Cells[0].Value = lSaleEntryInfo.EventRollNo;
+                    dataGridViewEventReport.Rows[i].Cells[1].Value = lSaleEntryInfo.Id;
+                    dataGridViewEventReport.Rows[i].Cells[2].Value = lSaleEntryInfo.StudentName;
+                    dataGridViewEventReport.Rows[i].Cells[3].Value = (lSaleEntryInfo.StudentName == null) ? lSaleEntryInfo.Qualification.Name : lSaleEntryInfo.Qualification.Name;
+                    i++;
                 }
-               
             }
         }
         private void LblEventReportGo_Click(object sender, EventArgs e)
         {
+            dataGridViewEventReport.AllowUserToResizeColumns = false;
+
             if (ComboBoxEventReport.Text == "MEMORY CHALLENGE")
             {
                 Memory();
@@ -170,9 +179,10 @@ namespace EVENT_MANAGEMENT
             {
 
             }
+            
             else
             {
-                MessageBox.Show("Something Went Wrong,Please Check Ur Event Selection");
+                 toolStripStatusLabel1.Text=("Something Went Wrong,Please Check Ur Event Selection");
             }
         }
     }

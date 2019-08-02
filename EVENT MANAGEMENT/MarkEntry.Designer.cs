@@ -36,12 +36,14 @@
             this.btnMarkExit = new System.Windows.Forms.Button();
             this.btnMarkSave = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btnMarkCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(578, 346);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // SlNo
             // 
@@ -68,13 +70,18 @@
             // 
             // EventRollNo
             // 
+            this.EventRollNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EventRollNo.HeaderText = "Event Roll No";
+            this.EventRollNo.MaxDropDownItems = 100;
             this.EventRollNo.Name = "EventRollNo";
+            this.EventRollNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.EventRollNo.Width = 200;
             // 
             // Judges
             // 
+            this.Judges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Judges.HeaderText = "Judges";
+            this.Judges.MaxDropDownItems = 100;
             this.Judges.Name = "Judges";
             this.Judges.Width = 200;
             // 
@@ -110,11 +117,18 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 451);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(606, 22);
             this.statusStrip1.TabIndex = 23;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
             // toolStrip1
             // 
@@ -180,6 +194,8 @@
             this.Text = "MarkEntry";
             this.Load += new System.EventHandler(this.MarkEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -198,6 +214,7 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Button btnMarkCancel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SlNo;
         private System.Windows.Forms.DataGridViewComboBoxColumn EventRollNo;
         private System.Windows.Forms.DataGridViewComboBoxColumn Judges;

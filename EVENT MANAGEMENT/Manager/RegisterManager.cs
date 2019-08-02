@@ -13,16 +13,18 @@ namespace EVENT_MANAGEMENT.Manager
     public class RegisterManager
     {
 
-        
+      
         public IList<Register> ListRegistration()
         {
             IList<Register> RegInfo = null;
             using (AccountContext Context = new AccountContext())
             {
-                RegInfo = Context.Registers.ToList();
+
+                RegInfo = Context.Registers.Include("Qualification").Include("Event").ToList();
             }
             return RegInfo;
         }
+       
         public Register GetRegisterById(int Id)
         {
             Register RegInfo = null;

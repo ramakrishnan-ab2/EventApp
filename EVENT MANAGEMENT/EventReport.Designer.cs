@@ -40,8 +40,10 @@
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Qualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResultReportErrorMsg = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventReport)).BeginInit();
+            this.ResultReportErrorMsg.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEventReportExit
@@ -141,11 +143,18 @@
             // 
             // ResultReportErrorMsg
             // 
+            this.ResultReportErrorMsg.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
             this.ResultReportErrorMsg.Location = new System.Drawing.Point(0, 415);
             this.ResultReportErrorMsg.Name = "ResultReportErrorMsg";
             this.ResultReportErrorMsg.Size = new System.Drawing.Size(925, 22);
             this.ResultReportErrorMsg.TabIndex = 19;
             this.ResultReportErrorMsg.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
             // EventReport
             // 
@@ -159,13 +168,15 @@
             this.Controls.Add(this.dataGridViewEventReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-         //   this.Name = "EventReport";
+          //  this.Name = "EventReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event Report";
             this.Load += new System.EventHandler(this.EventReport_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventReport)).EndInit();
+            this.ResultReportErrorMsg.ResumeLayout(false);
+            this.ResultReportErrorMsg.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +195,6 @@
         private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qualification;
         private System.Windows.Forms.StatusStrip ResultReportErrorMsg;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

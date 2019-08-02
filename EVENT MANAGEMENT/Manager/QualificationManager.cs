@@ -29,14 +29,14 @@ namespace EVENT_MANAGEMENT.Manager
             }
             return Qualification;
         }
-        //public IList<Qualification> ListQualification()
-        //{
-        //    IList<Qualification> Qualification = null;
-        //    using (AccountContext Context = new AccountContext())
-        //    {
-        //        Qualification = Context.Qualifications.Distinct().ToList();
-        //    }
-        //    return Qualification;
-        //}
+        public IList<Qualification> ListQualification()
+        {
+            IList<Qualification> Qualification = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                Qualification = Context.Qualifications.Distinct().ToList();
+            }
+            return Qualification;
+        }
     }
 }

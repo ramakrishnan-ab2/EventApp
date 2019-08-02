@@ -65,7 +65,7 @@
             this.dataGridViewResultReport.Location = new System.Drawing.Point(12, 38);
             this.dataGridViewResultReport.Name = "dataGridViewResultReport";
             this.dataGridViewResultReport.RowHeadersVisible = false;
-            this.dataGridViewResultReport.Size = new System.Drawing.Size(888, 432);
+            this.dataGridViewResultReport.Size = new System.Drawing.Size(886, 432);
             this.dataGridViewResultReport.TabIndex = 0;
             // 
             // SlNo
@@ -146,6 +146,7 @@
             this.LblResultReportGo.Name = "LblResultReportGo";
             this.LblResultReportGo.Size = new System.Drawing.Size(22, 32);
             this.LblResultReportGo.Text = "Go";
+            this.LblResultReportGo.Click += new System.EventHandler(this.LblResultReportGo_Click_1);
             // 
             // ResultReportErrorMsg
             // 
@@ -202,6 +203,7 @@
            // this.Name = "ResultReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Result Report";
+            this.Load += new System.EventHandler(this.ResultReport_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultReport)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
