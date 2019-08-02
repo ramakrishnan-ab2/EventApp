@@ -11,6 +11,10 @@ namespace EVENT_MANAGEMENT.Manager
     
    public class EventManager
     {
+        public enum EventReport
+        {
+            Byevent
+        }
         public int?[] EventIds { get; set; }
         public IList<Event> ListEvent(int CategoryId)
         {
@@ -31,22 +35,29 @@ namespace EVENT_MANAGEMENT.Manager
         }
 
         public IList<Event> ListEvent()
-            {
+        {
                 IList<Event> Event = null;
                 using (AccountContext Context = new AccountContext())
                 {
                     Event = Context.Events.ToList();
                 }
                 return Event;
-            }
-            public Event GetEventByName(string EventName)
-            {
+        }
+        public Event GetEventByName(string EventName)
+        {
             Event EventInfo = null;
             using (AccountContext Context = new AccountContext())
             {
                 EventInfo = Context.Events.FirstOrDefault(x => x.EventName == EventName);
                 return EventInfo;
             }
-            }
+        }
+        //public static void InitializeCostCenterCombo(ComboBox SelectBox, long CompanyId)
+        //{
+        //    EventManager EventManager = EventManager.Instance;
+        //    SelectBox.Items.Clear();
+        //    SelectBox.Items.AddRange(EventManager.GetAccessibleCostCenter(Global.User, CompanyId).ToArray<CostCenter>());
+        //    SelectBox.SelectedIndex = -1;
+        //}
     }
 }

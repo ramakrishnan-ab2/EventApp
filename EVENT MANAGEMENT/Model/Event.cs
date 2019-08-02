@@ -16,5 +16,7 @@ namespace EVENT_MANAGEMENT.Model
         {
             return EventName;
         }
+
+
     }
 }

@@ -92,12 +92,14 @@
             this.ComboBoxEventReport.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxEventReport.Name = "ComboBoxEventReport";
             this.ComboBoxEventReport.Size = new System.Drawing.Size(250, 35);
+            this.ComboBoxEventReport.SelectedIndexChanged += new System.EventHandler(this.ComboBoxEventReport_SelectedIndexChanged);
             // 
             // LblEventReportGo
             // 
             this.LblEventReportGo.Name = "LblEventReportGo";
             this.LblEventReportGo.Size = new System.Drawing.Size(22, 32);
             this.LblEventReportGo.Text = "Go";
+            this.LblEventReportGo.Click += new System.EventHandler(this.LblEventReportGo_Click);
             // 
             // dataGridViewEventReport
             // 
@@ -158,9 +160,10 @@
             this.Controls.Add(this.dataGridViewEventReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-          //  this.Name = "EventReport";
+            //this.Name = "EventReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event Report";
+            this.Load += new System.EventHandler(this.EventReport_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventReport)).EndInit();
