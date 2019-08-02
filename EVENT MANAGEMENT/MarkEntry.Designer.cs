@@ -28,22 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.SlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventRollNo = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Judges = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.AvgMark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMarkExit = new System.Windows.Forms.Button();
             this.btnMarkSave = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btnMarkCancel = new System.Windows.Forms.Button();
+            this.SlNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventRollNo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Judges = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.AvgMark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,47 +57,16 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(578, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(578, 260);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
-            // 
-            // SlNo
-            // 
-            this.SlNo.HeaderText = "Sl No";
-            this.SlNo.Name = "SlNo";
-            this.SlNo.Width = 50;
-            // 
-            // EventRollNo
-            // 
-            this.EventRollNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EventRollNo.HeaderText = "Event Roll No";
-            this.EventRollNo.MaxDropDownItems = 100;
-            this.EventRollNo.Name = "EventRollNo";
-            this.EventRollNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.EventRollNo.Width = 200;
-            // 
-            // Judges
-            // 
-            this.Judges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Judges.HeaderText = "Judges";
-            this.Judges.MaxDropDownItems = 100;
-            this.Judges.Name = "Judges";
-            this.Judges.Width = 200;
-            // 
-            // AvgMark
-            // 
-            this.AvgMark.HeaderText = "Avg. Mark";
-            this.AvgMark.Name = "AvgMark";
-            this.AvgMark.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AvgMark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.AvgMark.Width = 125;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnMarkExit
             // 
-            this.btnMarkExit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMarkExit.Location = new System.Drawing.Point(497, 399);
+            this.btnMarkExit.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarkExit.Location = new System.Drawing.Point(500, 319);
             this.btnMarkExit.Name = "btnMarkExit";
-            this.btnMarkExit.Size = new System.Drawing.Size(93, 28);
+            this.btnMarkExit.Size = new System.Drawing.Size(76, 23);
             this.btnMarkExit.TabIndex = 24;
             this.btnMarkExit.Text = "Exit";
             this.btnMarkExit.UseVisualStyleBackColor = true;
@@ -106,10 +74,10 @@
             // 
             // btnMarkSave
             // 
-            this.btnMarkSave.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMarkSave.Location = new System.Drawing.Point(394, 399);
+            this.btnMarkSave.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarkSave.Location = new System.Drawing.Point(418, 319);
             this.btnMarkSave.Name = "btnMarkSave";
-            this.btnMarkSave.Size = new System.Drawing.Size(97, 28);
+            this.btnMarkSave.Size = new System.Drawing.Size(76, 23);
             this.btnMarkSave.TabIndex = 25;
             this.btnMarkSave.Text = "Save";
             this.btnMarkSave.UseVisualStyleBackColor = true;
@@ -117,18 +85,11 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 451);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 354);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(606, 22);
             this.statusStrip1.TabIndex = 23;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
             // toolStrip1
             // 
@@ -146,9 +107,9 @@
             // 
             // toolStripLabel1
             // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(55, 32);
+            this.toolStripLabel1.Size = new System.Drawing.Size(45, 32);
             this.toolStripLabel1.Text = "Events";
             // 
             // toolStripComboBox1
@@ -157,8 +118,6 @@
             this.toolStripComboBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(250, 35);
-            this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
-            this.toolStripComboBox1.Click += new System.EventHandler(this.toolStripComboBox1_Click);
             // 
             // toolStripLabel2
             // 
@@ -169,33 +128,70 @@
             // 
             // btnMarkCancel
             // 
-            this.btnMarkCancel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMarkCancel.Location = new System.Drawing.Point(291, 399);
+            this.btnMarkCancel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarkCancel.Location = new System.Drawing.Point(336, 319);
             this.btnMarkCancel.Name = "btnMarkCancel";
-            this.btnMarkCancel.Size = new System.Drawing.Size(97, 28);
+            this.btnMarkCancel.Size = new System.Drawing.Size(76, 23);
             this.btnMarkCancel.TabIndex = 27;
             this.btnMarkCancel.Text = "Cancel";
             this.btnMarkCancel.UseVisualStyleBackColor = true;
             this.btnMarkCancel.Click += new System.EventHandler(this.button1_Click);
             // 
+            // SlNo
+            // 
+            this.SlNo.HeaderText = "#";
+            this.SlNo.Name = "SlNo";
+            this.SlNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.SlNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SlNo.Width = 50;
+            // 
+            // EventRollNo
+            // 
+            this.EventRollNo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.EventRollNo.HeaderText = "Event Roll No";
+            this.EventRollNo.Name = "EventRollNo";
+            this.EventRollNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.EventRollNo.Width = 200;
+            // 
+            // Judges
+            // 
+            this.Judges.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Judges.HeaderText = "Judges";
+            this.Judges.Name = "Judges";
+            this.Judges.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Judges.Width = 200;
+            // 
+            // AvgMark
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.NullValue = "0";
+            this.AvgMark.DefaultCellStyle = dataGridViewCellStyle3;
+            this.AvgMark.HeaderText = "Avg. Mark";
+            this.AvgMark.MaxInputLength = 10;
+            this.AvgMark.Name = "AvgMark";
+            this.AvgMark.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.AvgMark.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.AvgMark.Width = 125;
+            // 
             // FormMarkEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 473);
+            this.ClientSize = new System.Drawing.Size(606, 376);
             this.Controls.Add(this.btnMarkCancel);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnMarkExit);
             this.Controls.Add(this.btnMarkSave);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMarkEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MarkEntry";
             this.Load += new System.EventHandler(this.MarkEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -214,7 +210,6 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Button btnMarkCancel;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SlNo;
         private System.Windows.Forms.DataGridViewComboBoxColumn EventRollNo;
         private System.Windows.Forms.DataGridViewComboBoxColumn Judges;

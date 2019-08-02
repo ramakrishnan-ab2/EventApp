@@ -1,4 +1,5 @@
 ﻿using EVENT_MANAGEMENT.Context;
+using EVENT_MANAGEMENT.Manager;
 using EVENT_MANAGEMENT.Model;
 using System;
 using System.Collections.Generic;
@@ -15,23 +16,55 @@ namespace EVENT_MANAGEMENT
 {
     public partial class FormSchoolRegistration : Form
     {
+        SchoolManager SchoolManager = null;
         public FormSchoolRegistration()
         {
+            SchoolManager = new SchoolManager();
             InitializeComponent();
         }
 
         private void BtnSchoolRegistrationCancel_Click(object sender, EventArgs e)
-        {
-            TxtSchoolRegistrationAddress.ResetText();
-            TxtSchoolRegistrationSchoolName.ResetText();
+        {           
+            ResetForm();
+            LoadSchoolsWithFilter();
         }
 
         private void FormSchoolRegistration_Load(object sender, EventArgs e)
-        {
-            BtnSchoolRegistrationDelete.Enabled = false;
-            BtnSchoolRegistrationEdit.Enabled = false;
+        {                    
+            LoadSchoolsWithFilter();
+            ResetForm();
+            EnableForm(true);
+            TxtSchoolRegistrationSchoolName.Select();
         }
-
+        private void EnableForm(bool enable)
+        {
+            TxtSchoolRegistrationSchoolName.ReadOnly = !enable;
+            TxtSchoolRegistrationAddress.ReadOnly = !enable;
+            TxtSchoolRegistrationSchoolName.TabStop = enable;
+            TxtSchoolRegistrationAddress.TabStop = enable;
+            if (enable)
+            {
+                BtnSchoolRegistrationDelete.Enabled = !enable;
+                BtnSchoolRegistrationEdit.Enabled = !enable;
+                BtnSchoolRegistrationNew.Enabled = !enable;
+                BtnSchoolRegistrationSave.Enabled = enable;
+                BtnSchoolRegistrationCancel.Enabled = enable;                
+            }
+            else
+            {
+                BtnSchoolRegistrationDelete.Enabled = !enable;
+                BtnSchoolRegistrationEdit.Enabled = !enable;
+                BtnSchoolRegistrationNew.Enabled = !enable;
+                BtnSchoolRegistrationSave.Enabled = enable;
+                BtnSchoolRegistrationCancel.Enabled = enable;
+            }
+        }
+        private void ResetForm()
+        {
+            TxtSchoolRegId.ResetText();
+            TxtSchoolRegistrationSchoolName.ResetText();
+            TxtSchoolRegistrationAddress.ResetText();
+        }
         private void BtnSchoolRegistrationExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -39,242 +72,194 @@ namespace EVENT_MANAGEMENT
 
         private void BtnSchoolRegistrationNew_Click(object sender, EventArgs e)
         {
-            BtnSchoolRegistrationDelete.Enabled = false;
-            BtnSchoolRegistrationEdit.Enabled = false;
-            TxtSchoolRegistrationSchoolName.Focus();
-            TxtSchoolRegId.Text = string.Empty;
-
-            clears();
-            BtnSchoolRegistrationNew.Enabled = false;
-            BtnSchoolRegistrationDelete.Enabled = false;
-            BtnSchoolRegistrationEdit.Enabled = false;
-            BtnSchoolRegistrationSave.Enabled = true;
-            BtnSchoolRegistrationCancel.Enabled = true;
-            listBoxSchoolRegistration.Enabled = false;
-            // listBox1.Text = "";
-            TxtSchoolRegistrationSchoolName.Text = "";
-            TxtSchoolRegistrationAddress.Text = "";
-            TxtSchoolRegistrationSchoolName.ReadOnly = false;
-            TxtSchoolRegistrationAddress.ReadOnly = false;
+            ResetForm();
+            EnableForm(true);
+            TxtSchoolRegistrationSchoolName.Select();
         }
-
+        private School GetSchoolFromForm()
+        {
+            School lSchool = new School();
+            if (!string.IsNullOrEmpty(TxtSchoolRegId.Text))
+            {
+                lSchool.Id = Convert.ToInt32(TxtSchoolRegId.Text);
+            }
+            else
+            {
+                lSchool.Id = 0;
+            }
+            
+            lSchool.Name = TxtSchoolRegistrationSchoolName.Text.Trim();
+            lSchool.Address= TxtSchoolRegistrationAddress.Text.Trim();
+            return lSchool;
+                        
+        }
+        private void LoadSchoolsWithFilter()
+        {
+            listBoxSchoolRegistration.Items.Clear();
+            IList<School> Schools = SchoolManager.GetAllSchools();
+            foreach (var lSchool in Schools)
+            {                
+                listBoxSchoolRegistration.Items.Add(lSchool);
+            }
+            if (listBoxSchoolRegistration.Items.Count > 0)
+            {
+                listBoxSchoolRegistration.SelectedIndex = 0;
+            }
+        }
         private void BtnSchoolRegistrationSave_Click(object sender, EventArgs e)
         {
-            School a = new School();
-            try
+            if (ValidateForm())
             {
-                a.Name= TxtSchoolRegistrationSchoolName.Text.Trim();
-                a.Address= TxtSchoolRegistrationAddress.Text.Trim();
-              
-                a.Id= string.IsNullOrEmpty(TxtSchoolRegId.Text) ? 0 : int.Parse(TxtSchoolRegId.Text);
-
-                using (AccountContext db = new AccountContext())
-                {
-                    School Info = null;
-
-                    if (a.Id== 0)
+                    School lSchool = GetSchoolFromForm();
+                    if (lSchool.Id == 0)
                     {
-                        Info = db.Schools.Add(a);
-                        db.SaveChanges();
-                        MessageBox.Show("Saved");
-                        statusStripBtnSchoolRegistration.Text = "Saved";
+                        School lSchoolByName = SchoolManager.GetSchoolByName(lSchool.Name);
+                        if (lSchoolByName == null)
+                        {
+                            SchoolManager.AddSchoolInfo(lSchool);
+                            LoadSchoolsWithFilter();
+                            listBoxSchoolRegistration.SelectedIndex = -1;
+                            ResetForm();
+                            EnableForm(true);
+                        TxtSchoolRegistrationSchoolName.Select();
                     }
-                    if (string.IsNullOrEmpty(TxtSchoolRegistrationSchoolName.Text))
-                    {
-                        statusStripBtnSchoolRegistration.Text ="Please Enter School Name";
-                        TxtSchoolRegistrationSchoolName.Focus();
-                        //textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = "";
+                    else
+                        {
+                            ErrorMsg.Text = lSchool.Name + " already exists";
+                            TxtSchoolRegistrationSchoolName.Select();
+                        }
                     }
                     else
                     {
-                        db.Entry(a).State = EntityState.Modified;
-                        db.SaveChanges();
-                    }
-                    // err.Text="Saved";
-                    statusStripBtnSchoolRegistration.Text = "Saved";
-                }
-               
+                        School lSchoolById = SchoolManager.GetSchoolById(lSchool.Id);
+                        if (lSchoolById != null)
+                        {
+                            School lCurrencyByName = SchoolManager.CheckSchoolNameInUpdate(lSchool.Name, lSchool.Id);
+                            if (lCurrencyByName == null)
+                            {
+                                School SchoolInfo = SchoolManager.UpdateSchool(lSchool);
+                                LoadSchoolsWithFilter();
+                                listBoxSchoolRegistration.SelectedIndex =-1;
+                                ResetForm();
+                                EnableForm(true);
+                            TxtSchoolRegistrationSchoolName.Select();
+                            }
+                            else
+                            {
+                                ErrorMsg.Text=lSchool.Name + " already exists";
+                                TxtSchoolRegistrationSchoolName.Select();
+                            }
+                        }
+                        else
+                        {
+                            DisplaySystemError("Somting went wrong, please check this currency is still valid.");
+                            return;
+                        }
+                    }               
             }
-            catch
-            {
-
-            }
-
-            statusStripBtnSchoolRegistration.Text = string.Empty;
-
-            TxtSchoolRegistrationAddress.Text = TxtSchoolRegistrationSchoolName.Text = "";
            
-            listBoxSchoolRegistration.Refresh();
-            display();
-            //clears();
-            BtnSchoolRegistrationNew.Enabled = true;
-            BtnSchoolRegistrationDelete.Enabled = true;
-            BtnSchoolRegistrationEdit.Enabled = true;
-            BtnSchoolRegistrationCancel.Enabled = false;
-            BtnSchoolRegistrationSave.Enabled = false;
-            BtnSchoolRegistrationExit.Enabled = true;
-            listBoxSchoolRegistration.Enabled = true;
-            TxtSchoolRegistrationAddress.ReadOnly = true;
-            TxtSchoolRegistrationSchoolName.ReadOnly = true;
-          
-            listBoxSchoolRegistration.SelectedIndex =listBoxSchoolRegistration.FindStringExact(a.Name);
-            listBoxSchoolRegistration.SelectedIndex.ToString();
-           
-        }
-        public void display()
+        }       
+        private Boolean ValidateForm()
         {
-            listBoxSchoolRegistration.Items.Clear();
-            TxtSchoolRegId.Visible = false;
-            AccountContext db = new AccountContext();
-            School s = new School();
-            //listBoxSchoolRegistration.Items.AddRange(a);
-           // TxtSchoolRegistrationSchoolName.Text =Name;
-           // TxtSchoolRegistrationAddress.Text =Address;
-           
-
+            if (string.IsNullOrEmpty(TxtSchoolRegistrationSchoolName.Text.Trim()))
+            {
+                MessageBox.Show("Currency Name could not be empty, Please enter Currency Name");
+                TxtSchoolRegistrationSchoolName.Select();
+                return false;
+            }
+            return true;
+        }
+       
+        private void LoadSchoolInfo()
+        {
+            School SchoolFromDB = GetSchoolInfo();
+            if (SchoolFromDB != null)
+            {
+                TxtSchoolRegId.Text = Convert.ToString(SchoolFromDB.Id);
+                TxtSchoolRegistrationSchoolName.Text = SchoolFromDB.Name;
+                TxtSchoolRegistrationAddress.Text = SchoolFromDB.Address;             
+            }
+            
+        }
+        private void DisplaySystemError(string Message)
+        {
+            MessageBox.Show(Message);
+            LoadSchoolsWithFilter();
+            return;
+        }
+        private School GetSchoolInfo()
+        {
+            int Index = listBoxSchoolRegistration.SelectedIndex;
+            if (Index > -1)
+            {
+                School lSchool = (School)listBoxSchoolRegistration.Items[Index];
+                if (lSchool != null)
+                {
+                    School SchoolFromDB = SchoolManager.GetSchoolById(lSchool.Id);
+                    return SchoolFromDB;
+                }
+            }
+            return null;
         }
 
         private void BtnSchoolRegistrationEdit_Click(object sender, EventArgs e)
         {
-            School a = new School();
-            try
-            {
-                a.Name = TxtSchoolRegistrationSchoolName.Text.Trim();
-                a.Address = TxtSchoolRegistrationAddress.Text.Trim();
-
-                a.Id = string.IsNullOrEmpty(TxtSchoolRegId.Text) ? 0 : int.Parse(TxtSchoolRegId.Text);
-
-                using (AccountContext db = new AccountContext())
-                {
-                    School Info = null;
-
-                    if (a.Id == 0)
-                    {
-                        Info = db.Schools.Add(a);
-                        db.SaveChanges();
-                    }
-                    if (string.IsNullOrEmpty(TxtSchoolRegistrationSchoolName.Text))
-                    {
-                        statusStripBtnSchoolRegistration.Text = "Please Enter School Name";
-                        TxtSchoolRegistrationSchoolName.Focus();
-                        //textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = "";
-                    }
-                    else
-                    {
-                        db.Entry(a).State = EntityState.Modified;
-                        db.SaveChanges();
-                    }
-                    // err.Text="Saved";
-                    statusStripBtnSchoolRegistration.Text = "Saved";
-                }
-
-            }
-            catch
-            {
-
-            }
-
-            statusStripBtnSchoolRegistration.Text = string.Empty;
-
-            TxtSchoolRegistrationAddress.Text = TxtSchoolRegistrationSchoolName.Text = "";
-
-            listBoxSchoolRegistration.Refresh();
-            display();
-            //clears();
-            BtnSchoolRegistrationNew.Enabled = true;
-            BtnSchoolRegistrationDelete.Enabled = true;
-            BtnSchoolRegistrationEdit.Enabled = true;
-            BtnSchoolRegistrationCancel.Enabled = false;
-            BtnSchoolRegistrationSave.Enabled = false;
-            BtnSchoolRegistrationExit.Enabled = true;
-            listBoxSchoolRegistration.Enabled = true;
-            TxtSchoolRegistrationAddress.ReadOnly = true;
-            TxtSchoolRegistrationSchoolName.ReadOnly = true;
-
-            listBoxSchoolRegistration.SelectedIndex = listBoxSchoolRegistration.FindStringExact(a.Name);
-            listBoxSchoolRegistration.SelectedIndex.ToString();
-
+            EnableForm(true);
+            TxtSchoolRegistrationSchoolName.Select();          
         }
         void clears()
         {
             School a = new School();
-            statusStripBtnSchoolRegistration.Text = string.Empty;
-           
+            statusStripBtnSchoolRegistration.Text = string.Empty;         
             TxtSchoolRegistrationSchoolName.Text = TxtSchoolRegistrationAddress.Text = "";
             TxtSchoolRegId.Text = string.Empty;
-            //cancel.Enabled = true;
-            //save.Enabled = true;
             BtnSchoolRegistrationExit.Enabled = true;
             listBoxSchoolRegistration.SelectedIndex = listBoxSchoolRegistration.FindStringExact(a.Name);
-            //listBoxSchoolRegistration.SelectedIndex = 0;
             listBoxSchoolRegistration.Refresh();
         }
         private void BtnSchoolRegistrationDelete_Click(object sender, EventArgs e)
         {
-            School a = new School();
-            if (MessageBox.Show("Are you sure to delete this record ?", "SchoolInfo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+           if (string.IsNullOrEmpty(TxtSchoolRegId.Text))
             {
-                try
+                MessageBox.Show("Somting went wrong, please check this school is still valid.");
+                return;
+            }
+            School lSchool = GetSchoolInfo();
+            if (lSchool != null)
+            {
+                DialogResult Result = MessageBox.Show("Do you want to delete the school " + lSchool.Name + "?", "Delete Confirm",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (Result == DialogResult.Yes)
                 {
-
-                    using (AccountContext db = new AccountContext())
+                    Boolean Deleted = SchoolManager.DeleteSchool(lSchool.Id);
+                    if (Deleted)
                     {
-                        a.Name = TxtSchoolRegistrationSchoolName.Text.Trim();
-                        a.Address = TxtSchoolRegistrationAddress.Text.Trim();
-                        TxtSchoolRegId.Text = a.Id.ToString();
-                        db.Entry(a).State = EntityState.Deleted;
-                        db.SaveChanges();
-                        listBoxSchoolRegistration.Refresh();
-                        display();
-                        clears();
-                        statusStripBtnSchoolRegistration.Text = "Deleted";
-                        TxtSchoolRegistrationSchoolName.ReadOnly = true;
-                        TxtSchoolRegistrationAddress.ReadOnly = true;
-                        listBoxSchoolRegistration.SelectedItem.ToString();
-                        statusStripBtnSchoolRegistration.Text = string.Empty;
-                        display();
-                        TxtSchoolRegistrationSchoolName.Focus();
-                        BtnSchoolRegistrationNew.Enabled = true;
-                        BtnSchoolRegistrationDelete.Enabled = true;
-                        BtnSchoolRegistrationEdit.Enabled = true;
-                        BtnSchoolRegistrationCancel.Enabled = false;
-                        BtnSchoolRegistrationSave.Enabled = false;
-                        BtnSchoolRegistrationExit.Enabled = true;
-
+                        ResetForm();
+                        LoadSchoolsWithFilter();
                     }
-                }
-                catch
-                {
-                    MessageBox.Show("error");
+                    else
+                    {
+                        ErrorMsg.Text="Could not delete school," + lSchool.Name + "!, Please retry. ";
+                    }
                 }
             }
             else
             {
-
+                DisplaySystemError("Somting went wrong, please check this currency is still valid.");
+                return;
             }
-
+            
+        }
+        private void groupBoxSchoolRegistrationSchoolDetails_Enter(object sender, EventArgs e)
+        {
 
         }
 
         private void listBoxSchoolRegistration_SelectedIndexChanged(object sender, EventArgs e)
         {
-            School a = new School();
-            if (listBoxSchoolRegistration.SelectedIndex > -1)
-            {
-                a.Id = ((School)listBoxSchoolRegistration.Items[listBoxSchoolRegistration.SelectedIndex]).Id;
-                using (AccountContext db = new AccountContext())
-                {
-                     a= db.Schools.Where(x => x.Id == a.Id).FirstOrDefault();
-                    TxtSchoolRegistrationSchoolName.Text = a.Name;
-                    TxtSchoolRegistrationAddress.Text = a.Address;
-                    
-                    //listBox1.SelectedItem.ToString();
-                    //textBox6.Text = listBox1.SelectedIndex.ToString();
-                }
-                
-
-            }
-            listBoxSchoolRegistration.Refresh();
+            ResetForm();
+            LoadSchoolInfo();
+            EnableForm(false);
         }
     }
 }

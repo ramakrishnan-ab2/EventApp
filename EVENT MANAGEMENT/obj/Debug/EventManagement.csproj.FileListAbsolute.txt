@@ -16,12 +16,9 @@ C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT MANAG
 C:\Users\HP\source\repos\EVENT MANAGEMENT\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Container.resources
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Container.resources
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Login.resources
-E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.MarkEntry.resources
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Properties.Resources.resources
-E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Registration.resources
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.EventReport.resources
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.ResultReport.resources
-E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.SchoolRegistration.resources
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csproj.GenerateResource.Cache
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.exe
 E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT MANAGEMENT.pdb
@@ -104,8 +101,6 @@ E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Inter
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
 E:\EventManagement\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
-E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojResolveAssemblyReference.cache
-E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\envdte.dll
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
@@ -121,3 +116,26 @@ C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Sh
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
 C:\EventManagement\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
 C:\EventManagement\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojResolveAssemblyReference.cache
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormMarkEntry.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormRegistration.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.FormSchoolRegistration.resources
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\envdte.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\stdole.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.MSXML.dll
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\envdte.xml
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.xml
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
+E:\Event Management\EventApp\EVENT MANAGEMENT\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\itextsharp.dll
+E:\EventManagement\EVENT MANAGEMENT\bin\Debug\itextsharp.xml
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Control.DelayBox.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EVENT_MANAGEMENT.Migrations.init.resources
+E:\EventManagement\EVENT MANAGEMENT\obj\Debug\EventManagement.csprojResolveAssemblyReference.cache

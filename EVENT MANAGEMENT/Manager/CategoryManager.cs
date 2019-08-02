@@ -22,10 +22,10 @@ namespace EVENT_MANAGEMENT.Manager
                 {
                     Category = (from Categorys in Context.Categorys where CategoryIds.Contains(Categorys.Id) select Categorys).ToList<Category>();
                 }
-                else
-                {
-                    Category = (from Categorys in Context.Categorys select Categorys).ToList();
-                }
+                //else
+                //{
+                //    Category = (from Categorys in Context.Categorys select Categorys).ToList();
+                //}
             }
             return Category;
         }

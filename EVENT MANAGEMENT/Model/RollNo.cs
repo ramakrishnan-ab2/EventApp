@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 
 namespace EVENT_MANAGEMENT.Model
 {
-   public class School
+    public class RollNo
     {
         [Key]
         public int Id { get; set; }
-        
-        public string Name { get; set; }
-        public string Address { get; set; }
+        public string Number { get; set; }
         public override string ToString()
         {
-            return Name;
+            return Number;
         }
     }
 }

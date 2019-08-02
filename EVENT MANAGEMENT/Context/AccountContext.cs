@@ -13,7 +13,9 @@ namespace EVENT_MANAGEMENT.Context
         public AccountContext()
                 : base("name=AccountContext")
         {
+            
         }
+        public virtual DbSet<RollNo> RollNos { get; set; }
         public virtual DbSet<Category> Categorys { get; set; }
         public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<EventCategory> EventCategories { get; set; }

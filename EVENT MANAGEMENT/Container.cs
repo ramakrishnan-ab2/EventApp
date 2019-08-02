@@ -107,5 +107,16 @@ namespace EVENT_MANAGEMENT
             Global.User = null;
                setmain(false);
         }
+
+        private void Container_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult Result = MessageBox.Show("Exit From Application", "Exit Confirm",
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+            if (Result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            
+        }
     }
 }
