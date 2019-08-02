@@ -22,15 +22,15 @@ namespace EVENT_MANAGEMENT.Manager
                 {
                     Event = (from Events in Context.Events where EventIds.Contains(Events.Id) select Events).ToList();
                 }
-                else
-                {
-                    Event = (from Events in Context.Events select Events).ToList();
-                }
+                //else
+                //{
+                //    Event = (from Events in Context.Events select Events).ToList();
+                //}
             }
             return Event;
         }
 
-        public IList<Event> ListEvent()
+            public IList<Event> ListEvent()
             {
                 IList<Event> Event = null;
                 using (AccountContext Context = new AccountContext())

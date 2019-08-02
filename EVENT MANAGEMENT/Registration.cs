@@ -21,7 +21,7 @@ namespace EVENT_MANAGEMENT
             RegisterManager = new RegisterManager();
             InitializeComponent();
         }
-   
+
         private void LoadRegistration()
         {
             string FilterString = TxtRegistrationSearch.Text.Trim();
@@ -29,7 +29,7 @@ namespace EVENT_MANAGEMENT
             IList<Register> Register = RegisterManager.ListRegistration();
             foreach (var lRegister in Register)
             {
-                if (FilterString == null || string.IsNullOrEmpty(FilterString.Trim()) || lRegister.StudentName.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1 
+                if (FilterString == null || string.IsNullOrEmpty(FilterString.Trim()) || lRegister.StudentName.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1
                     || lRegister.PhoneNo.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1
                     || lRegister.RollNo.IndexOf(FilterString, StringComparison.OrdinalIgnoreCase) > -1)
                 {
@@ -41,7 +41,7 @@ namespace EVENT_MANAGEMENT
             {
                 listBoxRgistrationlistbox.SelectedIndex = 0;
             }
-                       
+
         }
         private void loadCombo()
         {
@@ -65,6 +65,17 @@ namespace EVENT_MANAGEMENT
                 TxtRegistrationSearch.TabStop = false;
                 BtnRegistartionNew.Select();
             }
+
+            if (!string.IsNullOrEmpty(TextBoxRegId.Text.Trim()) && EventIds.Contains(int.Parse(TextBoxRegId.Text)))
+            {
+                TxtRegistrationFee.Visible = true;
+                LblRegistrationFee.Visible = true;
+            }
+            else
+            {
+                TxtRegistrationFee.Visible = false;
+                LblRegistrationFee.Visible = false;
+            }
             TxtRegistartionName.ReadOnly = !enable;
             TxtRegistartionFathersName.ReadOnly = !enable;
             TxtRegistartionPhoneNo.ReadOnly = !enable;
@@ -83,7 +94,7 @@ namespace EVENT_MANAGEMENT
 
             if (enable)
             {
-                
+
                 BtnRegistrationPrint.Enabled = !enable;
                 BtnRegistartionDelete.Enabled = !enable;
                 BtnRegistartionEdit.Enabled = !enable;
@@ -93,9 +104,10 @@ namespace EVENT_MANAGEMENT
             }
             else
             {
+                
                 if (listBoxRgistrationlistbox.SelectedIndex < 0)
                 {
-                    BtnRegistrationPrint.Enabled =enable;
+                    BtnRegistrationPrint.Enabled = enable;
                     BtnRegistartionDelete.Enabled = enable;
                     BtnRegistartionEdit.Enabled = enable;
                 }
@@ -105,15 +117,15 @@ namespace EVENT_MANAGEMENT
                     BtnRegistartionDelete.Enabled = !enable;
                     BtnRegistartionEdit.Enabled = !enable;
                 }
-                
+
                 BtnRegistartionNew.Enabled = !enable;
                 BtnRegistartionSave.Enabled = enable;
                 BtnRegistartionCancel.Enabled = enable;
             }
-            
+
         }
         private void FormRegistration_Load(object sender, EventArgs e)
-        {            
+        {
             loadCombo();
             LoadRegistration();
             ResetForm();
@@ -128,7 +140,7 @@ namespace EVENT_MANAGEMENT
             TxtRegistartionFathersName.Text = "";
             TxtRegistartionEventRollNo.Text = Convert.ToString(0000);
             TxtRegistartionPhoneNo.Text = "";
-            comboBoxRegistartionCategory.SelectedIndex=-1;
+            comboBoxRegistartionCategory.SelectedIndex = -1;
             comboBoxRegistartionEvent.SelectedIndex = -1;
             comboBoxRegistartionQualification.SelectedIndex = -1;
             comboBoxRegistartionSchoolName.SelectedIndex = -1;
@@ -137,7 +149,7 @@ namespace EVENT_MANAGEMENT
             comboBoxRegistartionQualification.ResetText();
             comboBoxRegistartionSchoolName.ResetText();
             TxtRollNo.Text = Convert.ToString(0000);
-            TxtRegistrationFee.Text = "0.00";
+            TxtRegistrationFee.Text = "0";
             dateTimePickerRegistartionDate.Value = DateTime.Now;
         }
         private void BtnRegistartionNew_Click(object sender, EventArgs e)
@@ -156,11 +168,11 @@ namespace EVENT_MANAGEMENT
         private void BtnRegistartionDelete_Click(object sender, EventArgs e)
         {
             ErrorMsg.Text = "";
-               DialogResult Result = MessageBox.Show("Do you want to delete the "+ TxtRegistartionName.Text+ " registration.", "Delete Confirm",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            DialogResult Result = MessageBox.Show("Do you want to delete the " + TxtRegistartionName.Text + " registration.", "Delete Confirm",
+             MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (Result == DialogResult.Yes)
             {
-                if(RegisterManager.DeleteRegister(int.Parse(TextBoxRegId.Text)))
+                if (RegisterManager.DeleteRegister(int.Parse(TextBoxRegId.Text)))
                 {
                     ErrorMsg.Text = "Successfully removed.";
                     ResetForm();
@@ -178,7 +190,7 @@ namespace EVENT_MANAGEMENT
         private Register GetRegisterFromForm()
         {
             Register Register = new Register();
-            Register.Id = string.IsNullOrEmpty(TextBoxRegId.Text)?0:Convert.ToInt32(TextBoxRegId.Text);
+            Register.Id = string.IsNullOrEmpty(TextBoxRegId.Text) ? 0 : Convert.ToInt32(TextBoxRegId.Text);
             Register.StudentName = TxtRegistartionName.Text.Trim();
             Register.FathersName = TxtRegistartionFathersName.Text.Trim();
             Register.QualificationId = ((Qualification)comboBoxRegistartionQualification.Items[comboBoxRegistartionQualification.SelectedIndex]).Id;
@@ -186,7 +198,7 @@ namespace EVENT_MANAGEMENT
             Register.EventId = ((Event)comboBoxRegistartionEvent.Items[comboBoxRegistartionEvent.SelectedIndex]).Id;
             Register.SchoolId = ((School)comboBoxRegistartionSchoolName.Items[comboBoxRegistartionSchoolName.SelectedIndex]).Id;
 
-            Register.EventRollNo = string.IsNullOrEmpty(TxtRegistartionEventRollNo.Text) ?0 :int.Parse(TxtRegistartionEventRollNo.Text.Substring(TxtRegistartionEventRollNo.Text.Length-1));
+            Register.EventRollNo = string.IsNullOrEmpty(TxtRegistartionEventRollNo.Text) ? 0 : int.Parse(TxtRegistartionEventRollNo.Text.Substring(TxtRegistartionEventRollNo.Text.Length - 1));
             Register.PhoneNo = TxtRegistartionPhoneNo.Text.Trim();
             Register.Date = Convert.ToDateTime(dateTimePickerRegistartionDate.Text);
             Register.Fee = double.Parse(TxtRegistrationFee.Text);
@@ -228,13 +240,13 @@ namespace EVENT_MANAGEMENT
                 }
                 else
                 {
-                    ErrorMsg.Text = "This person already register in "+comboBoxRegistartionEvent.Text+" event ";
-                }               
-            }            
+                    ErrorMsg.Text = "This person already register in " + comboBoxRegistartionEvent.Text + " event ";
+                }
+            }
         }
         private bool validate()
         {
-            if(string.IsNullOrEmpty(TxtRegistartionName.Text.Trim()))
+            if (string.IsNullOrEmpty(TxtRegistartionName.Text.Trim()))
             {
                 ErrorMsg.Text = "please enter name";
                 TxtRegistartionName.Select();
@@ -246,13 +258,13 @@ namespace EVENT_MANAGEMENT
                 TxtRegistartionFathersName.Select();
                 return false;
             }
-            if (string.IsNullOrEmpty(TxtRegistartionPhoneNo.Text.Trim()))
-            {
-                ErrorMsg.Text = "please enter phone number";
-                TxtRegistartionPhoneNo.Select();
-                return false;
-            }
-            if (comboBoxRegistartionQualification.SelectedIndex<0)
+            //if (string.IsNullOrEmpty(TxtRegistartionPhoneNo.Text.Trim()))
+            //{
+            //    ErrorMsg.Text = "please enter phone number";
+            //    TxtRegistartionPhoneNo.Select();
+            //    return false;
+            //}
+            if (comboBoxRegistartionQualification.SelectedIndex < 0)
             {
                 ErrorMsg.Text = "please select qualification";
                 comboBoxRegistartionQualification.Select();
@@ -270,13 +282,19 @@ namespace EVENT_MANAGEMENT
                 comboBoxRegistartionEvent.Select();
                 return false;
             }
+            if (TxtRegistrationFee.Visible && (string.IsNullOrEmpty(TxtRegistrationFee.Text.Trim())|| int.Parse(TxtRegistrationFee.Text.Trim()) <1))
+            {
+                ErrorMsg.Text = "please enter member count";
+                TxtRegistrationFee.Select();
+                return false;
+            }
             if (comboBoxRegistartionSchoolName.SelectedIndex < 0)
             {
                 ErrorMsg.Text = "please select school";
                 comboBoxRegistartionSchoolName.Select();
                 return false;
             }
-            
+
 
             return true;
         }
@@ -299,7 +317,7 @@ namespace EVENT_MANAGEMENT
             FormSchoolRegistration FormSchoolRegistration = new FormSchoolRegistration();
             FormSchoolRegistration.ShowDialog();
             LoadSchoolCombo();
-            if(comboBoxRegistartionSchoolName.Items.Count>0 && comboBoxRegistartionSchoolName.FindStringExact(Temp)>-1)
+            if (comboBoxRegistartionSchoolName.Items.Count > 0 && comboBoxRegistartionSchoolName.FindStringExact(Temp) > -1)
             {
                 comboBoxRegistartionSchoolName.FindStringExact(Temp);
             }
@@ -308,7 +326,7 @@ namespace EVENT_MANAGEMENT
                 comboBoxRegistartionSchoolName.SelectedIndex = -1;
             }
         }
-        
+
         private void comboBoxRegistartionQualification_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxRegistartionCategory.ResetText();
@@ -327,12 +345,15 @@ namespace EVENT_MANAGEMENT
         {
             //string Temp = comboBoxRegistartionCategory.Text.Trim();
 
-            int QualificationId = (comboBoxRegistartionQualification.SelectedIndex>-1)?((Qualification)comboBoxRegistartionQualification.Items[comboBoxRegistartionQualification.SelectedIndex]).Id:0;
-            CategoryManager CategoryManager =new  CategoryManager();
+            int QualificationId = (comboBoxRegistartionQualification.SelectedIndex > -1) ? ((Qualification)comboBoxRegistartionQualification.Items[comboBoxRegistartionQualification.SelectedIndex]).Id : 0;
+            CategoryManager CategoryManager = new CategoryManager();
             comboBoxRegistartionCategory.Items.Clear();
-            comboBoxRegistartionCategory.Items.AddRange(CategoryManager.ListCategory(QualificationId).ToArray<Category>());
-
-            if (comboBoxRegistartionCategory.Items.Count > 0 )
+            IList<Category> Category = CategoryManager.ListCategory(QualificationId);
+            if (Category != null)
+            {
+                comboBoxRegistartionCategory.Items.AddRange(Category.ToArray());
+            }
+            if (comboBoxRegistartionCategory.Items.Count > 0)
             {
                 comboBoxRegistartionCategory.SelectedIndex = 0;
             }
@@ -352,7 +373,7 @@ namespace EVENT_MANAGEMENT
 
             //if (string.IsNullOrEmpty(Temp) || comboBoxRegistartionQualification.Items.Count == 0 || comboBoxRegistartionQualification.FindStringExact(Temp) < 0)
             //{
-                comboBoxRegistartionQualification.SelectedIndex = -1;
+            comboBoxRegistartionQualification.SelectedIndex = -1;
             //}
             //else
             //{
@@ -366,11 +387,15 @@ namespace EVENT_MANAGEMENT
             int CategoryId = (comboBoxRegistartionCategory.SelectedIndex > -1) ? ((Category)comboBoxRegistartionCategory.Items[comboBoxRegistartionCategory.SelectedIndex]).Id : 0;
             EventManager EventManager = new EventManager();
             comboBoxRegistartionEvent.Items.Clear();
-            comboBoxRegistartionEvent.Items.AddRange(EventManager.ListEvent(CategoryId).ToArray<Event>());
+            IList<Event> Event = EventManager.ListEvent(CategoryId);
+            if (Event != null)
+            {
+                comboBoxRegistartionEvent.Items.AddRange(Event.ToArray<Event>());
+            }
 
             //if (string.IsNullOrEmpty(Temp)|| comboBoxRegistartionEvent.Items.Count==0 || comboBoxRegistartionEvent.FindStringExact(Temp)<0)
             //{
-                comboBoxRegistartionEvent.SelectedIndex = -1;
+            comboBoxRegistartionEvent.SelectedIndex = -1;
             //}
             //else
             //{
@@ -387,7 +412,7 @@ namespace EVENT_MANAGEMENT
         private void listBoxRgistrationlistbox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ResetForm();
-            if(listBoxRgistrationlistbox.SelectedIndex>-1)
+            if (listBoxRgistrationlistbox.SelectedIndex > -1)
             {
                 Register RegisterFF = ((Register)listBoxRgistrationlistbox.Items[listBoxRgistrationlistbox.SelectedIndex]);
                 if (RegisterFF != null)
@@ -398,7 +423,7 @@ namespace EVENT_MANAGEMENT
                         TextBoxRegId.Text = Register.Id.ToString();
                         TxtRegistartionName.Text = Register.StudentName;
                         TxtRegistartionFathersName.Text = Register.FathersName;
-                        TxtRegistartionEventRollNo.Text = NameSplit(Register.Event.EventName)+"-"+ Register.Category.CategoryName + "-"+Register.EventRollNo.ToString();
+                        TxtRegistartionEventRollNo.Text = NameSplit(Register.Event.EventName) + "-" + Register.Category.CategoryName + "-" + Register.EventRollNo.ToString();
                         TxtRegistartionPhoneNo.Text = Register.PhoneNo;
                         TxtRegistrationFee.Text = Register.Fee.ToString();
                         dateTimePickerRegistartionDate.Value = Register.Date;
@@ -416,8 +441,8 @@ namespace EVENT_MANAGEMENT
 
         private string NameSplit(string Ename)
         {
-            string Output=string.Empty;
-            string[] split= Ename.Split(' ');
+            string Output = string.Empty;
+            string[] split = Ename.Split(' ');
             foreach (var word in split)
             {
                 Output += word[0].ToString();
@@ -427,7 +452,7 @@ namespace EVENT_MANAGEMENT
         private void comboBoxRegistartionCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxRegistartionEvent.ResetText();
-            if (comboBoxRegistartionCategory.SelectedIndex>-1)
+            if (comboBoxRegistartionCategory.SelectedIndex > -1)
             {
                 comboBoxRegistartionEvent.Enabled = true;
                 LoadEventCombo();
@@ -452,21 +477,7 @@ namespace EVENT_MANAGEMENT
             }
         }
 
-        private void TxtRegistrationFee_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != 8 && e.KeyChar != Convert.ToChar(Keys.Enter) && e.KeyChar != Convert.ToChar(Keys.Escape) && !char.IsControl(e.KeyChar))
-            {
 
-                if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back) || (e.KeyChar == '.')))
-                {
-                    e.Handled = true;
-                }
-                else if (e.KeyChar == '.' && TxtRegistrationFee.Text.IndexOf('.') > -1)
-                {
-                    e.Handled = true;
-                }
-            }
-        }
 
         private void BtnRegistartionSave_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
@@ -499,7 +510,7 @@ namespace EVENT_MANAGEMENT
         private void BtnRegistrationPrint_Click(object sender, EventArgs e)
         {
             RegistrationPrinting RegistrationPrinting = new RegistrationPrinting();
-            RegistrationPrinting.GenerateRegistrationPrinting(int.Parse(TextBoxRegId.Text),PicBox.Image);
+            RegistrationPrinting.GenerateRegistrationPrinting(int.Parse(TextBoxRegId.Text), PicBox.Image);
             loadCombo();
             LoadRegistration();
             ResetForm();
@@ -513,17 +524,35 @@ namespace EVENT_MANAGEMENT
             {
                 listBoxRgistrationlistbox.Select();
             }
-            
+
         }
         private void TxtRegistrationSearch_TextChanged(object sender, EventArgs e)
-        {         
+        {
             ResetForm();
             loadCombo();
             LoadRegistration();
             if (listBoxRgistrationlistbox.Items.Count > 0) { BtnRegistartionEdit.Enabled = true; BtnRegistartionDelete.Enabled = true; }
             else { BtnRegistartionEdit.Enabled = false; BtnRegistartionDelete.Enabled = false; }
         }
-        
+
+        public int[] EventIds= new int[]{2,21,9,24,26,27,6,25,22};
+        private void comboBoxRegistartionEvent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxRegistartionEvent.SelectedIndex>-1)
+            {
+                Event Event = (Event)comboBoxRegistartionEvent.Items[comboBoxRegistartionEvent.SelectedIndex];
+                if(Event!=null && EventIds.Contains(Event.Id))
+                {
+                    TxtRegistrationFee.Visible = true;
+                    LblRegistrationFee.Visible = true;
+                }
+                else
+                {
+                    TxtRegistrationFee.Visible = false;
+                    LblRegistrationFee.Visible = false;
+                }
+            }
+        }
     }
 }
 

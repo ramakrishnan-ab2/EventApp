@@ -21,51 +21,40 @@ namespace EVENT_MANAGEMENT
             MarkEntryManager = new MarkEntryManager(); 
             InitializeComponent();
         }
-      
-      
+           
         private void MarkEntry_Load(object sender, EventArgs e)
         { 
-                LoadEvent();
-           
-
+            LoadEvent();
         }
         private void LoadEvent()
         {
-            string FilterString = toolStripComboBox1.Text.Trim();
             toolStripComboBox1.Items.Clear();
             IList<Event> Events =MarkEntryManager.ListEvent();
             foreach (var lEvent in Events)
             {
-                
-                    toolStripComboBox1.Items.Add(lEvent);
+                toolStripComboBox1.Items.Add(lEvent);
                 
                 if (toolStripComboBox1.Items.Count > 0)
                 {
                     toolStripComboBox1.SelectedIndex = 0;
                 }
-                Event CurrencyFromDB = GetEventByName();
-                if (CurrencyFromDB != null)
-                {
-                   
-                    var CurrencyPricision = CurrencyFromDB.EventName;
-                    toolStripComboBox1.SelectedIndex = toolStripComboBox1.FindStringExact("" + CurrencyFromDB.EventName);
-                }
+                
             }
         }
-        private Event GetEventByName()
+        private void toolStripLabel2_Click(object sender, EventArgs e)
         {
-            int Index =toolStripComboBox1.SelectedIndex;
+            dataGridView1.Rows.Clear();
+            int Index = toolStripComboBox1.SelectedIndex;
             if (Index > -1)
             {
-                Event lCurrency = (Event)toolStripComboBox1.Items[Index];
-                if (lCurrency != null)
+                Event lEvent = (Event)toolStripComboBox1.Items[Index];
+                if (lEvent != null)
                 {
-                    Event CurrencyFromDB = MarkEntryManager.GetEventById(lCurrency.Id);
-                    return CurrencyFromDB;
+                    //Event CurrencyFromDB = MarkEntryManager.GetEventById(lCurrency.Id);
                 }
             }
-            return null;
         }
+       
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -102,23 +91,8 @@ namespace EVENT_MANAGEMENT
             ResetForm();
         }
 
-        private void toolStripComboBox1_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Cursor.Current = Cursors.WaitCursor;
-            if(toolStripComboBox1.SelectedIndex==0)
-            {
-
-            }
-        }
-
-        private void toolStripLabel2_Click(object sender, EventArgs e)
-        {
-           
-        }
+        
     }
 }

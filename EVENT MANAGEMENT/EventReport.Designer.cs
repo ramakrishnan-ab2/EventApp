@@ -40,16 +40,20 @@
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Qualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResultReportErrorMsg = new System.Windows.Forms.StatusStrip();
+            this.Errormsg = new System.Windows.Forms.ToolStripStatusLabel();
+            this.BtnScoringReport = new System.Windows.Forms.Button();
+            this.BtnScoringFinalReport = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventReport)).BeginInit();
+            this.ResultReportErrorMsg.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEventReportExit
             // 
-            this.btnEventReportExit.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEventReportExit.Location = new System.Drawing.Point(817, 375);
+            this.btnEventReportExit.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEventReportExit.Location = new System.Drawing.Point(838, 364);
             this.btnEventReportExit.Name = "btnEventReportExit";
-            this.btnEventReportExit.Size = new System.Drawing.Size(93, 28);
+            this.btnEventReportExit.Size = new System.Drawing.Size(75, 23);
             this.btnEventReportExit.TabIndex = 16;
             this.btnEventReportExit.Text = "Exit";
             this.btnEventReportExit.UseVisualStyleBackColor = true;
@@ -57,10 +61,10 @@
             // 
             // btnEventReportPrint
             // 
-            this.btnEventReportPrint.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEventReportPrint.Location = new System.Drawing.Point(714, 375);
+            this.btnEventReportPrint.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEventReportPrint.Location = new System.Drawing.Point(757, 364);
             this.btnEventReportPrint.Name = "btnEventReportPrint";
-            this.btnEventReportPrint.Size = new System.Drawing.Size(97, 28);
+            this.btnEventReportPrint.Size = new System.Drawing.Size(75, 23);
             this.btnEventReportPrint.TabIndex = 17;
             this.btnEventReportPrint.Text = "Print";
             this.btnEventReportPrint.UseVisualStyleBackColor = true;
@@ -92,12 +96,14 @@
             this.ComboBoxEventReport.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxEventReport.Name = "ComboBoxEventReport";
             this.ComboBoxEventReport.Size = new System.Drawing.Size(250, 35);
+            this.ComboBoxEventReport.SelectedIndexChanged += new System.EventHandler(this.ComboBoxEventReport_SelectedIndexChanged);
             // 
             // LblEventReportGo
             // 
             this.LblEventReportGo.Name = "LblEventReportGo";
             this.LblEventReportGo.Size = new System.Drawing.Size(22, 32);
             this.LblEventReportGo.Text = "Go";
+            this.LblEventReportGo.Click += new System.EventHandler(this.LblEventReportGo_Click);
             // 
             // dataGridViewEventReport
             // 
@@ -110,6 +116,7 @@
             this.Qualification});
             this.dataGridViewEventReport.Location = new System.Drawing.Point(12, 47);
             this.dataGridViewEventReport.Name = "dataGridViewEventReport";
+            this.dataGridViewEventReport.ReadOnly = true;
             this.dataGridViewEventReport.RowHeadersVisible = false;
             this.dataGridViewEventReport.Size = new System.Drawing.Size(903, 311);
             this.dataGridViewEventReport.TabIndex = 2;
@@ -118,39 +125,73 @@
             // 
             this.EventRollNo.HeaderText = "Event Roll No";
             this.EventRollNo.Name = "EventRollNo";
+            this.EventRollNo.ReadOnly = true;
             this.EventRollNo.Width = 150;
             // 
             // RollNo
             // 
             this.RollNo.HeaderText = "Roll No";
             this.RollNo.Name = "RollNo";
+            this.RollNo.ReadOnly = true;
             this.RollNo.Width = 150;
             // 
             // Name
             // 
             this.Name.HeaderText = "Name";
             this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
             this.Name.Width = 300;
             // 
             // Qualification
             // 
             this.Qualification.HeaderText = "Qualification";
             this.Qualification.Name = "Qualification";
+            this.Qualification.ReadOnly = true;
             this.Qualification.Width = 300;
             // 
             // ResultReportErrorMsg
             // 
-            this.ResultReportErrorMsg.Location = new System.Drawing.Point(0, 415);
+            this.ResultReportErrorMsg.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Errormsg});
+            this.ResultReportErrorMsg.Location = new System.Drawing.Point(0, 397);
             this.ResultReportErrorMsg.Name = "ResultReportErrorMsg";
             this.ResultReportErrorMsg.Size = new System.Drawing.Size(925, 22);
             this.ResultReportErrorMsg.TabIndex = 19;
             this.ResultReportErrorMsg.Text = "statusStrip1";
             // 
+            // Errormsg
+            // 
+            this.Errormsg.Name = "Errormsg";
+            this.Errormsg.Size = new System.Drawing.Size(13, 17);
+            this.Errormsg.Text = "  ";
+            // 
+            // BtnScoringReport
+            // 
+            this.BtnScoringReport.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnScoringReport.Location = new System.Drawing.Point(12, 364);
+            this.BtnScoringReport.Name = "BtnScoringReport";
+            this.BtnScoringReport.Size = new System.Drawing.Size(171, 23);
+            this.BtnScoringReport.TabIndex = 20;
+            this.BtnScoringReport.Text = "Generate Scoring Report";
+            this.BtnScoringReport.UseVisualStyleBackColor = true;
+            // 
+            // BtnScoringFinalReport
+            // 
+            this.BtnScoringFinalReport.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnScoringFinalReport.Location = new System.Drawing.Point(189, 364);
+            this.BtnScoringFinalReport.Name = "BtnScoringFinalReport";
+            this.BtnScoringFinalReport.Size = new System.Drawing.Size(205, 23);
+            this.BtnScoringFinalReport.TabIndex = 21;
+            this.BtnScoringFinalReport.Text = "Generate Scoring Final Report";
+            this.BtnScoringFinalReport.UseVisualStyleBackColor = true;
+            // 
             // EventReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 437);
+            this.ClientSize = new System.Drawing.Size(925, 419);
+            this.Controls.Add(this.BtnScoringFinalReport);
+            this.Controls.Add(this.BtnScoringReport);
             this.Controls.Add(this.ResultReportErrorMsg);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnEventReportExit);
@@ -158,12 +199,15 @@
             this.Controls.Add(this.dataGridViewEventReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-          //  this.Name = "EventReport";
+            //this.Name = "EventReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event Report";
+            this.Load += new System.EventHandler(this.EventReport_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventReport)).EndInit();
+            this.ResultReportErrorMsg.ResumeLayout(false);
+            this.ResultReportErrorMsg.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +226,8 @@
         private new System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qualification;
         private System.Windows.Forms.StatusStrip ResultReportErrorMsg;
+        private System.Windows.Forms.ToolStripStatusLabel Errormsg;
+        private System.Windows.Forms.Button BtnScoringReport;
+        private System.Windows.Forms.Button BtnScoringFinalReport;
     }
 }

@@ -13,7 +13,15 @@ namespace EVENT_MANAGEMENT.Manager
     public class RegisterManager
     {
 
-        
+        public IList<Register> ListRegistrationByEventId(int EId)
+        {
+            IList<Register> RegInfo = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                RegInfo = Context.Registers.Where(x=>x.EventId==EId).ToList();
+            }
+            return RegInfo;
+        }
         public IList<Register> ListRegistration()
         {
             IList<Register> RegInfo = null;
