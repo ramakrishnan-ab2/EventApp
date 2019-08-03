@@ -24,8 +24,25 @@ namespace EVENT_MANAGEMENT
             RegisterManager = new RegisterManager();
             InitializeComponent();
         }
-        private void LoadEvent()
+        private void LoadCategoryCombo()
         {
+            //string Temp = comboBoxRegistartionCategory.Text.Trim();
+
+            int QualificationId = (ComboBoxResultReportEvents.SelectedIndex > -1) ? ((Qualification)ComboBoxResultReportEvents.Items[ComboBoxResultReportEvents.SelectedIndex]).Id : 0;
+            CategoryManager CategoryManager = new CategoryManager();
+            ComboBoxResultReportCategory.Items.Clear();
+            IList<Category> Category = CategoryManager.ListCategory(QualificationId);
+            if (Category != null)
+            {
+                ComboBoxResultReportCategory.Items.AddRange(Category.ToArray());
+            }
+            if (ComboBoxResultReportCategory.Items.Count > 0)
+            {
+                ComboBoxResultReportCategory.SelectedIndex = 0;
+            }
+        }
+            private void LoadEvent()
+            {
             try
             {
             
@@ -72,7 +89,7 @@ namespace EVENT_MANAGEMENT
 
         private void LblResultReportGo_Click(object sender, EventArgs e)
         {
-
+            
         }
         private void Memory()
         {
@@ -90,32 +107,23 @@ namespace EVENT_MANAGEMENT
                     dataGridViewResultReport.Rows[i].Cells[0].Value = i+1;
                     dataGridViewResultReport.Rows[i].Cells[1].Value = lSaleEntryInfo.EventRollNo;
                     dataGridViewResultReport.Rows[i].Cells[2].Value = lSaleEntryInfo.Id;
-                    dataGridViewResultReport.Rows[i].Cells[3].Value = (lSaleEntryInfo.StudentName == null) ? lSaleEntryInfo.Qualification.Name : lSaleEntryInfo.Qualification.Name;
-                    //double judge1 = 0;
-                    //double judge2 = 0;
-                    //double judge3 = 0;
-                    //dataGridViewResultReport.Rows[i].Cells[4].Value= judge1;
-                    //dataGridViewResultReport.Rows[i].Cells[5].Value = judge2;
-                    //dataGridViewResultReport.Rows[i].Cells[6].Value = judge3;
-                    //if (dataGridViewResultReport.Rows[i].Cells[4] != null)
-                    //{
-                    //    judge1 = double.Parse(dataGridViewResultReport.Rows[i].Cells[4].Value.ToString());
+                    dataGridViewResultReport.Rows[i].Cells[3].Value = (lSaleEntryInfo.StudentName);
+                    double judge1 = 0;
+                    double judge2 = 0;
+                    double judge3 = 0;
+                    dataGridViewResultReport.Rows[i].Cells[4].Value = judge1;
+                    dataGridViewResultReport.Rows[i].Cells[5].Value = judge2;
+                    dataGridViewResultReport.Rows[i].Cells[6].Value = judge3;
+                    int sum = 0;
 
-                    //}
+                    for (int j = 0; j < dataGridViewResultReport.Rows.Count;j++)
+
+                    {
+
+                        sum = Convert.ToInt32(dataGridViewResultReport.Rows[j].Cells[4].Value)+ Convert.ToInt32(dataGridViewResultReport.Rows[j].Cells[5].Value)+ Convert.ToInt32(dataGridViewResultReport.Rows[j].Cells[6].Value);
+                        dataGridViewResultReport.Rows[j].Cells[7].Value = sum;
+                    }
                    
-                    //if (dataGridViewResultReport.Rows[i].Cells[5] != null)
-                    //{
-                    //    judge2 = double.Parse(dataGridViewResultReport.Rows[i].Cells[5].Value.ToString());
-
-                    //}
-                   
-                    //if (dataGridViewResultReport.Rows[i].Cells[6] != null)
-                    //{
-                    //    judge1 = double.Parse(dataGridViewResultReport.Rows[i].Cells[6].Value.ToString());
-
-                    //}
-                    // Avgmarks =judge1+judge2+judge3;
-                    //dataGridViewResultReport.Rows[i].Cells[7].Value =Avgmarks ;
                     i++;
                 }
             }
@@ -223,9 +231,36 @@ namespace EVENT_MANAGEMENT
             }
         }
 
-        private void ResultReport_Load_1(object sender, EventArgs e)
+       
+       
+        private void dataGridViewResultReport_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            LoadEvent();
+            int sum = 0;
+            foreach(DataGridViewRow dr in dataGridViewResultReport.Rows)
+
+            {
+
+                sum = Convert.ToInt32(dr.Cells[4].Value) + Convert.ToInt32(dr.Cells[5].Value) + Convert.ToInt32(dr.Cells[6].Value);
+                
+                dr.Cells[7].Value = sum;
+
+            }
+        }
+
+        private void ComboBoxResultReportEvents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //ComboBoxResultReportCategory.Items.Clear();
+            if (ComboBoxResultReportEvents.SelectedIndex >-1)
+            {
+                ComboBoxResultReportCategory.Enabled = true;
+                LoadCategoryCombo();
+                ComboBoxResultReportCategory.SelectedIndex = -1;
+            }
+            else
+            {
+                ComboBoxResultReportCategory.SelectedIndex = -1;
+                ComboBoxResultReportCategory.Enabled = false;
+            }
         }
     }
     

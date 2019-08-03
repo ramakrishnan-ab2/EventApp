@@ -41,6 +41,8 @@
             this.LblResultReportEvents = new System.Windows.Forms.ToolStripLabel();
             this.ComboBoxResultReportEvents = new System.Windows.Forms.ToolStripComboBox();
             this.LblResultReportGo = new System.Windows.Forms.ToolStripLabel();
+            this.LblResultReportCategory = new System.Windows.Forms.ToolStripLabel();
+            this.ComboBoxResultReportCategory = new System.Windows.Forms.ToolStripComboBox();
             this.ResultReportErrorMsg = new System.Windows.Forms.StatusStrip();
             this.btnResultReportExit = new System.Windows.Forms.Button();
             this.btnResultReportPrint = new System.Windows.Forms.Button();
@@ -120,6 +122,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LblResultReportEvents,
             this.ComboBoxResultReportEvents,
+            this.LblResultReportCategory,
+            this.ComboBoxResultReportCategory,
             this.LblResultReportGo});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -147,6 +151,17 @@
             this.LblResultReportGo.Size = new System.Drawing.Size(22, 32);
             this.LblResultReportGo.Text = "Go";
             this.LblResultReportGo.Click += new System.EventHandler(this.LblResultReportGo_Click_1);
+            // 
+            // LblResultReportCategory
+            // 
+            this.LblResultReportCategory.Name = "LblResultReportCategory";
+            this.LblResultReportCategory.Size = new System.Drawing.Size(55, 32);
+            this.LblResultReportCategory.Text = "Category";
+            // 
+            // ComboBoxResultReportCategory
+            // 
+            this.ComboBoxResultReportCategory.Name = "ComboBoxResultReportCategory";
+            this.ComboBoxResultReportCategory.Size = new System.Drawing.Size(121, 35);
             // 
             // ResultReportErrorMsg
             // 
@@ -203,7 +218,7 @@
            // this.Name = "ResultReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Result Report";
-            this.Load += new System.EventHandler(this.ResultReport_Load_1);
+            this.Load += new System.EventHandler(this.ResultReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResultReport)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -231,5 +246,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Judge3;
         private System.Windows.Forms.DataGridViewTextBoxColumn AvgMarks;
         private System.Windows.Forms.Button btnResultReportCancel;
+        private System.Windows.Forms.ToolStripLabel LblResultReportCategory;
+        private System.Windows.Forms.ToolStripComboBox ComboBoxResultReportCategory;
     }
 }
