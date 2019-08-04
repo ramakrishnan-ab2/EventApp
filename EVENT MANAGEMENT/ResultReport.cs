@@ -164,8 +164,37 @@ namespace EVENT_MANAGEMENT
             //}
 
         }
-        private void LblResultReportGo_Click_1(object sender, EventArgs e)
+        private void events()
         {
+            int EventId = (ComboBoxResultReportEvents.SelectedIndex > -1) ? ((Event)ComboBoxResultReportEvents.Items[ComboBoxResultReportEvents.SelectedIndex]).Id : 0;
+            RegisterManager RegisterManager = new RegisterManager();
+            dataGridViewResultReport.Rows.Clear();
+            IList<Register> Register = RegisterManager.ListRegistrationl(EventId);
+            if (Register != null)
+            {
+                foreach (var lRegister in Register)
+                {
+                    // if (FilterString == null || string.IsNullOrEmpty(FilterString.Trim()) || lRegister.EventId(FilterString, StringComparison.OrdinalIgnoreCase) > -1 )
+                    {
+                        int i = 0;
+                        foreach (DataGridViewRow dr in dataGridViewResultReport.Rows)
+                        {
+                            dr.Cells[0].Value = i + 1;
+                            dr.Cells[1].Value = lRegister.EventRollNo;
+                            dr.Cells[2].Value = lRegister.RollNo;
+                            dr.Cells[3].Value = lRegister.StudentName;
+                            // dr.Cells[4].Value
+
+                        }
+                    }
+                }
+            }
+           
+        }
+
+        
+            private void LblResultReportGo_Click_1(object sender, EventArgs e)
+            {
             dataGridViewResultReport.AllowUserToResizeColumns = false;
 
             if (ComboBoxResultReportEvents.Text == "MEMORY CHALLENGE")
@@ -177,9 +206,9 @@ namespace EVENT_MANAGEMENT
             {
                 quiz();
             }
-            else if (ComboBoxResultReportEvents.Text == "ELOCUTION - TAMIL")
+            else if (ComboBoxResultReportEvents.Text == "ELOCUTION-TAMIL")
             {
-
+                events();
             }
             else if (ComboBoxResultReportEvents.Text == "ELOCUTION-ENGLISH")
             {
