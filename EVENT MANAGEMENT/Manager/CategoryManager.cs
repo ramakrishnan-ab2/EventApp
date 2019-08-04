@@ -11,7 +11,7 @@ namespace EVENT_MANAGEMENT.Manager
    public class CategoryManager
     {
         public int?[] CategoryIds { get; set; }
-
+        public int?[] CategoryI { get; set; }
         public IList<Category> ListCategory(int QualificationId)
         {           
             IList<Category> Category = null;
@@ -28,6 +28,23 @@ namespace EVENT_MANAGEMENT.Manager
                 //}
             }
             return Category;
+        }
+        public IList<Category> ListCategoryl(int eId)
+        {
+            IList<Category> Categor = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                CategoryI = Context.EventCategories.Where(x => x.EventId== eId).Select(y => y.CategoryId).ToArray();
+                if (CategoryI.Length > 0)
+                {
+                    Categor = (from Categorys in Context.Categorys  where CategoryI.Contains(Categorys.Id) select Categorys).ToList<Category>();
+                }
+                //else
+                //{
+                //    Category = (from Categorys in Context.Categorys select Categorys).ToList();
+                //}
+            }
+            return Categor;
         }
         public Category AddCategory(Category CategoryFromForm)
         {

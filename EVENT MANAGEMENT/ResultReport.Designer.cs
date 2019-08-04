@@ -40,9 +40,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.LblResultReportEvents = new System.Windows.Forms.ToolStripLabel();
             this.ComboBoxResultReportEvents = new System.Windows.Forms.ToolStripComboBox();
-            this.LblResultReportGo = new System.Windows.Forms.ToolStripLabel();
             this.LblResultReportCategory = new System.Windows.Forms.ToolStripLabel();
             this.ComboBoxResultReportCategory = new System.Windows.Forms.ToolStripComboBox();
+            this.LblResultReportGo = new System.Windows.Forms.ToolStripLabel();
             this.ResultReportErrorMsg = new System.Windows.Forms.StatusStrip();
             this.btnResultReportExit = new System.Windows.Forms.Button();
             this.btnResultReportPrint = new System.Windows.Forms.Button();
@@ -140,17 +140,13 @@
             // 
             // ComboBoxResultReportEvents
             // 
+            this.ComboBoxResultReportEvents.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ComboBoxResultReportEvents.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ComboBoxResultReportEvents.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ComboBoxResultReportEvents.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxResultReportEvents.Name = "ComboBoxResultReportEvents";
             this.ComboBoxResultReportEvents.Size = new System.Drawing.Size(250, 35);
-            // 
-            // LblResultReportGo
-            // 
-            this.LblResultReportGo.Name = "LblResultReportGo";
-            this.LblResultReportGo.Size = new System.Drawing.Size(22, 32);
-            this.LblResultReportGo.Text = "Go";
-            this.LblResultReportGo.Click += new System.EventHandler(this.LblResultReportGo_Click_1);
+            this.ComboBoxResultReportEvents.SelectedIndexChanged += new System.EventHandler(this.ComboBoxResultReportEvents_SelectedIndexChanged_1);
             // 
             // LblResultReportCategory
             // 
@@ -160,8 +156,18 @@
             // 
             // ComboBoxResultReportCategory
             // 
+            this.ComboBoxResultReportCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ComboBoxResultReportCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ComboBoxResultReportCategory.Name = "ComboBoxResultReportCategory";
             this.ComboBoxResultReportCategory.Size = new System.Drawing.Size(121, 35);
+            this.ComboBoxResultReportCategory.SelectedIndexChanged += new System.EventHandler(this.ComboBoxResultReportCategory_SelectedIndexChanged);
+            // 
+            // LblResultReportGo
+            // 
+            this.LblResultReportGo.Name = "LblResultReportGo";
+            this.LblResultReportGo.Size = new System.Drawing.Size(22, 32);
+            this.LblResultReportGo.Text = "Go";
+            this.LblResultReportGo.Click += new System.EventHandler(this.LblResultReportGo_Click_1);
             // 
             // ResultReportErrorMsg
             // 
@@ -215,7 +221,7 @@
             this.Controls.Add(this.dataGridViewResultReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-           // this.Name = "ResultReport";
+          //  this.Name = "ResultReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Result Report";
             this.Load += new System.EventHandler(this.ResultReport_Load);

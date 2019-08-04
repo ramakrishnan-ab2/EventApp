@@ -92,6 +92,8 @@
             // 
             // ComboBoxEventReport
             // 
+            this.ComboBoxEventReport.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ComboBoxEventReport.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ComboBoxEventReport.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ComboBoxEventReport.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBoxEventReport.Name = "ComboBoxEventReport";
@@ -199,7 +201,7 @@
             this.Controls.Add(this.dataGridViewEventReport);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            //this.Name = "EventReport";
+           // this.Name = "EventReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event Report";
             this.Load += new System.EventHandler(this.EventReport_Load);

@@ -12,7 +12,7 @@ namespace EVENT_MANAGEMENT.Manager
 {
     public class RegisterManager
     {
-
+        public int?[] eventI { get; set; }
         public IList<Register> ListRegistrationByEventId(int EId)
         {
             IList<Register> RegInfo = null;
@@ -28,6 +28,16 @@ namespace EVENT_MANAGEMENT.Manager
             using (AccountContext Context = new AccountContext())
             {
                 RegInfo = Context.Registers.ToList();
+            }
+            return RegInfo;
+        }
+       
+            public IList<Register> ListRegistrationl(int eid)
+        {
+            IList<Register> RegInfo = null;
+            using (AccountContext Context = new AccountContext())
+            {
+                RegInfo = Context.Registers.Include("Event").Include("Category").Where(x=>x.EventId==eid)/*.Include("RollNo")*/.ToList();
             }
             return RegInfo;
         }
